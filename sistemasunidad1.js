@@ -154,4 +154,23 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = '';
         });
     });
+
+    // Animación para el encabezado y el botón en el hero
+    const heroHeader = document.querySelector('.unit-header h1');
+    const heroButton = document.querySelector('.animated-btn');
+
+    // Función para animar el encabezado y el botón
+    function animateHero() {
+        heroHeader.style.opacity = '1';
+        heroHeader.style.transform = 'translateY(0)';
+        heroButton.style.opacity = '1';
+    }
+
+    // Inicializar la opacidad y la posición
+    heroHeader.style.opacity = '0';
+    heroHeader.style.transform = 'translateY(-20px)';
+    heroButton.style.opacity = '0';
+
+    // Llamar a la función de animación después de un breve retraso
+    setTimeout(animateHero, 500); // Esperar medio segundo antes de animar
 });
