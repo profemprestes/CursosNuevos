@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Tecnologías de la Información | UTU DGETP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hero-animations.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --dark-color: #1e40af;
+            --light-color: #eff6ff;
+            --accent-color: #22c55e;
+            --accent-secondary: #f97316;
+            --gray-color: #64748b;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-card {
+            transition: all 0.3s ease-in-out;
+            border: none;
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .ems-2-header {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ems-3-header {
+            background-color: rgba(34, 197, 94, 0.1);
+            border-left: 5px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .btn-course {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-course:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+        .btn-course:hover i {
+            transform: translateX(3px);
+        }
+        
+        .btn-course i {
+            transition: transform 0.3s ease;
+        }
+        
+        .ems-2-card .card-header {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .ems-3-card .card-header {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-header {
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+        }
+        
+        .code-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.2;
+            animation: float 15s infinite linear;
+        }
+        
+        .el-1 {
+            top: 10%;
+            left: 10%;
+            animation-duration: 12s;
+        }
+        
+        .el-2 {
+            top: 60%;
+            left: 80%;
+            animation-duration: 18s;
+            animation-delay: 2s;
+        }
+        
+        .el-3 {
+            top: 30%;
+            left: 60%;
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+        
+        .el-4 {
+            top: 70%;
+            left: 30%;
+            animation-duration: 20s;
+            animation-delay: 3s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(10px, 15px) rotate(5deg);
+            }
+            50% {
+                transform: translate(5px, -10px) rotate(-5deg);
+            }
+            75% {
+                transform: translate(-10px, 5px) rotate(3deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-bg py-5 mb-5" id="inicio">
+        <div class="code-bg"></div>
+        <div class="floating-elements">
+            <div class="floating-element el-1">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="white">
+                    <path d="M8 3a2 2 0 00-2 2v4a2 2 0 01-2 2H3a1 1 0 000 2h1a2 2 0 012 2v4a2 2 0 002 2h2a1 1 0 000-2H8v-4a2 2 0 00-1.3-1.87A2 2 0 018 10V6h2a1 1 0 000-2H8z"/>
+                    <path d="M21 11h-1a2 2 0 01-2-2V5a2 2 0 00-2-2h-2a1 1 0 000 2h2v4a2 2 0 001.3 1.87A2 2 0 0016 14v4h-2a1 1 0 000 2h2a2 2 0 002-2v-4a2 2 0 012-2h1a1 1 0 000-2z"/>
+                </svg>
+            </div>
+            <div class="floating-element el-2">
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 19 7.73 19 10c0 2.97-1.41 5.61-3.6 7.39z"/>
+                </svg>
+            </div>
+            <div class="floating-element el-3">
+                <svg width="90" height="90" viewBox="0 0 24 24" fill="white">
+                    <path d="M7.5 4C4.46 4 2 6.46 2 9.5S4.46 15 7.5 15c2.74 0 5.09-1.97 5.44-4.63h-1.06c-.35 2.01-2.07 3.63-4.38 3.63-2.49 0-4.5-2.01-4.5-4.5S5.01 5 7.5 5c1.11 0 2.13.41 2.92 1.09l1.45-1.45C10.88 3.64 9.28 3 7.5 3 3.91 3 1 5.91 1 9.5S3.91 16 7.5 16c3.29 0 5.96-2.41 6.41-5.55H7.5v-1h7.5V9.5C15 6.46 12.54 4 9.5 4H7.5z"/>
+                </svg>
+            </div>
+            <div class="floating-element el-4">
+                <svg width="70" height="70" viewBox="0 0 24 24" fill="white">
+                    <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <div class="row align-items-center py-5">
+                <div class="col-lg-7 text-white">
+                    <h1 class="display-4 fw-bold hero-title">Cursos de Tecnologías de la Información</h1>
+                    <p class="lead mb-4 hero-subtitle">2° y 3° EMS | DGETP | UTU</p>
+                    <p class="fs-5 hero-description">Explora nuestros cursos especializados en tecnologías de la información, diseñados para prepararte con las habilidades y conocimientos que la industria demanda actualmente.</p>
+                    <a href="#cursos" class="btn btn-light btn-lg mt-3 shadow-sm hero-btn animated-btn">
+                        Explorar cursos <i class="bi bi-arrow-down-circle"></i>
+                    </a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <div class="hero-icon">
+                        <svg width="300" height="300" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Computer/Laptop -->
+                            <rect x="50" y="150" width="500" height="300" rx="20" fill="#E0E7FF" />
+                            <rect x="100" y="180" width="400" height="240" rx="5" fill="#2563EB" />
+                            <rect x="120" y="200" width="360" height="200" rx="2" fill="#1E40AF" />
+                            
+                            <!-- Code Elements -->
+                            <rect x="140" y="220" width="150" height="10" rx="5" fill="#FFFFFF" opacity="0.7" />
+                            <rect x="140" y="240" width="220" height="10" rx="5" fill="#FFFFFF" opacity="0.7" />
+                            <rect x="140" y="260" width="180" height="10" rx="5" fill="#FFFFFF" opacity="0.7" />
+                            <rect x="140" y="290" width="200" height="10" rx="5" fill="#22C55E" opacity="0.9" />
+                            <rect x="140" y="310" width="240" height="10" rx="5" fill="#22C55E" opacity="0.9" />
+                            <rect x="140" y="340" width="120" height="10" rx="5" fill="#F97316" opacity="0.9" />
+                            <rect x="140" y="360" width="180" height="10" rx="5" fill="#F97316" opacity="0.9" />
+                            
+                            <!-- Stand/Base -->
+                            <path d="M250 450 L350 450 L370 500 L230 500 Z" fill="#64748B" />
+                            <rect x="220" y="500" width="160" height="10" rx="5" fill="#475569" />
+                            
+                            <!-- Database Icon -->
+                            <ellipse cx="480" cy="320" rx="40" ry="20" fill="#F97316" opacity="0.8" />
+                            <rect x="440" y="320" width="80" height="40" rx="5" fill="#F97316" opacity="0.8" />
+                            <ellipse cx="480" cy="360" rx="40" ry="20" fill="#F97316" opacity="0.8" />
+                            
+                            <!-- Server Icon -->
+                            <rect x="440" y="220" width="80" height="60" rx="5" fill="#22C55E" opacity="0.8" />
+                            <rect x="450" y="230" width="60" height="10" rx="2" fill="#FFFFFF" opacity="0.6" />
+                            <rect x="450" y="245" width="60" height="10" rx="2" fill="#FFFFFF" opacity="0.6" />
+                            <rect x="450" y="260" width="60" height="10" rx="2" fill="#FFFFFF" opacity="0.6" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5" id="cursos">
+        <div class="ems-2-header">
+            <h2><i class="bi bi-mortarboard-fill me-2"></i>2° EMS | DGETP | Tecnologías de la Información</h2>
+            <p class="mb-0 text-muted">Cursos fundamentales para el segundo año de Educación Media Superior</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Programación Avanzada -->
+            <div class="col-md-4">
+                <div class="course-card ems-2-card card h-100">
+                    <div class="card-header">
+                        <i class="bi bi-code-slash me-2"></i>Programación Avanzada
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-icon">
+                            <i class="bi bi-braces"></i>
+                        </div>
+                        <h5 class="card-title">Profundiza en la programación</h5>
+                        <p class="card-text flex-grow-1">Aprende paradigmas avanzados de programación, estructuras de datos complejas y técnicas de optimización para desarrollar soluciones eficientes.</p>
+                        <a href="programacionavanzada.html" class="btn btn-course mt-3">
+                            Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Introducción a Base de Datos -->
+            <div class="col-md-4">
+                <div class="course-card ems-2-card card h-100">
+                    <div class="card-header">
+                        <i class="bi bi-database me-2"></i>Introducción a Base de Datos
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-icon">
+                            <i class="bi bi-table"></i>
+                        </div>
+                        <h5 class="card-title">Gestión de datos estructurados</h5>
+                        <p class="card-text flex-grow-1">Explora los fundamentos del diseño y gestión de bases de datos relacionales, modelado de datos y consultas SQL para almacenar y recuperar información eficientemente.</p>
+                        <a href="basededatos.html" class="btn btn-course mt-3">
+                            Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sistemas Operativos -->
+            <div class="col-md-4">
+                <div class="course-card ems-2-card card h-100">
+                    <div class="card-header">
+                        <i class="bi bi-terminal me-2"></i>Sistemas Operativos
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-icon">
+                            <i class="bi bi-pc-display"></i>
+                        </div>
+                        <h5 class="card-title">Fundamentos de Linux</h5>
+                        <p class="card-text flex-grow-1">Descubre el fascinante mundo de los sistemas operativos Linux, desde comandos básicos hasta la automatización de tareas mediante scripts.</p>
+                        <a href="sistemasoperativos.html" class="btn btn-course mt-3">
+                            Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ems-3-header">
+            <h2><i class="bi bi-mortarboard-fill me-2"></i>3° EMS | DGETP | Tecnologías de la Información</h2>
+            <p class="mb-0 text-muted">Cursos avanzados para el tercer año de Educación Media Superior</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Programación Full Stack -->
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card ems-3-card card h-100">
+                    <div class="card-header">
+                        <i class="bi bi-stack me-2"></i>Programación Full Stack
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-icon">
+                            <i class="bi bi-layers"></i>
+                        </div>
+                        <h5 class="card-title">Desarrollo web integral</h5>
+                        <p class="card-text flex-grow-1">Domina el desarrollo frontend y backend para crear aplicaciones web completas, utilizando frameworks modernos y APIs.</p>
+                        <a href="fullstack.html" class="btn btn-course mt-3">
+                            Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ingeniería de Software -->
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card ems-3-card card h-100">
+                    <div class="card-header">
+                        <i class="bi bi-diagram-3 me-2"></i>Ingeniería de Software
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-icon">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+                        <h5 class="card-title">Diseño y gestión de sistemas</h5>
+                        <p class="card-text flex-grow-1">Aprende metodologías de desarrollo, modelado UML y técnicas de gestión de proyectos para crear software de calidad.</p>
+                        <a href="ingenieria.html" class="btn btn-course mt-3">
+                            Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Administración de Sistemas Operativos -->
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card ems-3-card card h-100">
+                    <div class="card-header">
+                        <i class="bi bi-hdd-stack me-2"></i>Administración de SO
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-icon">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h5 class="card-title">Gestión de sistemas</h5>
+                        <p class="card-text flex-grow-1">Profundiza en la administración de sistemas Linux y Windows Server, configuración de redes y servicios empresariales.</p>
+                        <a href="adminsistemas.html" class="btn btn-course mt-3">
+                            Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutoría de Proyecto UTULAB -->
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card ems-3-card card h-100">
+                    <div class="card-header">
+                        <i class="bi bi-kanban me-2"></i>Tutoría de Proyecto UTULAB
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-icon">
+                            <i class="bi bi-lightning"></i>
+                        </div>
+                        <h5 class="card-title">Proyecto integrador</h5>
+                        <p class="card-text flex-grow-1">Desarrolla un proyecto real bajo la guía de tutores expertos, aplicando todos los conocimientos adquiridos durante tu formación.</p>
+                        <a href="utulab.html" class="btn btn-course mt-3">
+                            Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Matías Prestes</h5>
+                    <p class="text-light mb-1">Profesor de Informática</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-globe me-2"></i><a href="https://profemprestes.github.io" class="text-white">profemprestes.github.io</a></li>
+                        <li><i class="bi bi-envelope me-2"></i><a href="mailto:profematiasprestes@gmail.com" class="text-white">profematiasprestes@gmail.com</a></li>
+                        <li><i class="bi bi-geo-alt me-2"></i>Montevideo, Uruguay | Canelones, Uruguay</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Enlaces Útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://universidaddeltrabajo.edu.uy/" class="text-white"><i class="bi bi-link-45deg me-2"></i>UTU - Universidad del Trabajo</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Plataforma educativa</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Recursos adicionales</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Calendario académico</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="social-icons">
+                        <a href="https://youtube.com/profematiasprestes" class="social-icon text-white me-3" title="YouTube"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="https://linkedin.com/in/mprestestecnologia" class="social-icon text-white me-3" title="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="https://github.com/profemprestes" class="social-icon text-white" title="GitHub"><i class="bi bi-github fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 Cursos de Tecnologías de la Información | DGETP | UTU</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script3.js"></script>
+</body>
+</html>

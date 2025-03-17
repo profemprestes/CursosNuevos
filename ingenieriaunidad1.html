@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1: Especificación de Requerimientos | Curso Ingeniería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ingenieriaunidad1.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#unit-nav" data-bs-offset="200">
+    <header class="unit-header py-5" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold">Unidad 1: Especificación de Requerimientos</h1>
+                    <p class="lead mb-4">3° EMS | DGETP | Tecnologías de la Información</p>
+                    <p class="fs-5">Técnicas y herramientas para la captura y gestión eficaz de requisitos</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm animated-btn">Ver contenido <i class="bi bi-arrow-down-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Unidad 1</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#unit-nav" aria-controls="unit-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="unit-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#definicion"><i class="bi bi-journal-text"></i> Definición e Importancia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#herramientas"><i class="bi bi-tools"></i> Herramienta ES.RE (Norma IEEE Std. 830-1998)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tipos"><i class="bi bi-list-check"></i> Tipos de Requerimientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ciclovida"><i class="bi bi-arrow-repeat"></i> Ciclo de Vida de los Requisitos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#usuarios"><i class="bi bi-people"></i> Usuarios del Sistema</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tecnicas"><i class="bi bi-chat-dots"></i> Técnicas de Relevamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#factibilidades"><i class="bi bi-clipboard-check"></i> Factibilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#logica"><i class="bi bi-diagram-3"></i> Lógica del Sistema</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="ingenieria.html"><i class="bi bi-house-door"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="ingenieria.html">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 1: Especificación de Requerimientos</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="definicion" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-journal-text"></i>
+                </div>
+                <h2 class="section-title">Definición e Importancia</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>¿Qué son los Requerimientos?</h3>
+                            <p>Los requerimientos son descripciones de las necesidades o deseos de un producto. Son la base para todo el trabajo de desarrollo posterior y describen no solo lo que el software debe hacer sino también las restricciones sobre su operación e implementación.</p>
+                            
+                            <div class="info-box">
+                                <h4>Características de un buen requerimiento</h4>
+                                <ul class="feature-list">
+                                    <li><span class="feature-number">1</span> Completo: Define todo lo necesario</li>
+                                    <li><span class="feature-number">2</span> Correcto: Representa fielmente las necesidades</li>
+                                    <li><span class="feature-number">3</span> Factible: Puede implementarse con los recursos disponibles</li>
+                                    <li><span class="feature-number">4</span> Necesario: Su ausencia causaría una deficiencia en el sistema</li>
+                                    <li><span class="feature-number">5</span> Priorizable: Puede clasificarse según su importancia</li>
+                                    <li><span class="feature-number">6</span> Verificable: Puede comprobarse que se ha implementado correctamente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Importancia en el Ciclo de Desarrollo</h3>
+                            <p>Una especificación adecuada de requerimientos es fundamental para el éxito de un proyecto de software. Los estudios demuestran que los errores en los requerimientos son:</p>
+                            
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <div class="stat-value">10-100x</div>
+                                    <div class="stat-desc">Más costosos de corregir si se detectan en etapas tardías</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">56%</div>
+                                    <div class="stat-desc">De los defectos en los proyectos provienen de errores en los requerimientos</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">80%</div>
+                                    <div class="stat-desc">Del esfuerzo de rework se debe a problemas en los requerimientos</div>
+                                </div>
+                            </div>
+                            
+                            <div class="impact-diagram">
+                                <h4>Impacto en el Proyecto</h4>
+                                <div class="diagram-container">
+                                    <div class="diagram-item quality">
+                                        <div class="diagram-icon"><i class="bi bi-check-circle"></i></div>
+                                        <div class="diagram-title">Calidad</div>
+                                    </div>
+                                    <div class="diagram-item time">
+                                        <div class="diagram-icon"><i class="bi bi-clock"></i></div>
+                                        <div class="diagram-title">Tiempo</div>
+                                    </div>
+                                    <div class="diagram-item cost">
+                                        <div class="diagram-icon"><i class="bi bi-cash"></i></div>
+                                        <div class="diagram-title">Costo</div>
+                                    </div>
+                                    <div class="diagram-item scope">
+                                        <div class="diagram-icon"><i class="bi bi-bullseye"></i></div>
+                                        <div class="diagram-title">Alcance</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-tools"></i>
+                </div>
+                <h2 class="section-title">Herramienta ES.RE (Norma IEEE Std. 830-1998)</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>El estándar IEEE 830-1998 proporciona directrices para la especificación de requisitos de software (SRS) y establece la estructura y contenido que deben tener estos documentos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Estructura del Documento SRS</h3>
+                            <div class="srs-structure">
+                                <div class="structure-item">
+                                    <div class="item-number">1</div>
+                                    <div class="item-content">
+                                        <h4>Introducción</h4>
+                                        <ul>
+                                            <li>Propósito del documento</li>
+                                            <li>Alcance del sistema</li>
+                                            <li>Definiciones y acrónimos</li>
+                                            <li>Referencias</li>
+                                            <li>Visión general del documento</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="structure-item">
+                                    <div class="item-number">2</div>
+                                    <div class="item-content">
+                                        <h4>Descripción General</h4>
+                                        <ul>
+                                            <li>Perspectiva del producto</li>
+                                            <li>Funciones del producto</li>
+                                            <li>Características de los usuarios</li>
+                                            <li>Restricciones</li>
+                                            <li>Suposiciones y dependencias</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="structure-item">
+                                    <div class="item-number">3</div>
+                                    <div class="item-content">
+                                        <h4>Requisitos Específicos</h4>
+                                        <ul>
+                                            <li>Interfaces externas</li>
+                                            <li>Requisitos funcionales</li>
+                                            <li>Requisitos no funcionales</li>
+                                            <li>Restricciones de diseño</li>
+                                            <li>Atributos del sistema</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="structure-item">
+                                    <div class="item-number">4</div>
+                                    <div class="item-content">
+                                        <h4>Información de Apoyo</h4>
+                                        <ul>
+                                            <li>Apéndices</li>
+                                            <li>Índices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Beneficios de Utilizar IEEE 830</h3>
+                            
+                            <div class="benefits-list">
+                                <div class="benefit-item">
+                                    <div class="benefit-icon">
+                                        <i class="bi bi-check2-circle"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Documentación Estructurada</h4>
+                                        <p>Proporciona una estructura clara y organizada para capturar todos los requisitos relevantes.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <div class="benefit-icon">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Reutilización</h4>
+                                        <p>Facilita la reutilización de especificaciones en proyectos similares o relacionados.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <div class="benefit-icon">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Calidad Garantizada</h4>
+                                        <p>Asegura que se consideren todos los aspectos importantes de los requerimientos.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <div class="benefit-icon">
+                                        <i class="bi bi-translate"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Comunicación Efectiva</h4>
+                                        <p>Proporciona un lenguaje común entre clientes, usuarios y equipo de desarrollo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box warning mt-4">
+                                <h4><i class="bi bi-exclamation-triangle"></i> Consideraciones</h4>
+                                <p>Aunque IEEE 830 proporciona una base sólida, es importante adaptarla a las necesidades específicas del proyecto y complementarla con otras técnicas modernas de ingeniería de requisitos, especialmente en entornos ágiles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tipos" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-list-check"></i>
+                </div>
+                <h2 class="section-title">Tipos de Requerimientos</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Requerimientos Funcionales</h3>
+                            <p>Describen los servicios que el sistema debe proporcionar, cómo debe reaccionar a entradas particulares y cómo debe comportarse en situaciones específicas.</p>
+                            
+                            <div class="examples-block">
+                                <h4>Ejemplos de Requerimientos Funcionales</h4>
+                                <div class="example-item">
+                                    <div class="example-id">RF01</div>
+                                    <div class="example-text">El sistema debe permitir a los usuarios registrados iniciar sesión mediante email y contraseña.</div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-id">RF02</div>
+                                    <div class="example-text">El sistema deberá enviar notificaciones por email cuando una nueva tarea sea asignada a un usuario.</div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-id">RF03</div>
+                                    <div class="example-text">El sistema debe permitir la generación de reportes de ventas mensuales en formatos PDF y Excel.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="characteristics-block mt-4">
+                                <h4>Características</h4>
+                                <ul class="characteristics-list">
+                                    <li>Describen el <strong>qué</strong> debe hacer el sistema</li>
+                                    <li>Definidos desde la perspectiva del usuario</li>
+                                    <li>Expresados como capacidades específicas</li>
+                                    <li>Deben ser verificables y trazables</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Requerimientos No Funcionales</h3>
+                            <p>Especifican criterios para evaluar la operación de un sistema, en lugar de comportamientos específicos. Definen restricciones o atributos de calidad.</p>
+                            
+                            <div class="req-categories">
+                                <div class="req-category">
+                                    <div class="category-icon"><i class="bi bi-speedometer2"></i></div>
+                                    <div class="category-content">
+                                        <h4>Rendimiento</h4>
+                                        <p>Ejemplo: El sistema debe responder a las consultas en menos de 2 segundos para el 90% de las transacciones.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="req-category">
+                                    <div class="category-icon"><i class="bi bi-shield-lock"></i></div>
+                                    <div class="category-content">
+                                        <h4>Seguridad</h4>
+                                        <p>Ejemplo: El sistema debe cifrar todas las contraseñas de usuarios utilizando el algoritmo SHA-256.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="req-category">
+                                    <div class="category-icon"><i class="bi bi-arrow-repeat"></i></div>
+                                    <div class="category-content">
+                                        <h4>Disponibilidad</h4>
+                                        <p>Ejemplo: El sistema debe estar disponible el 99.9% del tiempo durante horario comercial.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="req-category">
+                                    <div class="category-icon"><i class="bi bi-hand-thumbs-up"></i></div>
+                                    <div class="category-content">
+                                        <h4>Usabilidad</h4>
+                                        <p>Ejemplo: El sistema debe permitir a un usuario nuevo completar un proceso de compra en menos de 5 pasos.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="req-category">
+                                    <div class="category-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+                                    <div class="category-content">
+                                        <h4>Escalabilidad</h4>
+                                        <p>Ejemplo: El sistema debe ser capaz de manejar un aumento del 200% en el número de usuarios sin degradación del rendimiento.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ciclovida" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-arrow-repeat"></i>
+                </div>
+                <h2 class="section-title">Ciclo de Vida de los Requisitos</h2>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content-card">
+                            <div class="lifecycle-diagram">
+                                <div class="lifecycle-phase">
+                                    <div class="phase-circle">
+                                        <i class="bi bi-search"></i>
+                                    </div>
+                                    <div class="phase-name">Elicitación</div>
+                                    <div class="phase-desc">Obtención de requisitos de stakeholders y fuentes</div>
+                                </div>
+                                <div class="lifecycle-arrow">→</div>
+                                <div class="lifecycle-phase">
+                                    <div class="phase-circle">
+                                        <i class="bi bi-journal-text"></i>
+                                    </div>
+                                    <div class="phase-name">Análisis</div>
+                                    <div class="phase-desc">Refinamiento y organización de requisitos</div>
+                                </div>
+                                <div class="lifecycle-arrow">→</div>
+                                <div class="lifecycle-phase">
+                                    <div class="phase-circle">
+                                        <i class="bi bi-file-text"></i>
+                                    </div>
+                                    <div class="phase-name">Especificación</div>
+                                    <div class="phase-desc">Documentación formal de requisitos</div>
+                                </div>
+                                <div class="lifecycle-arrow">→</div>
+                                <div class="lifecycle-phase">
+                                    <div class="phase-circle">
+                                        <i class="bi bi-check2-circle"></i>
+                                    </div>
+                                    <div class="phase-name">Validación</div>
+                                    <div class="phase-desc">Confirmación con stakeholders</div>
+                                </div>
+                                <div class="lifecycle-arrow curve-up">↗</div>
+                                <div class="lifecycle-phase">
+                                    <div class="phase-circle">
+                                        <i class="bi bi-gear"></i>
+                                    </div>
+                                    <div class="phase-name">Gestión</div>
+                                    <div class="phase-desc">Control de cambios y trazabilidad</div>
+                                </div>
+                                <div class="lifecycle-arrow curve-down">↘</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Actividades Principales</h3>
+                            
+                            <div class="activities-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon"><i class="bi bi-mic"></i></div>
+                                    <div class="activity-content">
+                                        <h4>Entrevistas y Workshops</h4>
+                                        <p>Sesiones con stakeholders para obtener información detallada sobre necesidades y expectativas.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon"><i class="bi bi-diagram-3"></i></div>
+                                    <div class="activity-content">
+                                        <h4>Modelado</h4>
+                                        <p>Crear representaciones visuales de requisitos (diagramas UML, prototipos, etc.).</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon"><i class="bi bi-card-checklist"></i></div>
+                                    <div class="activity-content">
+                                        <h4>Priorización</h4>
+                                        <p>Establecer importancia relativa de requisitos (MoSCoW, valor/esfuerzo, etc.).</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon"><i class="bi bi-graph-up"></i></div>
+                                    <div class="activity-content">
+                                        <h4>Trazabilidad</h4>
+                                        <p>Mantener relaciones entre requisitos y otros elementos del desarrollo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Gestión de Cambios</h3>
+                            
+                            <div class="change-process">
+                                <div class="process-steps">
+                                    <div class="process-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Solicitud de Cambio</h5>
+                                            <p>Documentar formalmente la propuesta de cambio en requisitos.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Análisis de Impacto</h5>
+                                            <p>Evaluar efectos del cambio en el proyecto (alcance, costo, cronograma).</p>
+                                        </div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Aprobación</h5>
+                                            <p>Decisión formal sobre aceptación o rechazo del cambio.</p>
+                                        </div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <h5>Implementación</h5>
+                                            <p>Actualización de documentación y comunicación a interesados.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-lightbulb"></i> Buenas Prácticas</h4>
+                                <ul>
+                                    <li>Utilizar herramientas de gestión de requisitos</li>
+                                    <li>Mantener líneas base de requisitos</li>
+                                    <li>Versionar la documentación de requisitos</li>
+                                    <li>Comunicar cambios a todos los stakeholders</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="usuarios" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h2 class="section-title">Usuarios del Sistema</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Tipos de Usuarios y Clasificación</h3>
+                            
+                            <div class="user-types">
+                                <div class="user-type">
+                                    <div class="user-icon primary">
+                                        <i class="bi bi-person-check"></i>
+                                    </div>
+                                    <div class="user-content">
+                                        <h4>Usuarios Primarios</h4>
+                                        <p>Interactúan directamente con el sistema de forma habitual y dependen de él para realizar su trabajo.</p>
+                                        <div class="user-examples">
+                                            <span>Operadores</span>
+                                            <span>Clientes regulares</span>
+                                            <span>Administradores</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="user-type">
+                                    <div class="user-icon secondary">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                    <div class="user-content">
+                                        <h4>Usuarios Secundarios</h4>
+                                        <p>Usan el sistema ocasionalmente o indirectamente para obtener informes o resultados.</p>
+                                        <div class="user-examples">
+                                            <span>Gerentes</span>
+                                            <span>Auditores</span>
+                                            <span>Usuarios ocasionales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="user-type">
+                                    <div class="user-icon tertiary">
+                                        <i class="bi bi-wrench"></i>
+                                    </div>
+                                    <div class="user-content">
+                                        <h4>Usuarios Terciarios</h4>
+                                        <p>No usan el sistema pero se ven afectados por él o influyen en su desarrollo.</p>
+                                        <div class="user-examples">
+                                            <span>Equipo de mantenimiento</span>
+                                            <span>Reguladores</span>
+                                            <span>Beneficiarios indirectos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-info-circle"></i> Importancia de la Clasificación</h4>
+                                <p>Clasificar adecuadamente a los usuarios permite establecer prioridades en los requisitos, diseñar interfaces apropiadas para cada perfil y garantizar que se abordan las necesidades de todos los interesados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Identificación y Análisis de Stakeholders</h3>
+                            
+                            <div class="stakeholder-matrix">
+                                <h4>Matriz de Stakeholders</h4>
+                                <div class="matrix-container">
+                                    <div class="matrix-row">
+                                        <div class="matrix-cell header-cell">Poder / Interés</div>
+                                        <div class="matrix-cell header-cell">Bajo Interés</div>
+                                        <div class="matrix-cell header-cell">Alto Interés</div>
+                                    </div>
+                                    <div class="matrix-row">
+                                        <div class="matrix-cell header-cell">Alto Poder</div>
+                                        <div class="matrix-cell content-cell high-power-low-interest">
+                                            <h5>Mantener Satisfechos</h5>
+                                            <ul>
+                                                <li>Alta gerencia</li>
+                                                <li>Organismos reguladores</li>
+                                            </ul>
+                                        </div>
+                                        <div class="matrix-cell content-cell high-power-high-interest">
+                                            <h5>Gestionar Atentamente</h5>
+                                            <ul>
+                                                <li>Patrocinadores</li>
+                                                <li>Usuarios clave</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="matrix-row">
+                                        <div class="matrix-cell header-cell">Bajo Poder</div>
+                                        <div class="matrix-cell content-cell low-power-low-interest">
+                                            <h5>Monitorear</h5>
+                                            <ul>
+                                                <li>Público general</li>
+                                                <li>Competidores</li>
+                                            </ul>
+                                        </div>
+                                        <div class="matrix-cell content-cell low-power-high-interest">
+                                            <h5>Mantener Informados</h5>
+                                            <ul>
+                                                <li>Usuarios finales</li>
+                                                <li>Equipos de soporte</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="stakeholder-process mt-4">
+                                <h4>Proceso de Análisis</h4>
+                                <div class="process-steps">
+                                    <div class="process-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Identificación</h5>
+                                            <p>Listar todos los posibles interesados en el proyecto.</p>
+                                        </div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Análisis</h5>
+                                            <p>Evaluar su influencia, interés y actitud hacia el proyecto.</p>
+                                        </div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Priorización</h5>
+                                            <p>Clasificar según importancia para el éxito del proyecto.</p>
+                                        </div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <h5>Estrategia</h5>
+                                            <p>Definir enfoque de comunicación y gestión para cada grupo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnicas" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-chat-dots"></i>
+                </div>
+                <h2 class="section-title">Técnicas de Relevamiento</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Cuestionarios</h3>
+                            
+                            <div class="technique-details">
+                                <div class="technique-description">
+                                    <p>Los cuestionarios son herramientas estructuradas que permiten recopilar información de múltiples personas de manera eficiente. Pueden ser útiles para obtener datos cuantitativos y cualitativos sobre necesidades y preferencias.</p>
+                                </div>
+                                
+                                <div class="technique-pros-cons">
+                                    <div class="pros">
+                                        <h4><i class="bi bi-plus-circle"></i> Ventajas</h4>
+                                        <ul>
+                                            <li>Permiten recopilar datos de muchos usuarios rápidamente</li>
+                                            <li>Proveen resultados cuantificables</li>
+                                            <li>No requieren la presencia del analista</li>
+                                            <li>Pueden completarse en el momento conveniente para el encuestado</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cons">
+                                        <h4><i class="bi bi-dash-circle"></i> Desventajas</h4>
+                                        <ul>
+                                            <li>Limitados para capturar información detallada o matices</li>
+                                            <li>No permiten hacer preguntas de seguimiento inmediatas</li>
+                                            <li>Pueden tener baja tasa de respuesta</li>
+                                            <li>Riesgo de malinterpretación de las preguntas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="technique-tips">
+                                    <h4>Recomendaciones</h4>
+                                    <ul class="tips-list">
+                                        <li>Mantener cuestionarios concisos (menos de 15 minutos para completar)</li>
+                                        <li>Incluir tanto preguntas cerradas como abiertas</li>
+                                        <li>Probar el cuestionario antes de distribuirlo masivamente</li>
+                                        <li>Explicar claramente el propósito y confidencialidad</li>
+                                        <li>Considerar incentivos para aumentar la participación</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="content-card mt-4">
+                            <h3>Revisión de Registros</h3>
+                            
+                            <div class="technique-details">
+                                <div class="technique-description">
+                                    <p>La revisión de registros consiste en analizar documentación existente, como manuales de procedimientos, informes, datos históricos y cualquier documentación relevante para comprender los procesos actuales y las necesidades del sistema.</p>
+                                </div>
+                                
+                                <div class="document-types">
+                                    <h4>Tipos de Documentos a Revisar</h4>
+                                    <div class="document-items">
+                                        <div class="document-item">
+                                            <div class="document-icon"><i class="bi bi-file-text"></i></div>
+                                            <div class="document-name">Manuales de usuario existentes</div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-icon"><i class="bi bi-clipboard-data"></i></div>
+                                            <div class="document-name">Informes y estadísticas</div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-icon"><i class="bi bi-diagram-2"></i></div>
+                                            <div class="document-name">Diagramas de flujo de procesos</div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-icon"><i class="bi bi-file-earmark-spreadsheet"></i></div>
+                                            <div class="document-name">Formatos y plantillas</div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-icon"><i class="bi bi-card-list"></i></div>
+                                            <div class="document-name">Normativas y regulaciones</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-box mt-4">
+                                    <h4><i class="bi bi-info-circle"></i> Beneficios</h4>
+                                    <p>La revisión de documentación proporciona contexto valioso sobre los procesos existentes, evita reinventar soluciones y ayuda a identificar requisitos que podrían no surgir en entrevistas o talleres.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Entrevistas</h3>
+                            
+                            <div class="technique-details">
+                                <div class="technique-description">
+                                    <p>Las entrevistas son conversaciones estructuradas o semiestructuradas con stakeholders para obtener información detallada sobre necesidades, expectativas y problemas. Son una de las técnicas más efectivas para la elicitación de requisitos.</p>
+                                </div>
+                                
+                                <div class="interview-types">
+                                    <div class="type-item">
+                                        <h4>Entrevistas Estructuradas</h4>
+                                        <p>Siguen un guión predefinido de preguntas, generalmente en un orden específico.</p>
+                                        <div class="type-characteristics">
+                                            <span>Preguntas preparadas</span>
+                                            <span>Fácil de analizar</span>
+                                            <span>Menos flexibilidad</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="type-item">
+                                        <h4>Entrevistas Semiestructuradas</h4>
+                                        <p>Combinan preguntas predefinidas con la posibilidad de explorar temas que surjan durante la conversación.</p>
+                                        <div class="type-characteristics">
+                                            <span>Guía flexible</span>
+                                            <span>Exploración de temas</span>
+                                            <span>Balance de control</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="type-item">
+                                        <h4>Entrevistas No Estructuradas</h4>
+                                        <p>Conversaciones abiertas donde la discusión fluye naturalmente según los temas que surjan.</p>
+                                        <div class="type-characteristics">
+                                            <span>Máxima libertad</span>
+                                            <span>Descubrimiento</span>
+                                            <span>Difícil de controlar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="interview-process mt-4">
+                                    <h4>Proceso de Entrevista</h4>
+                                    <div class="process-steps">
+                                        <div class="process-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <h5>Preparación</h5>
+                                                <p>Investigar al entrevistado y preparar guía de preguntas.</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <h5>Introducción</h5>
+                                                <p>Presentarse y explicar el propósito de la entrevista.</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <h5>Desarrollo</h5>
+                                                <p>Realizar preguntas y explorar respuestas con técnicas apropiadas.</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-content">
+                                                <h5>Cierre</h5>
+                                                <p>Resumir puntos clave y acordar próximos pasos.</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-step">
+                                            <div class="step-number">5</div>
+                                            <div class="step-content">
+                                                <h5>Documentación</h5>
+                                                <p>Transcribir y analizar la información obtenida.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="interview-tips mt-4">
+                                    <h4>Técnicas Efectivas</h4>
+                                    <ul class="tips-list">
+                                        <li><strong>Escucha activa:</strong> Prestar atención completa a lo que dice el entrevistado</li>
+                                        <li><strong>Preguntas abiertas:</strong> Usar preguntas que no se respondan con sí/no</li>
+                                        <li><strong>Parafraseo:</strong> Reformular lo que ha dicho el entrevistado para confirmar entendimiento</li>
+                                        <li><strong>Exploración:</strong> Profundizar en temas relevantes con preguntas de seguimiento</li>
+                                        <li><strong>Silencio estratégico:</strong> Permitir pausas para que el entrevistado reflexione</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="factibilidades" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-clipboard-check"></i>
+                </div>
+                <h2 class="section-title">Factibilidades del Sistema</h2>
+                
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>El estudio de factibilidad es una evaluación que determina si un proyecto es viable desde diferentes perspectivas. Este análisis ayuda a identificar obstáculos potenciales y a tomar decisiones informadas antes de comprometer recursos significativos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Factibilidad Operativa</h3>
+                            <p>Evalúa si el sistema propuesto funcionará adecuadamente en la organización y será utilizado correctamente por los usuarios.</p>
+                            
+                            <div class="feasibility-checklist">
+                                <h4>Aspectos a Evaluar</h4>
+                                <div class="checklist-item">
+                                    <div class="check-icon"><i class="bi bi-people"></i></div>
+                                    <div class="check-content">
+                                        <h5>Aceptación de Usuarios</h5>
+                                        <p>¿Los usuarios están dispuestos a adoptar el nuevo sistema?</p>
+                                    </div>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="check-icon"><i class="bi bi-mortarboard"></i></div>
+                                    <div class="check-content">
+                                        <h5>Capacitación</h5>
+                                        <p>¿Existen recursos para capacitar adecuadamente al personal?</p>
+                                    </div>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="check-icon"><i class="bi bi-arrow-repeat"></i></div>
+                                    <div class="check-content">
+                                        <h5>Cambios en Procesos</h5>
+                                        <p>¿Los cambios en flujos de trabajo son aceptables?</p>
+                                    </div>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="check-icon"><i class="bi bi-gear"></i></div>
+                                    <div class="check-content">
+                                        <h5>Soporte Organizacional</h5>
+                                        <p>¿La dirección apoya el proyecto y sus implicaciones?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feasibility-tools mt-4">
+                                <h4>Herramientas de Evaluación</h4>
+                                <ul>
+                                    <li>Entrevistas con usuarios y gerentes</li>
+                                    <li>Encuestas de actitud y disposición</li>
+                                    <li>Evaluación de la resistencia al cambio</li>
+                                    <li>Análisis de impacto en procesos existentes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Factibilidad Técnica</h3>
+                            <p>Evalúa si la organización tiene o puede adquirir la tecnología necesaria para implementar y operar el sistema propuesto.</p>
+                            
+                            <div class="feasibility-aspects">
+                                <div class="aspect-item">
+                                    <div class="aspect-icon"><i class="bi bi-laptop"></i></div>
+                                    <div class="aspect-content">
+                                        <h4>Hardware</h4>
+                                        <ul>
+                                            <li>Disponibilidad de equipos necesarios</li>
+                                            <li>Capacidad de procesamiento requerida</li>
+                                            <li>Infraestructura de red y comunicaciones</li>
+                                            <li>Almacenamiento y servidores</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="aspect-item">
+                                    <div class="aspect-icon"><i class="bi bi-code-square"></i></div>
+                                    <div class="aspect-content">
+                                        <h4>Software</h4>
+                                        <ul>
+                                            <li>Tecnologías y plataformas requeridas</li>
+                                            <li>Disponibilidad de expertise en desarrollo</li>
+                                            <li>Compatibilidad con sistemas existentes</li>
+                                            <li>Escalabilidad de la solución</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="aspect-item">
+                                    <div class="aspect-icon"><i class="bi bi-person-workspace"></i></div>
+                                    <div class="aspect-content">
+                                        <h4>Competencias</h4>
+                                        <ul>
+                                            <li>Habilidades técnicas disponibles</li>
+                                            <li>Necesidades de contratación o capacitación</li>
+                                            <li>Soporte técnico y mantenimiento</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="logica" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-diagram-3"></i>
+                </div>
+                <h2 class="section-title">Lógica del Sistema</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Árbol de Decisión</h3>
+                            <p>Un árbol de decisión es una representación gráfica de un proceso de toma de decisiones, donde cada nodo representa una condición y cada rama representa un posible resultado o acción.</p>
+                            
+                            <div class="decision-tree">
+                                <div class="tree-container">
+                                    <svg width="100%" height="300" viewBox="0 0 600 300">
+                                        <!-- Nodos de decisión -->
+                                        <rect x="250" y="20" width="100" height="40" rx="5" fill="#9370DB" />
+                                        <text x="300" y="45" text-anchor="middle" fill="white">¿Cliente registrado?</text>
+                                        
+                                        <rect x="150" y="120" width="100" height="40" rx="5" fill="#9370DB" />
+                                        <text x="200" y="145" text-anchor="middle" fill="white">¿Datos completos?</text>
+                                        
+                                        <rect x="350" y="120" width="100" height="40" rx="5" fill="#9370DB" />
+                                        <text x="400" y="145" text-anchor="middle" fill="white">¿Sesión activa?</text>
+                                        
+                                        <!-- Nodos de acción -->
+                                        <rect x="50" y="220" width="100" height="40" rx="5" fill="#FF7F50" />
+                                        <text x="100" y="245" text-anchor="middle" fill="white">Solicitar datos</text>
+                                        
+                                        <rect x="200" y="220" width="100" height="40" rx="5" fill="#FF7F50" />
+                                        <text x="250" y="245" text-anchor="middle" fill="white">Registrar usuario</text>
+                                        
+                                        <rect x="350" y="220" width="100" height="40" rx="5" fill="#FF7F50" />
+                                        <text x="400" y="245" text-anchor="middle" fill="white">Iniciar sesión</text>
+                                        
+                                        <rect x="500" y="220" width="100" height="40" rx="5" fill="#FF7F50" />
+                                        <text x="550" y="245" text-anchor="middle" fill="white">Mostrar panel</text>
+                                        
+                                        <!-- Conectores -->
+                                        <line x1="300" y1="60" x2="200" y2="120" stroke="#483D8B" stroke-width="2" />
+                                        <line x1="300" y1="60" x2="400" y2="120" stroke="#483D8B" stroke-width="2" />
+                                        
+                                        <line x1="200" y1="160" x2="100" y2="220" stroke="#483D8B" stroke-width="2" />
+                                        <line x1="200" y1="160" x2="250" y2="220" stroke="#483D8B" stroke-width="2" />
+                                        
+                                        <line x1="400" y1="160" x2="400" y2="220" stroke="#483D8B" stroke-width="2" />
+                                        <line x1="400" y1="160" x2="550" y2="220" stroke="#483D8B" stroke-width="2" />
+                                        
+                                        <!-- Etiquetas de decisión -->
+                                        <text x="240" y="90" text-anchor="middle" fill="#333">No</text>
+                                        <text x="360" y="90" text-anchor="middle" fill="#333">Sí</text>
+                                        
+                                        <text x="140" y="190" text-anchor="middle" fill="#333">No</text>
+                                        <text x="230" y="190" text-anchor="middle" fill="#333">Sí</text>
+                                        
+                                        <text x="370" y="190" text-anchor="middle" fill="#333">No</text>
+                                        <text x="480" y="190" text-anchor="middle" fill="#333">Sí</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-examples mt-4">
+                                <h4>Aplicaciones en Ingeniería de Requisitos</h4>
+                                <ul>
+                                    <li>Modelar flujos de decisión complejos</li>
+                                    <li>Visualizar reglas de negocio</li>
+                                    <li>Ilustrar escenarios condicionales</li>
+                                    <li>Documentar lógica de validación</li>
+                                    <li>Representar algoritmos de toma de decisiones</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-lightbulb"></i> Ventajas</h4>
+                                <p>Los árboles de decisión son herramientas visuales poderosas para comunicar procesos complejos de forma clara y comprensible para stakeholders técnicos y no técnicos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Tabla de Decisión</h3>
+                            <p>Una tabla de decisión es una herramienta que organiza condiciones y acciones en formato tabular, permitiendo visualizar todas las combinaciones posibles de condiciones y sus correspondientes resultados.</p>
+                            
+                            <div class="decision-table">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" class="text-center">Condiciones</th>
+                                            <th colspan="4" class="text-center">Acciones</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Cliente registrado</th>
+                                            <th>Datos completos</th>
+                                            <th>Sesión activa</th>
+                                            <th>Perfil verificado</th>
+                                            <th>Solicitar datos</th>
+                                            <th>Registrar usuario</th>
+                                            <th>Iniciar sesión</th>
+                                            <th>Mostrar panel</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>No</td>
+                                            <td>No</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>No</td>
+                                            <td>Sí</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sí</td>
+                                            <td>-</td>
+                                            <td>No</td>
+                                            <td>-</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sí</td>
+                                            <td>-</td>
+                                            <td>Sí</td>
+                                            <td>No</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>X</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sí</td>
+                                            <td>-</td>
+                                            <td>Sí</td>
+                                            <td>Sí</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>X</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="table-vs-tree mt-4">
+                                <h4>Comparación con Árboles de Decisión</h4>
+                                <div class="comparison-table">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Característica</th>
+                                                <th>Tabla de Decisión</th>
+                                                <th>Árbol de Decisión</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Complejidad</td>
+                                                <td>Mejor para muchas condiciones</td>
+                                                <td>Mejor para lógica secuencial</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Visualización</td>
+                                                <td>Formato tabular compacto</td>
+                                                <td>Representación gráfica jerárquica</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Análisis</td>
+                                                <td>Facilita ver combinaciones</td>
+                                                <td>Muestra rutas de decisión</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mantenimiento</td>
+                                                <td>Fácil de actualizar</td>
+                                                <td>Puede volverse complejo</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Uso Ideal</td>
+                                                <td>Reglas de validación complejas</td>
+                                                <td>Flujos de proceso secuenciales</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-info-circle"></i> Cuándo usar cada herramienta</h4>
+                                <p><strong>Tablas de decisión:</strong> Ideal para situaciones con muchas combinaciones de condiciones y cuando es importante verificar la exhaustividad.</p>
+                                <p><strong>Árboles de decisión:</strong> Mejor para ilustrar procesos de decisión secuenciales y cuando la visualización jerárquica facilita la comprensión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-to-top-container">
+            <a href="#inicio" class="back-to-top">
+                <i class="bi bi-arrow-up-circle-fill"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto text-center">
+                    <h4>Unidad 1: Especificación de Requerimientos</h4>
+                    <p>Curso de Ingeniería del Software | 3° EMS | DGETP</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="ingenieria.html" class="btn btn-outline-light animated-btn">
+                        <i class="bi bi-house-door me-2"></i> Volver a la página principal
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 Curso de Ingeniería del Software | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="ingenieriaunidad1.js"></script>
+</body>
+</html>

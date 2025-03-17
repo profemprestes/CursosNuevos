@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2: Permisos y Propiedades | Curso SO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sistemasunidad2.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#unit-nav" data-bs-offset="200">
+    <header class="unit-header py-5" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold">Unidad 2: Permisos y Propiedades</h1>
+                    <p class="lead mb-4">2° EMS | DGETP | Tecnologías de la Información</p>
+                    <p class="fs-5">Gestión de usuarios, grupos y permisos de archivos en Linux</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm animated-btn">Ver contenido <i class="bi bi-arrow-down-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Unidad 2</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#unit-nav" aria-controls="unit-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="unit-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#procesos"><i class="bi bi-cpu"></i> Procesos y Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#usuarios"><i class="bi bi-person"></i> Administración de Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cuentas"><i class="bi bi-people"></i> Gestión de Cuentas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contraseñas"><i class="bi bi-key"></i> Gestión de Contraseñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#grupos"><i class="bi bi-people-fill"></i> Gestión de Grupos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="sistemasoperativos.html"><i class="bi bi-house-door"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="sistemasoperativos.html">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 2: Permisos y Propiedades</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="procesos" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-cpu"></i>
+                </div>
+                <h2 class="section-title">Procesos y Gestión de Recursos</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Conceptos Básicos de Procesos</h3>
+                            <p>En Linux, un proceso es una instancia de un programa en ejecución. Cada proceso tiene su propio espacio de memoria, variables y recursos asignados por el sistema operativo.</p>
+                            
+                            <div class="info-box">
+                                <h4>Características de los Procesos</h4>
+                                <ul class="feature-list">
+                                    <li><span class="feature-number">1</span> Cada proceso tiene un identificador único (PID)</li>
+                                    <li><span class="feature-number">2</span> Los procesos pueden crear otros procesos (procesos hijo)</li>
+                                    <li><span class="feature-number">3</span> Pueden ejecutarse en primer plano o en segundo plano</li>
+                                    <li><span class="feature-number">4</span> Tienen diferentes estados: ejecución, espera, detenido, etc.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="process-states">
+                                <h4>Estados de un Proceso</h4>
+                                <div class="state-diagram">
+                                    <div class="state-node running">
+                                        <span>En ejecución</span>
+                                    </div>
+                                    <div class="state-arrow">→</div>
+                                    <div class="state-node waiting">
+                                        <span>En espera</span>
+                                    </div>
+                                    <div class="state-arrow">→</div>
+                                    <div class="state-node stopped">
+                                        <span>Detenido</span>
+                                    </div>
+                                    <div class="state-arrow curved">↩</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Gestión de Procesos</h3>
+                            <p>Linux proporciona varias herramientas para monitorear y controlar procesos:</p>
+                            
+                            <div class="command-table">
+                                <div class="command-category">
+                                    <h4>Herramientas de Monitoreo</h4>
+                                    <div class="command-list">
+                                        <div class="command-item">
+                                            <div class="command-name">ps</div>
+                                            <div class="command-desc">Muestra instantáneas de procesos actuales</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">top</div>
+                                            <div class="command-desc">Monitor en tiempo real de procesos</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">htop</div>
+                                            <div class="command-desc">Versión mejorada de top</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="command-category">
+                                    <h4>Control de Procesos</h4>
+                                    <div class="command-list">
+                                        <div class="command-item">
+                                            <div class="command-name">kill</div>
+                                            <div class="command-desc">Envía señales a procesos</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">killall</div>
+                                            <div class="command-desc">Termina procesos por nombre</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">nice/renice</div>
+                                            <div class="command-desc">Ajusta prioridad de procesos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-demo">
+                                <div class="terminal-header">
+                                    <div class="terminal-buttons">
+                                        <span class="terminal-close"></span>
+                                        <span class="terminal-minimize"></span>
+                                        <span class="terminal-maximize"></span>
+                                    </div>
+                                    <div class="terminal-title">Gestión de Procesos</div>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre><code>$ ps aux
+
+$ top
+
+$ kill -9 1234
+
+$ renice +5 -p 1234</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="usuarios" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-person"></i>
+                </div>
+                <h2 class="section-title">Administración de Usuarios y Grupos</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>Linux es un sistema multiusuario que permite a múltiples usuarios acceder simultáneamente al sistema. La administración adecuada de usuarios y grupos es fundamental para mantener la seguridad y organización del sistema.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Sistema de Usuarios en Linux</h3>
+                            
+                            <div class="info-box">
+                                <h4>Tipos de Usuarios</h4>
+                                <div class="user-types">
+                                    <div class="user-type">
+                                        <div class="user-icon root">
+                                            <i class="bi bi-shield-lock-fill"></i>
+                                        </div>
+                                        <div class="user-info">
+                                            <h5>Root (Superusuario)</h5>
+                                            <p>UID 0, privilegios completos sobre el sistema</p>
+                                        </div>
+                                    </div>
+                                    <div class="user-type">
+                                        <div class="user-icon system">
+                                            <i class="bi bi-gear-fill"></i>
+                                        </div>
+                                        <div class="user-info">
+                                            <h5>Usuarios del Sistema</h5>
+                                            <p>UID 1-999, servicios y daemons del sistema</p>
+                                        </div>
+                                    </div>
+                                    <div class="user-type">
+                                        <div class="user-icon normal">
+                                            <i class="bi bi-person-fill"></i>
+                                        </div>
+                                        <div class="user-info">
+                                            <h5>Usuarios Regulares</h5>
+                                            <p>UID 1000+, usuarios normales con privilegios limitados</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="mt-4">Archivos del Sistema Relacionados con Usuarios</h4>
+                            <div class="file-reference">
+                                <div class="file-item">
+                                    <div class="file-name">/etc/passwd</div>
+                                    <div class="file-desc">Base de datos principal de usuarios</div>
+                                    <div class="file-content">
+                                        <code>nombre:x:UID:GID:comentario:home:shell</code>
+                                    </div>
+                                </div>
+                                <div class="file-item">
+                                    <div class="file-name">/etc/shadow</div>
+                                    <div class="file-desc">Almacena contraseñas cifradas</div>
+                                </div>
+                                <div class="file-item">
+                                    <div class="file-name">/etc/group</div>
+                                    <div class="file-desc">Base de datos de grupos</div>
+                                </div>
+                                <div class="file-item">
+                                    <div class="file-name">/etc/gshadow</div>
+                                    <div class="file-desc">Contraseñas cifradas de grupos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Herramientas de Administración</h3>
+                            
+                            <div class="tools-container">
+                                <div class="tool-card">
+                                    <div class="tool-icon">
+                                        <i class="bi bi-terminal"></i>
+                                    </div>
+                                    <div class="tool-content">
+                                        <h4>Herramientas de Línea de Comandos</h4>
+                                        <ul>
+                                            <li><code>useradd</code> - Crear usuarios</li>
+                                            <li><code>usermod</code> - Modificar usuarios</li>
+                                            <li><code>userdel</code> - Eliminar usuarios</li>
+                                            <li><code>passwd</code> - Gestionar contraseñas</li>
+                                            <li><code>groupadd</code> - Crear grupos</li>
+                                            <li><code>groupmod</code> - Modificar grupos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="tool-card">
+                                    <div class="tool-icon">
+                                        <i class="bi bi-window"></i>
+                                    </div>
+                                    <div class="tool-content">
+                                        <h4>Herramientas Gráficas</h4>
+                                        <ul>
+                                            <li><code>system-config-users</code> - Red Hat/Fedora</li>
+                                            <li><code>users-admin</code> - Ubuntu/GNOME</li>
+                                            <li><code>YaST User Management</code> - openSUSE</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-container mt-4">
+                                <h4>Ejemplo de Información de Usuario</h4>
+                                <div class="terminal-demo">
+                                    <div class="terminal-header">
+                                        <div class="terminal-buttons">
+                                            <span class="terminal-close"></span>
+                                            <span class="terminal-minimize"></span>
+                                            <span class="terminal-maximize"></span>
+                                        </div>
+                                        <div class="terminal-title">Terminal</div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <pre><code>$ id usuario1
+uid=1000(usuario1) gid=1000(usuario1) grupos=1000(usuario1),4(adm),24(cdrom),27(sudo)
+
+$ grep usuario1 /etc/passwd
+usuario1:x:1000:1000:Usuario Ejemplo:/home/usuario1:/bin/bash</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cuentas" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h2 class="section-title">Gestión de Cuentas de Usuario</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>La creación de usuarios en Linux implica varios pasos automáticos, incluyendo la asignación de UID/GID y la creación del directorio home.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Creación de Usuarios</h3>
+                            <p>La creación de usuarios en Linux se puede realizar mediante el comando <code>useradd</code>.</p>
+                            
+                            <div class="steps-container">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h4>Crear Usuario Básico</h4>
+                                        <div class="code-sample">
+                                            <pre><code>sudo useradd nombreusuario</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h4>Crear Usuario con Opciones</h4>
+                                        <div class="code-sample">
+                                            <pre><code>sudo useradd -m -d /home/usuario -s /bin/bash -c "Nombre Completo" usuario</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <h4>Establecer Contraseña</h4>
+                                        <div class="code-sample">
+                                            <pre><code>sudo passwd nombreusuario</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-content">
+                                        <h4>Verificar Usuario</h4>
+                                        <div class="code-sample">
+                                            <pre><code>id nombreusuario
+grep nombreusuario /etc/passwd</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="option-list mt-4">
+                                <h4>Opciones Comunes de useradd</h4>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Opción</th>
+                                            <th>Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>-m</code></td>
+                                            <td>Crear directorio home</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>-d</code></td>
+                                            <td>Especificar ruta del directorio home</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>-s</code></td>
+                                            <td>Especificar shell</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>-c</code></td>
+                                            <td>Comentario (generalmente nombre completo)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>-G</code></td>
+                                            <td>Grupos adicionales</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Eliminación y Modificación de Usuarios</h3>
+                            
+                            <div class="sections-container">
+                                <div class="section-block">
+                                    <h4>Eliminación de Usuarios</h4>
+                                    <p>Para eliminar un usuario en Linux, se utiliza el comando <code>userdel</code>.</p>
+                                    <div class="code-sample">
+                                        <pre><code># Eliminar usuario manteniendo su directorio home
+sudo userdel nombreusuario
+
+# Eliminar usuario y su directorio home
+sudo userdel -r nombreusuario
+
+# Forzar eliminación incluso si el usuario tiene procesos en ejecución
+sudo userdel -f nombreusuario</code></pre>
+                                    </div>
+                                    
+                                    <div class="info-box warning mt-3">
+                                        <h5><i class="bi bi-exclamation-triangle"></i> Precaución</h5>
+                                        <p>La eliminación de usuarios es permanente. Considera hacer una copia de seguridad de los datos importantes del directorio home antes de usar la opción <code>-r</code>.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="section-block mt-4">
+                                    <h4>Modificación de Usuarios</h4>
+                                    <p>El comando <code>usermod</code> permite modificar diversos atributos de las cuentas de usuario existentes.</p>
+                                    <div class="code-sample">
+                                        <pre><code># Cambiar shell del usuario
+sudo usermod -s /bin/zsh nombreusuario
+
+# Añadir usuario a grupos adicionales
+sudo usermod -aG grupo1,grupo2 nombreusuario
+
+# Cambiar directorio home
+sudo usermod -d /nuevo/home/ruta nombreusuario
+
+# Cambiar nombre de usuario
+sudo usermod -l nuevonombre antiguonombre
+
+# Bloquear cuenta de usuario
+sudo usermod -L nombreusuario
+
+# Desbloquear cuenta de usuario
+sudo usermod -U nombreusuario</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="example-container mt-4">
+                                    <h4>Ejemplo Práctico</h4>
+                                    <div class="example-steps">
+                                        <div class="example-step">
+                                            <div class="example-number">1</div>
+                                            <div class="example-text">
+                                                <p>Crear un usuario para un nuevo desarrollador:</p>
+                                                <code>sudo useradd -m -s /bin/bash -c "Ana Desarrolladora" -G developers,sudo anadev</code>
+                                            </div>
+                                        </div>
+                                        <div class="example-step">
+                                            <div class="example-number">2</div>
+                                            <div class="example-text">
+                                                <p>Establecer una contraseña temporal:</p>
+                                                <code>sudo passwd anadev</code>
+                                            </div>
+                                        </div>
+                                        <div class="example-step">
+                                            <div class="example-number">3</div>
+                                            <div class="example-text">
+                                                <p>Obligar a cambiar la contraseña en el primer inicio de sesión:</p>
+                                                <code>sudo passwd -e anadev</code>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contraseñas" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-key"></i>
+                </div>
+                <h2 class="section-title">Gestión de Contraseñas</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Administración de Contraseñas</h3>
+                            <p>La gestión adecuada de contraseñas es fundamental para mantener la seguridad del sistema Linux. Las contraseñas se almacenan de forma cifrada en el archivo <code>/etc/shadow</code>.</p>
+                            
+                            <div class="command-reference">
+                                <h4>Comandos Principales</h4>
+                                <div class="command-group">
+                                    <div class="command-header">
+                                        <code>passwd</code>
+                                    </div>
+                                    <div class="command-description">
+                                        <p>Permite a los usuarios cambiar sus contraseñas y a los administradores gestionar contraseñas de otros usuarios.</p>
+                                        <div class="code-sample">
+                                            <pre><code># Usuario cambia su propia contraseña
+passwd
+
+# Administrador cambia la contraseña de otro usuario
+sudo passwd nombreusuario
+
+# Bloquear contraseña de usuario
+sudo passwd -l nombreusuario
+
+# Desbloquear contraseña de usuario
+sudo passwd -u nombreusuario
+
+# Forzar cambio de contraseña en próximo inicio de sesión
+sudo passwd -e nombreusuario</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-info-circle"></i> Archivo /etc/shadow</h4>
+                                <p>Cada línea en <code>/etc/shadow</code> contiene los siguientes campos separados por dos puntos:</p>
+                                <code>username:encrypted_password:lastchange:min:max:warn:inactive:expire:reserved</code>
+                                <ul class="mt-2">
+                                    <li><strong>username</strong>: Nombre del usuario</li>
+                                    <li><strong>encrypted_password</strong>: Contraseña cifrada (o * si está bloqueada)</li>
+                                    <li><strong>lastchange</strong>: Días desde 1/1/1970 que se cambió la contraseña</li>
+                                    <li><strong>min</strong>: Días mínimos entre cambios de contraseña</li>
+                                    <li><strong>max</strong>: Días máximos de validez de la contraseña</li>
+                                    <li><strong>warn</strong>: Días antes de max para advertir al usuario</li>
+                                    <li><strong>inactive</strong>: Días después de expirar para desactivar la cuenta</li>
+                                    <li><strong>expire</strong>: Fecha de caducidad de la cuenta (días desde 1/1/1970)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Política de Contraseñas</h3>
+                            
+                            <div class="policy-section">
+                                <h4>Configuración de Políticas</h4>
+                                <p>Las políticas de contraseñas en Linux pueden gestionarse mediante varios mecanismos:</p>
+                                <div class="policy-options">
+                                    <div class="policy-option">
+                                        <div class="policy-icon">
+                                            <i class="bi bi-file-text"></i>
+                                        </div>
+                                        <div class="policy-content">
+                                            <h5>Módulo PAM (<code>pam_pwquality</code>)</h5>
+                                            <p>Configurable en <code>/etc/security/pwquality.conf</code> o <code>/etc/pam.d/common-password</code></p>
+                                        </div>
+                                    </div>
+                                    <div class="policy-option">
+                                        <div class="policy-icon">
+                                            <i class="bi bi-file-code"></i>
+                                        </div>
+                                        <div class="policy-content">
+                                            <h5>Herramienta <code>chage</code></h5>
+                                            <p>Permite configurar parámetros de caducidad de contraseñas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="command-reference mt-4">
+                                <h4>Uso de <code>chage</code></h4>
+                                <div class="code-sample">
+                                    <pre><code># Ver configuración actual de un usuario
+sudo chage -l nombreusuario
+
+# Establecer fecha de expiración de contraseña 
+sudo chage -E 2023-12-31 nombreusuario
+
+# Configurar días máximos de validez
+sudo chage -M 90 nombreusuario
+
+# Configurar advertencia previa a expiración
+sudo chage -W 7 nombreusuario
+
+# Forzar cambio de contraseña en próximo inicio de sesión
+sudo chage -d 0 nombreusuario</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="best-practices mt-4">
+                                <h4>Buenas Prácticas de Seguridad</h4>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Longitud Mínima</h5>
+                                        <p>Establecer contraseñas de al menos 12 caracteres</p>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-shuffle"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Complejidad</h5>
+                                        <p>Combinar mayúsculas, minúsculas, números y caracteres especiales</p>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-clock-history"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Caducidad</h5>
+                                        <p>Forzar cambios regulares (60-90 días)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grupos" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+                <h2 class="section-title">Gestión de Grupos</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Conceptos de Grupos en Linux</h3>
+                            <p>Los grupos en Linux permiten organizar usuarios y asignar permisos colectivamente, facilitando la administración del sistema.</p>
+                            
+                            <div class="groups-concept">
+                                <h4>Tipos de Grupos</h4>
+                                <div class="group-types">
+                                    <div class="group-type">
+                                        <div class="group-icon primary">
+                                            <i class="bi bi-person-badge"></i>
+                                        </div>
+                                        <div class="group-info">
+                                            <h5>Grupo Primario</h5>
+                                            <p>Cada usuario pertenece a un grupo primario, generalmente con el mismo nombre del usuario.</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-type">
+                                        <div class="group-icon secondary">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <div class="group-info">
+                                            <h5>Grupos Secundarios</h5>
+                                            <p>Un usuario puede pertenecer a múltiples grupos secundarios para obtener permisos adicionales.</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-type">
+                                        <div class="group-icon system">
+                                            <i class="bi bi-gear-wide"></i>
+                                        </div>
+                                        <div class="group-info">
+                                            <h5>Grupos del Sistema</h5>
+                                            <p>GID entre 0-999, usados para procesos del sistema (audio, video, sudo, etc.).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-info-circle"></i> Archivo /etc/group</h4>
+                                <p>La información de grupos se almacena en <code>/etc/group</code> con el siguiente formato:</p>
+                                <code>nombregrupo:x:GID:lista,de,usuarios</code>
+                                <ul class="mt-2">
+                                    <li><strong>nombregrupo</strong>: Nombre del grupo</li>
+                                    <li><strong>x</strong>: Marcador de contraseña (actual en /etc/gshadow)</li>
+                                    <li><strong>GID</strong>: ID numérico del grupo</li>
+                                    <li><strong>lista,de,usuarios</strong>: Usuarios miembros del grupo (secundario)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Administración de Grupos</h3>
+                            
+                            <div class="command-reference">
+                                <h4>Creación y Eliminación de Grupos</h4>
+                                <div class="code-sample">
+                                    <pre><code># Crear un nuevo grupo
+sudo groupadd nombregrupo
+
+# Crear grupo con GID específico
+sudo groupadd -g 1500 nombregrupo
+
+# Eliminar un grupo
+sudo groupdel nombregrupo</code></pre>
+                                </div>
+                                
+                                <h4 class="mt-4">Modificación de Grupos</h4>
+                                <div class="code-sample">
+                                    <pre><code># Cambiar nombre del grupo
+sudo groupmod -n nuevonombre viejonombre
+
+# Cambiar GID de un grupo
+sudo groupmod -g 1600 nombregrupo</code></pre>
+                                </div>
+                                
+                                <h4 class="mt-4">Gestión de Miembros</h4>
+                                <div class="code-sample">
+                                    <pre><code># Añadir usuario a grupo
+sudo usermod -aG nombregrupo usuario
+
+# Añadir usuario a múltiples grupos
+sudo usermod -aG grupo1,grupo2,grupo3 usuario
+
+# Establecer grupo primario de un usuario
+sudo usermod -g nombregrupo usuario
+
+# Añadir usuario directamente al grupo (alternativa)
+sudo gpasswd -a usuario nombregrupo
+
+# Eliminar usuario de un grupo
+sudo gpasswd -d usuario nombregrupo
+
+# Ver grupos de un usuario
+groups usuario</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="example-container mt-4">
+                                <h4>Ejemplo Práctico</h4>
+                                <div class="example-steps">
+                                    <div class="example-step">
+                                        <div class="example-number">1</div>
+                                        <div class="example-text">
+                                            <p>Crear un grupo para el departamento de desarrollo:</p>
+                                            <code>sudo groupadd developers</code>
+                                        </div>
+                                    </div>
+                                    <div class="example-step">
+                                        <div class="example-number">2</div>
+                                        <div class="example-text">
+                                            <p>Añadir usuarios al grupo:</p>
+                                            <code>sudo usermod -aG developers usuario1
+sudo usermod -aG developers usuario2</code>
+                                        </div>
+                                    </div>
+                                    <div class="example-step">
+                                        <div class="example-number">3</div>
+                                        <div class="example-text">
+                                            <p>Crear carpeta compartida para el grupo:</p>
+                                            <code>sudo mkdir /var/shared/developers
+sudo chown root:developers /var/shared/developers
+sudo chmod 2775 /var/shared/developers</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-to-top-container">
+            <a href="#inicio" class="back-to-top">
+                <i class="bi bi-arrow-up-circle-fill"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto text-center">
+                    <h4>Unidad 2: Permisos y Propiedades</h4>
+                    <p>Curso de Sistemas Operativos | 2° EMS | DGETP</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="index.html" class="btn btn-outline-light animated-btn">
+                        <i class="bi bi-house-door me-2"></i> Volver a la página principal
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 Curso de Sistemas Operativos | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="sistemasunidad2.js"></script>
+</body>
+</html>

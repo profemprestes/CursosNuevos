@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3: Automatización de Tareas y Scripts | Curso SO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sistemasunidad3.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#unit-nav" data-bs-offset="200">
+    <header class="unit-header py-5" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold">Unidad 3: Automatización de Tareas y Scripts</h1>
+                    <p class="lead mb-4">2° EMS | DGETP | Tecnologías de la Información</p>
+                    <p class="fs-5">Programación básica de scripts para automatizar procesos en Linux</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm animated-btn">Ver contenido <i class="bi bi-arrow-down-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Unidad 3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#unit-nav" aria-controls="unit-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="unit-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shell"><i class="bi bi-terminal"></i> Uso de Shell Script</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bash"><i class="bi bi-code-slash"></i> Escritura de Scripts en Bash</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#variables"><i class="bi bi-braces"></i> Variables y Estructuras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cron"><i class="bi bi-clock"></i> Tareas Programadas Cron</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#batch"><i class="bi bi-calendar-event"></i> Gestión at y batch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="sistemasoperativos.html"><i class="bi bi-house-door"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="sistemasoperativos.html">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 3: Automatización de Tareas y Scripts</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="shell" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-terminal"></i>
+                </div>
+                <h2 class="section-title">Uso de Shell Script</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Introducción a Shell Script</h3>
+                            <p>Un shell script es un archivo de texto que contiene una secuencia de comandos que el shell interpreta y ejecuta. Son similares a los archivos batch de DOS/Windows, pero mucho más potentes.</p>
+                            
+                            <div class="info-box">
+                                <h4>¿Por qué usar Shell Scripts?</h4>
+                                <ul class="feature-list">
+                                    <li><span class="feature-number">1</span> Automatización de tareas repetitivas</li>
+                                    <li><span class="feature-number">2</span> Ejecución secuencial de múltiples comandos</li>
+                                    <li><span class="feature-number">3</span> Programación de tareas administrativas</li>
+                                    <li><span class="feature-number">4</span> Personalización del entorno de trabajo</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="terminal-demo">
+                                <div class="terminal-header">
+                                    <div class="terminal-buttons">
+                                        <span class="terminal-close"></span>
+                                        <span class="terminal-minimize"></span>
+                                        <span class="terminal-maximize"></span>
+                                    </div>
+                                    <div class="terminal-title">Primer Shell Script</div>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre><code># Crear un script básico
+echo '#!/bin/bash
+echo "Hola, mundo!"
+echo "Este es mi primer script"
+date
+whoami' > mi_script.sh
+
+# Dar permisos de ejecución
+chmod +x mi_script.sh
+
+# Ejecutar el script
+./mi_script.sh</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Shells en Linux</h3>
+                            <p>Linux ofrece varios tipos de shell, cada uno con características y capacidades distintas:</p>
+                            
+                            <div class="shells-comparison">
+                                <div class="shell-item">
+                                    <div class="shell-icon">
+                                        <i class="bi bi-terminal-fill"></i>
+                                    </div>
+                                    <div class="shell-content">
+                                        <h4>Bash (Bourne Again Shell)</h4>
+                                        <p>El shell más común en sistemas Linux modernos. Es una versión mejorada del shell Bourne original con características adicionales.</p>
+                                        <div class="shell-features">
+                                            <span>Autocompletado</span>
+                                            <span>Historia</span>
+                                            <span>Alias</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="shell-item">
+                                    <div class="shell-icon">
+                                        <i class="bi bi-terminal-plus"></i>
+                                    </div>
+                                    <div class="shell-content">
+                                        <h4>Zsh (Z Shell)</h4>
+                                        <p>Shell extendido con numerosas mejoras, incluyendo mejor completado, corrección ortográfica y temas personalizables.</p>
+                                        <div class="shell-features">
+                                            <span>Temas</span>
+                                            <span>Plugins</span>
+                                            <span>Completado avanzado</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="shell-item">
+                                    <div class="shell-icon">
+                                        <i class="bi bi-terminal-dash"></i>
+                                    </div>
+                                    <div class="shell-content">
+                                        <h4>Fish (Friendly Interactive Shell)</h4>
+                                        <p>Diseñado para ser interactivo y amigable, con resaltado de sintaxis y sugerencias basadas en el historial.</p>
+                                        <div class="shell-features">
+                                            <span>Resaltado</span>
+                                            <span>Sugerencias</span>
+                                            <span>Web config</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box warning mt-4">
+                                <h4><i class="bi bi-exclamation-triangle"></i> Compatibilidad de Scripts</h4>
+                                <p>Al escribir scripts, es recomendable especificar el shell a utilizar con la línea shebang (<code>#!/bin/bash</code>) para garantizar la compatibilidad entre sistemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bash" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-code-slash"></i>
+                </div>
+                <h2 class="section-title">Escritura de Scripts en Bash</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>Bash es el shell más utilizado en entornos Linux y proporciona numerosas herramientas y características para crear scripts potentes y flexibles. En esta sección aprenderemos cómo estructurar, escribir y ejecutar scripts en Bash.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Estructura Básica de un Script Bash</h3>
+                            
+                            <div class="script-structure">
+                                <h4>Componentes Principales</h4>
+                                <div class="structure-item">
+                                    <div class="structure-name">Shebang</div>
+                                    <div class="structure-desc">La primera línea que indica el intérprete a usar</div>
+                                    <div class="code-sample">
+                                        <pre><code>#!/bin/bash</code></pre>
+                                    </div>
+                                </div>
+                                <div class="structure-item">
+                                    <div class="structure-name">Comentarios</div>
+                                    <div class="structure-desc">Documentación del propósito y funcionamiento</div>
+                                    <div class="code-sample">
+                                        <pre><code># Este es un comentario
+# Autor: Nombre
+# Fecha: 01/01/2023
+# Descripción: Este script hace X</code></pre>
+                                    </div>
+                                </div>
+                                <div class="structure-item">
+                                    <div class="structure-name">Variables</div>
+                                    <div class="structure-desc">Declaración de variables globales</div>
+                                    <div class="code-sample">
+                                        <pre><code>NOMBRE="Usuario"
+FECHA=$(date +%F)
+CONTADOR=0</code></pre>
+                                    </div>
+                                </div>
+                                <div class="structure-item">
+                                    <div class="structure-name">Funciones</div>
+                                    <div class="structure-desc">Bloques de código reutilizables</div>
+                                    <div class="code-sample">
+                                        <pre><code>saludar() {
+  echo "Hola, $1"
+}</code></pre>
+                                    </div>
+                                </div>
+                                <div class="structure-item">
+                                    <div class="structure-name">Cuerpo Principal</div>
+                                    <div class="structure-desc">Secuencia principal de comandos</div>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-demo mt-4">
+                                <div class="terminal-header">
+                                    <div class="terminal-buttons">
+                                        <span class="terminal-close"></span>
+                                        <span class="terminal-minimize"></span>
+                                        <span class="terminal-maximize"></span>
+                                    </div>
+                                    <div class="terminal-title">Ejemplo de Script Completo</div>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre><code>#!/bin/bash
+# Script de ejemplo
+# Autor: Estudiante
+# Fecha: 2023-09-01
+# Descripción: Muestra información del sistema
+
+# Variables
+TITULO="Información del Sistema"
+FECHA=$(date +"%d-%m-%Y %H:%M:%S")
+USUARIO=$(whoami)
+
+# Función para mostrar separador
+mostrar_separador() {
+  echo "----------------------------------------"
+}
+
+# Inicio del script
+clear
+echo $TITULO
+mostrar_separador
+echo "Fecha y hora: $FECHA"
+echo "Usuario: $USUARIO"
+mostrar_separador
+echo "Información de CPU:"
+lscpu | grep "Model name" | sed 's/Model name:/CPU:/'
+mostrar_separador
+echo "Uso de memoria:"
+free -h | grep "Mem"
+mostrar_separador
+echo "Espacio en disco:"
+df -h | grep "/dev/sd"</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Buenas Prácticas para Scripts</h3>
+                            
+                            <div class="best-practices">
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Documentación Clara</h5>
+                                        <p>Incluye comentarios que expliquen el propósito del script, autor, fecha y cómo utilizarlo.</p>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-bug"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Manejo de Errores</h5>
+                                        <p>Implementa verificaciones para capturar errores y proporcionar mensajes útiles.</p>
+                                        <div class="code-sample">
+                                            <pre><code>if [ ! -f "$archivo" ]; then
+  echo "Error: El archivo $archivo no existe"
+  exit 1
+fi</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-code-square"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Modularización</h5>
+                                        <p>Divide el código en funciones reutilizables para mejorar la legibilidad y mantenimiento.</p>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Seguridad</h5>
+                                        <p>Valida entradas, usa comillas en variables y evita permisos excesivos.</p>
+                                        <div class="code-sample">
+                                            <pre><code># Mal (inseguro)
+rm -rf $directorio
+
+# Bien (seguro)
+rm -rf "$directorio"</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="steps-container mt-4">
+                                <h4>Desarrollo de Scripts</h4>
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h5>Planificación</h5>
+                                        <p>Define claramente qué debe hacer el script y cómo debe comportarse.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h5>Escritura</h5>
+                                        <p>Escribe el código siguiendo las buenas prácticas y con comentarios claros.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <h5>Pruebas</h5>
+                                        <p>Verifica el funcionamiento en diferentes escenarios y con distintos datos.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-content">
+                                        <h5>Implementación</h5>
+                                        <p>Añade permisos adecuados y coloca el script donde corresponda.</p>
+                                        <div class="code-sample">
+                                            <pre><code>chmod +x script.sh
+sudo cp script.sh /usr/local/bin/</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="variables" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-braces"></i>
+                </div>
+                <h2 class="section-title">Uso de Variables, Estructuras de Control y Funciones</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Variables y Tipos de Datos</h3>
+                            <p>Las variables en Bash permiten almacenar y manipular datos durante la ejecución del script.</p>
+                            
+                            <div class="variable-section">
+                                <h4>Declaración y Uso de Variables</h4>
+                                <div class="code-sample">
+                                    <pre><code># Asignación de variables
+NOMBRE="Juan"
+EDAD=25
+FECHA_ACTUAL=$(date +%Y-%m-%d)
+
+# Uso de variables
+echo "Hola, $NOMBRE"
+echo "Tienes $EDAD años"
+echo "Hoy es $FECHA_ACTUAL"</code></pre>
+                                </div>
+                                
+                                <h4 class="mt-4">Variables Especiales</h4>
+                                <div class="vars-table">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Variable</th>
+                                                <th>Descripción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>$0</code></td>
+                                                <td>Nombre del script</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>$1, $2, ...</code></td>
+                                                <td>Argumentos posicionales</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>$#</code></td>
+                                                <td>Número de argumentos</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>$@</code></td>
+                                                <td>Todos los argumentos</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>$?</code></td>
+                                                <td>Código de salida del último comando</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>$$</code></td>
+                                                <td>PID del script actual</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <h4 class="mt-4">Arrays</h4>
+                                <div class="code-sample">
+                                    <pre><code># Declarar array
+FRUTAS=("manzana" "naranja" "plátano" "uva")
+
+# Acceder a elementos
+echo "Primera fruta: ${FRUTAS[0]}"
+echo "Tercera fruta: ${FRUTAS[2]}"
+
+# Todos los elementos
+echo "Todas las frutas: ${FRUTAS[@]}"
+
+# Número de elementos
+echo "Cantidad de frutas: ${#FRUTAS[@]}"</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Estructuras de Control</h3>
+                            
+                            <div class="control-structures">
+                                <div class="structure-card">
+                                    <h4>Condicionales (if-else)</h4>
+                                    <div class="code-sample">
+                                        <pre><code>if [ "$edad" -ge 18 ]; then
+  echo "Eres mayor de edad"
+elif [ "$edad" -ge 13 ]; then
+  echo "Eres adolescente"
+else
+  echo "Eres un niño"
+fi</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="structure-card">
+                                    <h4>Comparaciones</h4>
+                                    <div class="comparison-table">
+                                        <div class="comp-group">
+                                            <h5>Numéricos</h5>
+                                            <table class="table table-sm">
+                                                <tr><td><code>-eq</code></td><td>Igual</td></tr>
+                                                <tr><td><code>-ne</code></td><td>No igual</td></tr>
+                                                <tr><td><code>-gt</code></td><td>Mayor que</td></tr>
+                                                <tr><td><code>-lt</code></td><td>Menor que</td></tr>
+                                                <tr><td><code>-ge</code></td><td>Mayor o igual</td></tr>
+                                                <tr><td><code>-le</code></td><td>Menor o igual</td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="comp-group">
+                                            <h5>Cadenas</h5>
+                                            <table class="table table-sm">
+                                                <tr><td><code>=</code></td><td>Igual</td></tr>
+                                                <tr><td><code>!=</code></td><td>No igual</td></tr>
+                                                <tr><td><code>-z</code></td><td>Cadena vacía</td></tr>
+                                                <tr><td><code>-n</code></td><td>Cadena no vacía</td></tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="structure-card">
+                                    <h4>Bucles</h4>
+                                    <div class="loop-examples">
+                                        <h5>For</h5>
+                                        <div class="code-sample">
+                                            <pre><code># Iteración sobre elementos
+for fruta in manzana naranja plátano; do
+  echo "Me gusta la $fruta"
+done
+
+# Iteración con rango
+for i in {1..5}; do
+  echo "Número: $i"
+done</code></pre>
+                                        </div>
+                                        
+                                        <h5 class="mt-3">While</h5>
+                                        <div class="code-sample">
+                                            <pre><code>contador=1
+while [ $contador -le 5 ]; do
+  echo "Contador: $contador"
+  ((contador++))
+done</code></pre>
+                                        </div>
+                                        
+                                        <h5 class="mt-3">Until</h5>
+                                        <div class="code-sample">
+                                            <pre><code>contador=1
+until [ $contador -gt 5 ]; do
+  echo "Contador until: $contador"
+  ((contador++))
+done</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="structure-card">
+                                    <h4>Case</h4>
+                                    <div class="code-sample">
+                                        <pre><code>echo "Selecciona una opción (1-3):"
+read opcion
+
+case $opcion in
+  1)
+    echo "Has seleccionado la opción 1"
+    ;;
+  2)
+    echo "Has seleccionado la opción 2"
+    ;;
+  3)
+    echo "Has seleccionado la opción 3"
+    ;;
+  *)
+    echo "Opción no válida"
+    ;;
+esac</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="content-card">
+                            <h3>Funciones</h3>
+                            <p>Las funciones permiten organizar y reutilizar bloques de código dentro de los scripts.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="code-sample">
+                                        <pre><code># Definición de función básica
+saludar() {
+  echo "Hola, bienvenido"
+}
+
+# Función con parámetros
+saludar_personal() {
+  echo "Hola, $1. Bienvenido a $2"
+}
+
+# Función con valor de retorno
+sumar() {
+  local resultado=$(($1 + $2))
+  echo $resultado
+}
+
+# Uso de las funciones
+saludar
+saludar_personal "Carlos" "Linux"
+total=$(sumar 5 3)
+echo "La suma es: $total"</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="function-tips">
+                                        <h4>Consejos para Funciones</h4>
+                                        <ul class="feature-list">
+                                            <li><span class="feature-number">1</span> Usa <code>local</code> para variables internas de función</li>
+                                            <li><span class="feature-number">2</span> Documenta el propósito de la función con comentarios</li>
+                                            <li><span class="feature-number">3</span> Utiliza nombres descriptivos para las funciones</li>
+                                            <li><span class="feature-number">4</span> Evita efectos secundarios no documentados</li>
+                                        </ul>
+                                        
+                                        <div class="info-box mt-4">
+                                            <h5><i class="bi bi-lightbulb"></i> Consejo</h5>
+                                            <p>Se recomienda definir todas las funciones al inicio del script, antes del código principal, para mejorar la legibilidad y organización.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-script mt-4">
+                                <h4>Ejemplo Completo con Funciones</h4>
+                                <div class="terminal-demo">
+                                    <div class="terminal-header">
+                                        <div class="terminal-buttons">
+                                            <span class="terminal-close"></span>
+                                            <span class="terminal-minimize"></span>
+                                            <span class="terminal-maximize"></span>
+                                        </div>
+                                        <div class="terminal-title">Script con Funciones</div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <pre><code>#!/bin/bash
+# Script de ejemplo con funciones
+# Autor: Estudiante
+# Fecha: 2023-09-01
+
+# Función para mostrar mensajes con formato
+imprimir_mensaje() {
+    local tipo=$1
+    local mensaje=$2
+    
+    case $tipo in
+        info)
+            echo -e "\033[1;34m[INFO]\033[0m $mensaje"
+            ;;
+        exito)
+            echo -e "\033[1;32m[ÉXITO]\033[0m $mensaje"
+            ;;
+        error)
+            echo -e "\033[1;31m[ERROR]\033[0m $mensaje"
+            ;;
+        *)
+            echo "$mensaje"
+            ;;
+    esac
+}
+
+# Función para verificar si un directorio existe
+verificar_directorio() {
+    local dir=$1
+    
+    if [ -d "$dir" ]; then
+        return 0  # Existe
+    else
+        return 1  # No existe
+    fi
+}
+
+# Función para crear backup de un directorio
+crear_backup() {
+    local dir_origen=$1
+    local dir_destino=$2
+    
+    verificar_directorio "$dir_origen"
+    if [ $? -ne 0 ]; then
+        imprimir_mensaje error "El directorio $dir_origen no existe"
+        return 1
+    fi
+    
+    local fecha=$(date +%Y%m%d_%H%M%S)
+    local nombre_backup="backup_${fecha}.tar.gz"
+    
+    imprimir_mensaje info "Creando backup de $dir_origen..."
+    tar -czf "${dir_destino}/${nombre_backup}" -C "$(dirname "$dir_origen")" "$(basename "$dir_origen")"
+    
+    if [ $? -eq 0 ]; then
+        imprimir_mensaje exito "Backup creado en ${dir_destino}/${nombre_backup}"
+        return 0
+    else
+        imprimir_mensaje error "Error al crear el backup"
+        return 1
+    fi
+}
+
+# Script principal
+clear
+imprimir_mensaje info "Script de backup iniciado"
+
+# Verificar argumentos
+if [ $# -ne 2 ]; then
+    imprimir_mensaje error "Uso: $0 <directorio_origen> <directorio_destino>"
+    exit 1
+fi
+
+DIR_ORIGEN=$1
+DIR_DESTINO=$2
+
+# Verificar directorio destino
+verificar_directorio "$DIR_DESTINO"
+if [ $? -ne 0 ]; then
+    imprimir_mensaje info "Creando directorio destino $DIR_DESTINO"
+    mkdir -p "$DIR_DESTINO"
+fi
+
+# Crear backup
+crear_backup "$DIR_ORIGEN" "$DIR_DESTINO"
+exit $?</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cron" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-clock"></i>
+                </div>
+                <h2 class="section-title">Tareas Programadas Cron</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Configuración de Tareas Cron</h3>
+                            <p>El servicio cron permite programar tareas para que se ejecuten automáticamente en momentos específicos, como mantenimiento del sistema, copias de seguridad o actualizaciones periódicas.</p>
+                            
+                            <div class="crontab-section">
+                                <h4>Archivo Crontab</h4>
+                                <p>Cada usuario puede tener su propio archivo crontab que define sus tareas programadas.</p>
+                                <div class="code-sample">
+                                    <pre><code># Ver crontab actual
+crontab -l
+
+# Editar crontab
+crontab -e
+
+# Eliminar todas las tareas
+crontab -r</code></pre>
+                                </div>
+                                
+                                <h4 class="mt-4">Sintaxis de Crontab</h4>
+                                <div class="crontab-format">
+                                    <div class="format-header">
+                                        <span>minuto</span>
+                                        <span>hora</span>
+                                        <span>día-mes</span>
+                                        <span>mes</span>
+                                        <span>día-semana</span>
+                                        <span>comando</span>
+                                    </div>
+                                    <div class="format-example">
+                                        <code>30 2 * * * /ruta/al/script.sh</code>
+                                    </div>
+                                    <p class="format-desc">Ejecuta el script todos los días a las 2:30 AM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="cron-table mt-4">
+                                <h4>Valores Permitidos</h4>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Campo</th>
+                                            <th>Valores</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Minuto</td>
+                                            <td>0-59</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hora</td>
+                                            <td>0-23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Día del mes</td>
+                                            <td>1-31</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mes</td>
+                                            <td>1-12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Día de la semana</td>
+                                            <td>0-7 (0 y 7 son domingo)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Ejemplos de Expresiones Cron</h3>
+                            
+                            <div class="cron-examples">
+                                <div class="example-item">
+                                    <div class="example-expression">
+                                        <code>* * * * *</code>
+                                    </div>
+                                    <div class="example-desc">
+                                        <p>Cada minuto de cada día</p>
+                                    </div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-expression">
+                                        <code>0 * * * *</code>
+                                    </div>
+                                    <div class="example-desc">
+                                        <p>Al inicio de cada hora</p>
+                                    </div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-expression">
+                                        <code>0 0 * * *</code>
+                                    </div>
+                                    <div class="example-desc">
+                                        <p>Diariamente a la medianoche</p>
+                                    </div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-expression">
+                                        <code>0 12 * * 1-5</code>
+                                    </div>
+                                    <div class="example-desc">
+                                        <p>A las 12:00 de lunes a viernes</p>
+                                    </div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-expression">
+                                        <code>0 0 1 * *</code>
+                                    </div>
+                                    <div class="example-desc">
+                                        <p>El primer día de cada mes a las 00:00</p>
+                                    </div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-expression">
+                                        <code>*/15 * * * *</code>
+                                    </div>
+                                    <div class="example-desc">
+                                        <p>Cada 15 minutos</p>
+                                    </div>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-expression">
+                                        <code>0 9-17 * * 1-5</code>
+                                    </div>
+                                    <div class="example-desc">
+                                        <p>Al inicio de cada hora durante horario laboral (9 AM - 5 PM, lunes a viernes)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="practical-example mt-4">
+                                <h4>Ejemplo Práctico de Crontab</h4>
+                                <div class="code-sample">
+                                    <pre><code># Actualización diaria del sistema a las 3 AM
+0 3 * * * apt update && apt upgrade -y
+
+# Backup semanal los domingos a las 2 AM
+0 2 * * 0 /home/usuario/scripts/backup.sh
+
+# Limpieza de archivos temporales cada 6 horas
+0 */6 * * * find /tmp -type f -atime +7 -delete
+
+# Reporte de uso de disco el día 1 y 15 de cada mes
+0 7 1,15 * * df -h > /home/usuario/disk_report_$(date +\%Y\%m\%d).txt
+
+# Reiniciar servidor web cada noche a las 4 AM
+0 4 * * * systemctl restart apache2</code></pre>
+                                </div>
+                                
+                                <div class="info-box warning mt-4">
+                                    <h5><i class="bi bi-exclamation-triangle"></i> Recomendaciones</h5>
+                                    <ul>
+                                        <li>Usa rutas absolutas para todos los comandos y archivos</li>
+                                        <li>Redirige salidas y errores para evitar correos automáticos: <code>comando > /dev/null 2>&1</code></li>
+                                        <li>Limita el acceso a crontab en sistemas multiusuario</li>
+                                        <li>Registra las ejecuciones para facilitar la depuración</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="batch" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-calendar-event"></i>
+                </div>
+                <h2 class="section-title">Gestión de Tareas at y batch</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Comando at</h3>
+                            <p>El comando <code>at</code> permite programar tareas para su ejecución en un momento específico, pero a diferencia de cron, estas tareas se ejecutan una sola vez.</p>
+                            
+                            <div class="at-command">
+                                <h4>Uso Básico</h4>
+                                <div class="code-sample">
+                                    <pre><code># Ejecutar tarea a una hora específica
+at 10:00 PM
+> comando1
+> comando2
+> Ctrl+D para finalizar
+
+# Programar para una fecha futura
+at 10:00 AM Jul 25 2023
+> comando
+> Ctrl+D
+
+# Usar notación relativa
+at now + 2 hours
+> comando
+> Ctrl+D</code></pre>
+                                </div>
+                                
+                                <h4 class="mt-4">Administración de Tareas at</h4>
+                                <div class="code-sample">
+                                    <pre><code># Listar tareas pendientes
+atq
+
+# Ver detalles de una tarea
+at -c [número_trabajo]
+
+# Eliminar una tarea
+atrm [número_trabajo]</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="at-examples mt-4">
+                                <h4>Ejemplos Prácticos</h4>
+                                <div class="example-steps">
+                                    <div class="example-step">
+                                        <div class="example-number">1</div>
+                                        <div class="example-text">
+                                            <p>Programar un recordatorio:</p>
+                                            <code>echo "notify-send 'Recordatorio' 'Reunión en 10 minutos'" | at now + 50 minutes</code>
+                                        </div>
+                                    </div>
+                                    <div class="example-step">
+                                        <div class="example-number">2</div>
+                                        <div class="example-text">
+                                            <p>Apagar el sistema en 30 minutos:</p>
+                                            <code>echo "shutdown -h now" | at now + 30 minutes</code>
+                                        </div>
+                                    </div>
+                                    <div class="example-step">
+                                        <div class="example-number">3</div>
+                                        <div class="example-text">
+                                            <p>Ejecutar un script en la madrugada:</p>
+                                            <code>at 3:00 AM tomorrow
+> /home/usuario/scripts/procesar_datos.sh
+> Ctrl+D</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Comando batch</h3>
+                            <p>El comando <code>batch</code> permite programar tareas para que se ejecuten cuando la carga del sistema sea lo suficientemente baja, lo que es útil para tareas intensivas.</p>
+                            
+                            <div class="batch-command">
+                                <h4>Uso Básico</h4>
+                                <div class="code-sample">
+                                    <pre><code># Programar tarea para ejecutarse cuando la carga sea baja
+batch
+> comando1
+> comando2
+> Ctrl+D para finalizar
+
+# También se puede usar con archivos
+batch < archivo_comandos.txt</code></pre>
+                                </div>
+                                
+                                <div class="info-box mt-4">
+                                    <h5><i class="bi bi-info-circle"></i> ¿Cuándo usar batch?</h5>
+                                    <p>El comando <code>batch</code> es ideal para tareas que:</p>
+                                    <ul>
+                                        <li>Consumen muchos recursos (CPU, memoria, disco)</li>
+                                        <li>No son urgentes y pueden esperar</li>
+                                        <li>Podrían afectar el rendimiento del sistema si se ejecutan durante periodos de alta actividad</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-section mt-4">
+                                <h4>Comparación de Herramientas de Programación</h4>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Herramienta</th>
+                                            <th>Uso Ideal</th>
+                                            <th>Frecuencia</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>cron</code></td>
+                                            <td>Tareas recurrentes</td>
+                                            <td>Programadas (minutos a años)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>at</code></td>
+                                            <td>Ejecución única</td>
+                                            <td>Momento específico</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>batch</code></td>
+                                            <td>Tareas intensivas</td>
+                                            <td>Cuando la carga del sistema lo permita</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="best-practices mt-4">
+                                <h4>Buenas Prácticas</h4>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-journal-text"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Documentación</h5>
+                                        <p>Mantén un registro de todas las tareas programadas y su propósito.</p>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-alarm"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Coordinación</h5>
+                                        <p>Evita programar múltiples tareas intensivas al mismo tiempo.</p>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-file-text"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Logs</h5>
+                                        <p>Configura la redirección de salida para capturar resultados y errores.</p>
+                                    </div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-icon">
+                                        <i class="bi bi-envelope"></i>
+                                    </div>
+                                    <div class="practice-content">
+                                        <h5>Notificaciones</h5>
+                                        <p>Configura notificaciones para tareas críticas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-to-top-container">
+            <a href="#inicio" class="back-to-top">
+                <i class="bi bi-arrow-up-circle-fill"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto text-center">
+                    <h4>Unidad 3: Automatización de Tareas y Scripts</h4>
+                    <p>Curso de Sistemas Operativos | 2° EMS | DGETP</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="index.html" class="btn btn-outline-light animated-btn">
+                        <i class="bi bi-house-door me-2"></i> Volver a la página principal
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 Curso de Sistemas Operativos | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="sistemasunidad3.js"></script>
+</body>
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3: Gestión, Planificación y Control de Proyecto | Curso Ingeniería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ingenieriaunidad3.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#unit-nav" data-bs-offset="200">
+    <header class="unit-header py-5" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold">Unidad 3: Gestión, Planificación y Control de Proyecto</h1>
+                    <p class="lead mb-4">3° EMS | DGETP | Tecnologías de la Información</p>
+                    <p class="fs-5">Técnicas y herramientas para la gestión eficiente de proyectos de software</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm animated-btn">Ver contenido <i class="bi bi-arrow-down-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Unidad 3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#unit-nav" aria-controls="unit-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="unit-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#problemas-soluciones"><i class="bi bi-exclamation-diamond"></i> Problemas y Soluciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gestion-proyectos"><i class="bi bi-kanban"></i> Gestión de Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cambios"><i class="bi bi-arrow-repeat"></i> Gestión de Cambios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#metricas"><i class="bi bi-graph-up"></i> Métricas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#validacion"><i class="bi bi-check-circle"></i> Validación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="ingenieria.html"><i class="bi bi-house-door"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="ingenieria.html">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 3: Gestión, Planificación y Control de Proyecto</li>
+                    </ol>
+                </div>
+            </div>
+
+        <section id="problemas-soluciones" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-exclamation-diamond"></i>
+                </div>
+                <h2 class="section-title">Problemas y Soluciones en la Gestión de un Proyecto</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>La gestión de proyectos de software enfrenta numerosos desafíos que pueden impactar significativamente en los resultados. Comprender estos problemas comunes y sus posibles soluciones es fundamental para el éxito del proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content-card">
+                            <h3>Categorías de Problemas</h3>
+                            <p>Los problemas en la gestión de proyectos pueden clasificarse en diferentes categorías, cada una con su propia dinámica y soluciones específicas.</p>
+                            
+                            <div class="problem-categories">
+                                <div class="category-section">
+                                    <h4>Problemas de Personal</h4>
+                                    <div class="category-content">
+                                        <p>Los problemas de personal se refieren a los desafíos relacionados con el liderazgo, la gestión de equipos y la motivación de los miembros del equipo.</p>
+                                        <div class="problem-details">
+                                            <ul>
+                                                <li>Escasez de talento calificado</li>
+                                                <li>Rotación del personal</li>
+                                                <li>Comunicación ineficiente</li>
+                                                <li>Conflictos interpersonales</li>
+                                            </ul>
+                                            <h5>Soluciones efectivas:</h5>
+                                            <ul>
+                                                <li>Formación continua</li>
+                                                <li>Incentivos y reconocimiento</li>
+                                                <li>Construcción de equipos balanceados</li>
+                                                <li>Establecimiento de roles claros</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="category-section">
+                                    <h4>Problemas de Proceso</h4>
+                                    <div class="category-content">
+                                        <p>Los problemas de proceso se relacionan con la eficiencia y la efectividad de las actividades del proyecto.</p>
+                                        <div class="problem-details">
+                                            <ul>
+                                                <li>Procesos demasiado rígidos o demasiado flexibles</li>
+                                                <li>Falta de documentación</li>
+                                                <li>Estimaciones poco precisas</li>
+                                                <li>Cambios constantes en los requerimientos</li>
+                                            </ul>
+                                            <h5>Soluciones efectivas:</h5>
+                                            <ul>
+                                                <li>Adopción de metodologías ágiles o híbridas</li>
+                                                <li>Automatización de procesos repetitivos</li>
+                                                <li>Documentación suficiente pero no excesiva</li>
+                                                <li>Mejora continua del proceso</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="category-section">
+                                    <h4>Problemas de Producto</h4>
+                                    <div class="category-content">
+                                        <p>Los problemas de producto se centran en la calidad y las características del software desarrollado.</p>
+                                        <div class="problem-details">
+                                            <ul>
+                                                <li>Alcance poco claro o cambiante</li>
+                                                <li>Calidad inconsistente</li>
+                                                <li>Deuda técnica</li>
+                                                <li>Integración con sistemas existentes</li>
+                                            </ul>
+                                            <h5>Soluciones efectivas:</h5>
+                                            <ul>
+                                                <li>Definición clara de criterios de aceptación</li>
+                                                <li>Pruebas automatizadas</li>
+                                                <li>Revisiones de código</li>
+                                                <li>Gestión proactiva de la deuda técnica</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="category-section">
+                                    <h4>Problemas de Proyecto</h4>
+                                    <div class="category-content">
+                                        <p>Los problemas de proyecto abarcan aspectos más amplios que afectan al proyecto en su totalidad.</p>
+                                        <div class="problem-details">
+                                            <ul>
+                                                <li>Restricciones de tiempo y presupuesto</li>
+                                                <li>Gestión de riesgos deficiente</li>
+                                                <li>Dependencias externas</li>
+                                                <li>Expectativas desalineadas de los stakeholders</li>
+                                            </ul>
+                                            <h5>Soluciones efectivas:</h5>
+                                            <ul>
+                                                <li>Planificación realista y adaptativa</li>
+                                                <li>Identificación y mitigación proactiva de riesgos</li>
+                                                <li>Comunicación transparente con los stakeholders</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Ética Profesional en la Gestión de Proyectos</h3>
+                            <p>La ética juega un papel fundamental en la gestión de proyectos de software, guiando la toma de decisiones y las interacciones con todos los involucrados.</p>
+                            
+                            <div class="ethics-principles">
+                                <div class="principle-item">
+                                    <div class="principle-icon">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div class="principle-content">
+                                        <h4>Responsabilidad</h4>
+                                        <p>Asumir las consecuencias de las decisiones tomadas y acciones realizadas en el marco del proyecto.</p>
+                                        <ul>
+                                            <li>Entregar lo prometido en tiempo y forma</li>
+                                            <li>Reconocer y corregir errores</li>
+                                            <li>Priorizar la calidad y seguridad del software</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="principle-item">
+                                    <div class="principle-icon">
+                                        <i class="bi bi-chat-square-text"></i>
+                                    </div>
+                                    <div class="principle-content">
+                                        <h4>Transparencia</h4>
+                                        <p>Mantener una comunicación honesta y clara con todos los stakeholders del proyecto.</p>
+                                        <ul>
+                                            <li>Informar sobre riesgos y problemas</li>
+                                            <li>Proporcionar estimaciones realistas</li>
+                                            <li>Explicar las implicaciones técnicas en términos comprensibles</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="principle-item">
+                                    <div class="principle-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="principle-content">
+                                        <h4>Respeto</h4>
+                                        <p>Valorar a todas las personas involucradas en el proyecto, reconociendo sus derechos y dignidad.</p>
+                                        <ul>
+                                            <li>Considerar las opiniones de todos los miembros del equipo</li>
+                                            <li>Respetar la privacidad y los datos personales</li>
+                                            <li>Evitar discriminación y conductas inapropiadas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="principle-item">
+                                    <div class="principle-icon">
+                                        <i class="bi bi-book"></i>
+                                    </div>
+                                    <div class="principle-content">
+                                        <h4>Profesionalismo</h4>
+                                        <p>Mantener altos estándares de conducta y competencia técnica en todas las actividades del proyecto.</p>
+                                        <ul>
+                                            <li>Actualizar constantemente conocimientos y habilidades</li>
+                                            <li>Seguir las mejores prácticas de la industria</li>
+                                            <li>Evitar conflictos de interés</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-lightbulb"></i> Códigos de Ética</h4>
+                                <p>Existen diversos códigos de ética profesional que pueden servir como guía, como los de la ACM (Association for Computing Machinery), IEEE (Institute of Electrical and Electronics Engineers) y PMI (Project Management Institute).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="content-card">
+                            <h3>Metodologías de Desarrollo</h3>
+                            <p>La elección de una metodología adecuada es crucial para el éxito del proyecto y debe adaptarse a las características específicas del equipo y del producto a desarrollar.</p>
+                            
+                            <div class="methodology-types">
+                                <div class="methodology-item">
+                                    <h4>Modelo de Constantine</h4>
+                                    <p>Larry Constantine propuso diferentes estructuras de equipo que pueden adoptarse según las características del proyecto:</p>
+                                    
+                                    <div class="methodology-details">
+                                        <div class="detail-item">
+                                            <div class="detail-header" data-bs-toggle="collapse" data-bs-target="#const-closed">
+                                                <h5><i class="bi bi-plus-circle"></i> Estructura Cerrada</h5>
+                                            </div>
+                                            <div class="collapse" id="const-closed">
+                                                <div class="detail-content">
+                                                    <ul>
+                                                        <li>Jerarquía bien definida</li>
+                                                        <li>Comunicación formalizada</li>
+                                                        <li>Roles y responsabilidades estrictamente definidos</li>
+                                                        <li>Ideal para proyectos grandes y complejos con requisitos estables</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="detail-item">
+                                            <div class="detail-header" data-bs-toggle="collapse" data-bs-target="#const-random">
+                                                <h5><i class="bi bi-plus-circle"></i> Estructura Aleatoria</h5>
+                                            </div>
+                                            <div class="collapse" id="const-random">
+                                                <div class="detail-content">
+                                                    <ul>
+                                                        <li>Organización flexible y poco jerárquica</li>
+                                                        <li>Comunicación directa y abierta</li>
+                                                        <li>Roles menos rígidos y más adaptables</li>
+                                                        <li>Adecuada para proyectos innovadores con requisitos cambiantes</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="detail-item">
+                                            <div class="detail-header" data-bs-toggle="collapse" data-bs-target="#const-open">
+                                                <h5><i class="bi bi-plus-circle"></i> Estructura Abierta</h5>
+                                            </div>
+                                            <div class="collapse" id="const-open">
+                                                <div class="detail-content">
+                                                    <ul>
+                                                        <li>Balance entre estructura y flexibilidad</li>
+                                                        <li>Comunicación formal e informal según necesidad</li>
+                                                        <li>Roles definidos pero con cierta flexibilidad</li>
+                                                        <li>Apropiada para la mayoría de proyectos de software modernos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="methodology-item mt-4">
+                                    <h4>Modelo de Mantei</h4>
+                                    <p>Marilyn Mantei identificó tres estructuras organizacionales para equipos de desarrollo:</p>
+                                    
+                                    <div class="methodology-details">
+                                        <div class="detail-item">
+                                            <div class="detail-header" data-bs-toggle="collapse" data-bs-target="#mantei-chief">
+                                                <h5><i class="bi bi-people"></i> Organización Jefe-Programador</h5>
+                                            </div>
+                                            <div class="collapse" id="mantei-chief">
+                                                <div class="detail-content">
+                                                    <ul>
+                                                        <li>Un líder técnico fuerte dirige un pequeño equipo</li>
+                                                        <li>Toma de decisiones centralizada</li>
+                                                        <li>Clara división de responsabilidades</li>
+                                                        <li>Eficiente para proyectos pequeños a medianos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="detail-item">
+                                            <div class="detail-header" data-bs-toggle="collapse" data-bs-target="#mantei-team">
+                                                <h5><i class="bi bi-people-fill"></i> Organización Democrática de Equipo</h5>
+                                            </div>
+                                            <div class="collapse" id="mantei-team">
+                                                <div class="detail-content">
+                                                    <ul>
+                                                        <li>Sin jerarquía explícita, liderazgo rotativo</li>
+                                                        <li>Decisiones por consenso</li>
+                                                        <li>Responsabilidades compartidas</li>
+                                                        <li>Adecuada para equipos experimentados en proyectos innovadores</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="detail-item">
+                                            <div class="detail-header" data-bs-toggle="collapse" data-bs-target="#mantei-controlled">
+                                                <h5><i class="bi bi-clipboard-data"></i> Organización Descentralizada Controlada</h5>
+                                            </div>
+                                            <div class="collapse" id="mantei-controlled">
+                                                <div class="detail-content">
+                                                    <ul>
+                                                        <li>Estructura jerárquica con múltiples niveles</li>
+                                                        <li>Equipos especializados con autonomía controlada</li>
+                                                        <li>Comunicación formal entre equipos, informal dentro de ellos</li>
+                                                        <li>Efectiva para proyectos grandes y complejos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Enfoques de Trabajo Cooperativo y Colaborativo</h3>
+                            <p>En el desarrollo de software moderno, la colaboración efectiva entre los miembros del equipo es fundamental para el éxito del proyecto.</p>
+                            
+                            <div class="work-approach">
+                                <div class="approach-comparison">
+                                    <div class="comparison-item">
+                                        <div class="comparison-header">
+                                            <h4><i class="bi bi-people"></i> Trabajo Cooperativo</h4>
+                                        </div>
+                                        <div class="comparison-content">
+                                            <p>Los miembros del equipo dividen el trabajo en tareas individuales que luego se integran para formar el producto final.</p>
+                                            <h5>Características:</h5>
+                                            <ul>
+                                                <li>División clara de responsabilidades</li>
+                                                <li>Cada miembro es experto en su área</li>
+                                                <li>Comunicación principalmente en puntos de integración</li>
+                                                <li>Estructura más jerárquica</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="comparison-item">
+                                        <h4><i class="bi bi-people-fill"></i> Trabajo Colaborativo</h4>
+                                        <div class="comparison-content">
+                                            <p>Los miembros del equipo trabajan juntos en las mismas tareas, con responsabilidad compartida por el resultado.</p>
+                                            <h5>Características:</h5>
+                                            <ul>
+                                                <li>Responsabilidad colectiva por el producto</li>
+                                                <li>Miembros con conocimientos solapados</li>
+                                                <li>Comunicación constante y abierta</li>
+                                                <li>Estructura más plana y flexible</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="approaches-tools mt-4">
+                                    <h4>Herramientas y Prácticas</h4>
+                                    <div class="tools-grid">
+                                        <div class="tool-card">
+                                            <div class="tool-logo">
+                                                <i class="bi bi-github"></i>
+                                            </div>
+                                            <div class="tool-info">
+                                                <h4>GitHub</h4>
+                                                <p>Plataforma basada en Git que facilita la colaboración, revisión de código y gestión de proyectos.</p>
+                                                <div class="tool-features">
+                                                    <span>Pull Requests</span>
+                                                    <span>Issues</span>
+                                                    <span>Actions</span>
+                                                    <span>Projects</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tool-card">
+                                            <div class="tool-logo">
+                                                <i class="bi bi-git"></i>
+                                            </div>
+                                            <div class="tool-info">
+                                                <h4>GitLab</h4>
+                                                <p>Plataforma completa de DevOps que incluye repositorios Git, CI/CD, gestión de proyectos y más.</p>
+                                                <div class="tool-features">
+                                                    <span>Repositorios</span>
+                                                    <span>CI/CD</span>
+                                                    <span>Wiki</span>
+                                                    <span>Registros</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tool-card">
+                                            <div class="tool-logo">
+                                                <i class="bi bi-git"></i>
+                                            </div>
+                                            <div class="tool-info">
+                                                <h4>Bitbucket</h4>
+                                                <p>Solución de Atlassian para control de versiones y colaboración, con integración con Jira y Confluence.</p>
+                                                <div class="tool-features">
+                                                    <span>Git/Mercurial</span>
+                                                    <span>Pipelines</span>
+                                                    <span>Integración Jira</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cambios" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-arrow-repeat"></i>
+                </div>
+                <h2 class="section-title">Proceso de Gestión de Cambios</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Seguimiento y Control de Cambios</h3>
+                            <p>La gestión eficaz de cambios es fundamental para mantener la integridad del proyecto y asegurar que todas las modificaciones se implementan de manera controlada.</p>
+                            
+                            <div class="change-process">
+                                <div class="process-flow">
+                                    <div class="process-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Solicitud de Cambio</h4>
+                                            <p>Documentar formalmente la necesidad de cambio, identificando su naturaleza, justificación y alcance.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Análisis de Impacto</h4>
+                                            <p>Evaluar las consecuencias del cambio en términos de tiempo, costo, recursos y calidad del proyecto.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Evaluación y Decisión</h4>
+                                            <p>Determinar si el cambio se aprueba, rechaza o se pospone, considerando su valor y viabilidad.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <h4>Implementación</h4>
+                                            <p>Ejecutar el cambio siguiendo los procesos establecidos y actualizando la documentación correspondiente.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">5</div>
+                                        <div class="step-content">
+                                            <h4>Verificación</h4>
+                                            <p>Comprobar que el cambio se ha implementado correctamente y cumple con los objetivos esperados.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-box mt-4">
+                                    <h4><i class="bi bi-info-circle"></i> Beneficios del Control de Cambios</h4>
+                                    <ul>
+                                        <li>Previene el alcance incontrolado (scope creep)</li>
+                                        <li>Mantiene la alineación con los objetivos del proyecto</li>
+                                        <li>Facilita la trazabilidad de las decisiones</li>
+                                        <li>Reduce los riesgos asociados a cambios no planificados</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Control y Avance de Versiones</h3>
+                            <p>Los sistemas de control de versiones son herramientas esenciales para gestionar los cambios en el código fuente y otros artefactos del proyecto.</p>
+                            
+                            <div class="version-control">
+                                <div class="vc-concepts">
+                                    <div class="concept-item">
+                                        <h4><i class="bi bi-check-circle"></i> Commit</h4>
+                                        <div class="concept-content">
+                                            <p>Un commit representa un conjunto de cambios relacionados que se guardan en el repositorio.</p>
+                                            <div class="code-block">
+                                                <pre><code># Preparar archivos para commit
+git add archivo.java
+
+# Crear un commit con mensaje descriptivo
+git commit -m "Implementada función de autenticación"</code></pre>
+                                            </div>
+                                            
+                                            <h5>Buenas prácticas:</h5>
+                                            <ul>
+                                                <li>Realizar commits pequeños y coherentes</li>
+                                                <li>Escribir mensajes de commit claros y descriptivos</li>
+                                                <li>Verificar los cambios antes de hacer commit</li>
+                                                <li>Incluir referencia a tareas o tickets relacionados</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="concept-item mt-4">
+                                        <h4><i class="bi bi-diagram-3"></i> Branch</h4>
+                                        <div class="concept-content">
+                                            <p>Las ramas (branches) permiten desarrollar funcionalidades o correcciones de forma aislada sin afectar al código principal.</p>
+                                            <div class="code-block">
+                                                <pre><code># Crear una nueva rama
+git branch feature/login
+
+# Cambiar a la nueva rama
+git checkout feature/login
+
+# Crear y cambiar a una nueva rama (atajo)
+git checkout -b feature/payment</code></pre>
+                                            </div>
+                                            
+                                            <h5>Estrategias de ramificación:</h5>
+                                            <ul>
+                                                <li><strong>Git Flow:</strong> Ramas main, develop, feature, release y hotfix</li>
+                                                <li><strong>GitHub Flow:</strong> Rama principal y ramas de funcionalidades</li>
+                                                <li><strong>Trunk-Based Development:</strong> Todos trabajan en la rama principal</li>
+                                            </ul>
+                                            
+                                            <div class="branching-diagram mt-3">
+                                                <svg width="100%" height="200" viewBox="0 0 600 200">
+                                                    <!-- Rama principal -->
+                                                    <line x1="50" y1="100" x2="550" y2="100" stroke="#3182ce" stroke-width="4" />
+                                                    
+                                                    <!-- Commits en rama principal -->
+                                                    <circle cx="100" cy="100" r="10" fill="#3182ce" />
+                                                    <circle cx="200" cy="100" r="10" fill="#3182ce" />
+                                                    <circle cx="400" cy="100" r="10" fill="#3182ce" />
+                                                    
+                                                    <!-- Rama feature -->
+                                                    <line x1="200" y1="100" x2="250" y2="50" stroke="#38a169" stroke-width="3" />
+                                                    <line x1="250" y1="50" x2="350" y2="50" stroke="#38a169" stroke-width="3" />
+                                                    <line x1="350" y1="50" x2="400" y2="100" stroke="#38a169" stroke-width="3" />
+                                                    
+                                                    <!-- Commits en rama feature -->
+                                                    <circle cx="250" cy="50" r="8" fill="#38a169" />
+                                                    <circle cx="300" cy="50" r="8" fill="#38a169" />
+                                                    <circle cx="350" cy="50" r="8" fill="#38a169" />
+                                                    
+                                                    <!-- Rama hotfix -->
+                                                    <line x1="300" y1="100" x2="350" y2="150" stroke="#e53e3e" stroke-width="3" />
+                                                    <line x1="350" y1="150" x2="450" y2="150" stroke="#e53e3e" stroke-width="3" />
+                                                    <line x1="450" y1="150" x2="500" y2="100" stroke="#e53e3e" stroke-width="3" />
+                                                    
+                                                    <!-- Etiquetas -->
+                                                    <text x="75" y="80" font-size="12" fill="#333">main</text>
+                                                    <text x="225" y="40" font-size="12" fill="#333">feature</text>
+                                                    <text x="325" y="170" font-size="12" fill="#333">hotfix</text>
+                                                    
+                                                    <!-- Merge -->
+                                                    <text x="410" y="80" font-size="10" fill="#333">merge</text>
+                                                    <text x="510" y="80" font-size="10" fill="#333">merge</text>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metricas" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-graph-up"></i>
+                </div>
+                <h2 class="section-title">Métricas del Software</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Introducción a las Métricas</h3>
+                            <p>Las métricas de software proporcionan medidas cuantitativas que permiten evaluar, controlar y mejorar el proceso de desarrollo y la calidad del producto.</p>
+                            
+                            <div class="metrics-importance">
+                                <div class="quote-block">
+                                    <blockquote>
+                                        <p>"No se puede gestionar lo que no se puede medir."</p>
+                                        <footer>— Peter Drucker</footer>
+                                    </blockquote>
+                                </div>
+                                
+                                <div class="importance-points mt-4">
+                                    <h4>¿Por qué son importantes las métricas?</h4>
+                                    <div class="importance-item">
+                                        <div class="importance-icon">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="importance-content">
+                                            <h5>Visibilidad</h5>
+                                            <p>Proporcionan transparencia sobre el estado real del proyecto y el producto.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="importance-item">
+                                        <div class="importance-icon">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </div>
+                                        <div class="importance-content">
+                                            <h5>Control</h5>
+                                            <p>Facilitan la identificación temprana de desviaciones y problemas.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="importance-item">
+                                        <div class="importance-icon">
+                                            <i class="bi bi-bar-chart"></i>
+                                        </div>
+                                        <div class="importance-content">
+                                            <h5>Mejora Continua</h5>
+                                            <p>Establecen líneas base para medir el progreso y la mejora a lo largo del tiempo.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="importance-item">
+                                        <div class="importance-icon">
+                                            <i class="bi bi-lightning"></i>
+                                        </div>
+                                        <div class="importance-content">
+                                            <h5>Predicción</h5>
+                                            <p>Ayudan a realizar estimaciones más precisas para futuros proyectos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Aplicación de Métricas</h3>
+                            <p>La implementación efectiva de métricas requiere un enfoque sistemático que incluya selección, recopilación, análisis y actuación basada en datos.</p>
+                            
+                            <div class="metrics-implementation">
+                                <div class="implementation-process">
+                                    <div class="process-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Definición de Objetivos</h4>
+                                            <p>Establecer claramente qué se pretende medir y por qué, alineado con los objetivos del proyecto.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Selección de Métricas</h4>
+                                            <p>Elegir un conjunto limitado de métricas relevantes que aporten valor y sean fáciles de recopilar.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Recopilación de Datos</h4>
+                                            <p>Implementar mecanismos para la obtención sistemática y consistente de los datos requeridos.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <h4>Análisis e Interpretación</h4>
+                                            <p>Procesar y contextualizar los datos para extraer conclusiones significativas.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="process-step">
+                                        <div class="step-number">5</div>
+                                        <div class="step-content">
+                                            <h4>Acción y Mejora</h4>
+                                            <p>Tomar decisiones informadas basadas en los resultados para mejorar el proceso o producto.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="metrics-example mt-4">
+                                    <h4>Ejemplo Práctico: Análisis de Valor Ganado</h4>
+                                    <p>Una técnica que integra medidas de alcance, cronograma y recursos para evaluar el rendimiento del proyecto.</p>
+                                    
+                                    <div class="earned-value">
+                                        <div class="ev-chart">
+                                            <canvas id="evChart" width="400" height="200"></canvas>
+                                        </div>
+                                        
+                                        <div class="ev-metrics mt-3">
+                                            <div class="metrics-grid">
+                                                <div class="metric-item">
+                                                    <div class="metric-name">PV (Valor Planificado)</div>
+                                                    <div class="metric-value">$120,000</div>
+                                                </div>
+                                                <div class="metric-item">
+                                                    <div class="metric-name">EV (Valor Ganado)</div>
+                                                    <div class="metric-value">$100,000</div>
+                                                </div>
+                                                <div class="metric-item">
+                                                    <div class="metric-name">AC (Costo Real)</div>
+                                                    <div class="metric-value">$110,000</div>
+                                                </div>
+                                                <div class="metric-item">
+                                                    <div class="metric-name">SV (Varianza Cronograma)</div>
+                                                    <div class="metric-value">-$20,000</div>
+                                                </div>
+                                                <div class="metric-item">
+                                                    <div class="metric-name">CV (Varianza Costo)</div>
+                                                    <div class="metric-value">-$10,000</div>
+                                                </div>
+                                                <div class="metric-item">
+                                                    <div class="metric-name">SPI (Índice Rendimiento Cronograma)</div>
+                                                    <div class="metric-value">0.83</div>
+                                                </div>
+                                                <div class="metric-item">
+                                                    <div class="metric-name">CPI (Índice Rendimiento Costo)</div>
+                                                    <div class="metric-value">0.91</div>
+                                                </div>
+                                                <div class="metric-item">
+                                                    <div class="metric-name">EAC (Estimación a Completar)</div>
+                                                    <div class="metric-value">$154,000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="validacion" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+                <h2 class="section-title">Validación y Verificación</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>La validación y verificación son actividades fundamentales para asegurar la calidad del software. Mientras que la verificación se centra en confirmar que el software se construye correctamente, la validación asegura que se está construyendo el software correcto.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Introducción al Testing</h3>
+                            <p>Las pruebas de software son un componente crítico del proceso de desarrollo que ayuda a identificar defectos, confirmar la funcionalidad y verificar el cumplimiento de los requisitos.</p>
+                            
+                            <div class="testing-overview">
+                                <div class="principles">
+                                    <h4>Principios del Testing</h4>
+                                    <div class="principles-list">
+                                        <div class="principle">
+                                            <div class="principle-number">1</div>
+                                            <div class="principle-content">
+                                                <h5>Las pruebas demuestran la presencia de defectos, no su ausencia</h5>
+                                                <p>Las pruebas pueden mostrar que existen defectos, pero no pueden probar que no hay defectos.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="principle">
+                                            <div class="principle-number">2</div>
+                                            <div class="principle-content">
+                                                <h5>Las pruebas exhaustivas son imposibles</h5>
+                                                <p>Probar todas las combinaciones de entradas y precondiciones no es factible, por lo que se requiere análisis de riesgos.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="principle">
+                                            <div class="principle-number">3</div>
+                                            <div class="principle-content">
+                                                <h5>Pruebas tempranas</h5>
+                                                <p>Las actividades de prueba deben comenzar lo antes posible y enfocarse en objetivos definidos.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="principle">
+                                            <div class

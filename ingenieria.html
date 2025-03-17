@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Ingeniería del Software | 3° EMS DGETP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hero-animations.css">
+    <style>
+        /* Estilos específicos para la página de Ingeniería */
+        :root {
+            --primary-color: #1aa15e; /* Azul-violeta */
+            --secondary-color: #9370db; /* Púrpura medio */
+            --dark-color: #483d8b; /* Azul pizarra oscuro */
+            --light-color: #e6e6fa; /* Lavanda */
+            --accent-color: #ff7f50; /* Coral */
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+        }
+        
+        .navbar-dark.bg-dark {
+            background-color: var(--dark-color) !important;
+        }
+        
+        .unit-1 {
+            border-left-color: #9370db;
+        }
+        
+        .unit-2 {
+            border-left-color: #1aa15e;
+        }
+        
+        .unit-3 {
+            border-left-color: #ff7f50;
+        }
+        
+        .unit-1 .feature-icon {
+            background-color: #9370db !important;
+        }
+        
+        .unit-2 .feature-icon {
+            background-color: #2dbe76 !important;
+        }
+        
+        .unit-3 .feature-icon {
+            background-color: #ff7f50 !important;
+        }
+        
+        .unit-1 .unit-btn {
+            background-color: #9370db;
+            border-color: #9370db;
+        }
+        
+        .unit-2 .unit-btn {
+            background-color: #1aa15e;
+            border-color: #1aa15e;
+        }
+        
+        .unit-3 .unit-btn {
+            background-color: #ff7f50;
+            border-color: #ff7f50;
+        }
+        
+        .unit-1 .unit-btn:hover {
+            background-color: #8a6ddb;
+            border-color: #8a6ddb;
+        }
+        
+        .unit-2 .unit-btn:hover {
+            background-color: #1aa15e;
+            border-color: #1aa15e;
+        }
+        
+        .unit-3 .unit-btn:hover {
+            background-color: #ff6b3c;
+            border-color: #ff6b3c;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+        }
+        
+        .circle-icon {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-bg py-5 mb-5" id="inicio">
+        <div class="hero-icons-container">
+            <div class="hero-circle circle-1"></div>
+            <div class="hero-circle circle-2"></div>
+            <div class="hero-circle circle-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="row align-items-center py-5">
+                <div class="col-lg-7 text-white">
+                    <h1 class="display-4 fw-bold hero-title">Curso de Ingeniería del Software</h1>
+                    <p class="lead mb-4 hero-subtitle">3° EMS | DGETP | Tecnologías de la Información</p>
+                    <p class="fs-5 hero-description">Aprende los fundamentos y prácticas de la ingeniería de software para diseñar, desarrollar y mantener soluciones robustas y escalables.</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm hero-btn animated-btn">
+                        Explorar contenido <i class="bi bi-arrow-down-circle"></i>
+                    </a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <div class="hero-icon">
+                        <svg width="300" height="300" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Circle -->
+                            <circle cx="300" cy="300" r="250" fill="#E6E6FA" opacity="0.3" />
+                            
+                            <!-- Code Editor -->
+                            <rect x="100" y="120" width="400" height="300" rx="15" fill="#2D3748" />
+                            <rect x="100" y="120" width="400" height="40" rx="15" fill="#4A5568" />
+                            <circle cx="130" cy="140" r="8" fill="#FC5753" />
+                            <circle cx="155" cy="140" r="8" fill="#FDBC40" />
+                            <circle cx="180" cy="140" r="8" fill="#33C748" />
+                            
+                            <!-- Code Lines -->
+                            <rect x="120" y="180" width="180" height="8" rx="4" fill="#9370DB" />
+                            <rect x="120" y="200" width="250" height="8" rx="4" fill="#1aa15e" />
+                            <rect x="150" y="220" width="200" height="8" rx="4" fill="#9370DB" />
+                            <rect x="150" y="240" width="150" height="8" rx="4" fill="#9370DB" />
+                            <rect x="120" y="260" width="280" height="8" rx="4" fill="#1aa15e" />
+                            <rect x="120" y="280" width="150" height="8" rx="4" fill="#9370DB" />
+                            <rect x="120" y="300" width="250" height="8" rx="4" fill="#1aa15e" />
+                            <rect x="150" y="320" width="200" height="8" rx="4" fill="#9370DB" />
+                            <rect x="150" y="340" width="180" height="8" rx="4" fill="#9370DB" />
+                            <rect x="120" y="360" width="260" height="8" rx="4" fill="#1aa15e" />
+                            
+                            <!-- UML Diagram Elements -->
+                            <rect x="400" y="180" width="80" height="50" rx="5" stroke="#FF7F50" stroke-width="3" fill="none" />
+                            <rect x="400" y="260" width="80" height="50" rx="5" stroke="#FF7F50" stroke-width="3" fill="none" />
+                            <rect x="400" y="340" width="80" height="50" rx="5" stroke="#FF7F50" stroke-width="3" fill="none" />
+                            <line x1="440" y1="230" x2="440" y2="260" stroke="#FF7F50" stroke-width="3" />
+                            <line x1="440" y1="310" x2="440" y2="340" stroke="#FF7F50" stroke-width="3" />
+                            
+                            <!-- Gears -->
+                            <circle cx="520" cy="450" r="30" fill="#9370DB" />
+                            <circle cx="520" cy="450" r="12" fill="#483D8B" />
+                            <path d="M520 420 L520 412" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                            <path d="M520 488 L520 480" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                            <path d="M490 450 L482 450" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                            <path d="M558 450 L550 450" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                            <path d="M498 428 L492 422" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                            <path d="M548 478 L542 472" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                            <path d="M498 472 L492 478" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                            <path d="M548 422 L542 428" stroke="#9370DB" stroke-width="8" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Ingeniería SW</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html"><i class="bi bi-house-door"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#unidad1"><i class="bi bi-1-circle"></i> Especificación de Requerimientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#unidad2"><i class="bi bi-2-circle"></i> Modelado de Sistemas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#unidad3"><i class="bi bi-3-circle"></i> Gestión de Proyectos</a>
+                    </li>
+                 
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <section class="mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Descripción General del Curso</h2>
+                    <hr class="divider my-4">
+                    <p class="text-muted mb-5">
+                        Este curso está diseñado para estudiantes de tercer año de Educación Media Superior con especialidad en Tecnologías de la Información.
+                        Aprenderás las metodologías, técnicas y herramientas fundamentales de la ingeniería del software para desarrollar aplicaciones de calidad.
+                        El enfoque práctico te permitirá aplicar los conocimientos en proyectos reales, desde la especificación de requerimientos hasta
+                        la gestión y planificación de proyectos completos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="row g-4">
+            <section class="col-md-12 mb-5" id="unidad1">
+                <div class="card h-100 shadow unit-card unit-1">
+                    <div class="card-body p-5">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 p-2 rounded-circle">
+                            <i class="bi bi-clipboard-check"></i>
+                        </div>
+                        <h3 class="card-title">Unidad 1: Especificación de Requerimientos</h3>
+                        <p class="card-text">Aprende a identificar, documentar y validar los requisitos de un sistema software.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Introducción a la ingeniería de requisitos</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Técnicas de elicitación de requisitos</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Clasificación de requisitos funcionales y no funcionales</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Documentación de requisitos (SRS)</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Validación y verificación de requisitos</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Gestión de cambios en los requisitos</li>
+                        </ul>
+                        <button class="btn btn-outline-primary mt-4 show-more" data-target="more-unidad1">Ver más detalles <i class="bi bi-plus-circle"></i></button>
+                        <div id="more-unidad1" class="more-content mt-3" style="display: none;">
+                            <p>En esta unidad, aprenderás las mejores prácticas para capturar correctamente las necesidades del cliente y transformarlas en requisitos claros, completos y verificables. Realizarás entrevistas, cuestionarios y otras técnicas para obtener información de calidad, y aprenderás a documentarla siguiendo estándares profesionales.</p>
+                        </div>
+                        <a href="ingenieriaunidad1.html" class="btn unit-btn mt-3">Ir a Unidad 1 <i class="bi bi-arrow-right-circle"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-md-12 mb-5" id="unidad2">
+                <div class="card h-100 shadow unit-card unit-2">
+                    <div class="card-body p-5">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 p-2 rounded-circle">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3 class="card-title">Unidad 2: Modelado de Sistemas</h3>
+                        <p class="card-text">Diseño y representación de sistemas software mediante diferentes técnicas de modelado.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Introducción al modelado de software</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Lenguaje Unificado de Modelado (UML)</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Diagramas de casos de uso</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Diagramas de clases y objetos</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Diagramas de secuencia y actividad</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Patrones de diseño software</li>
+                        </ul>
+                        <button class="btn btn-outline-primary mt-4 show-more" data-target="more-unidad2">Ver más detalles <i class="bi bi-plus-circle"></i></button>
+                        <div id="more-unidad2" class="more-content mt-3" style="display: none;">
+                            <p>Esta unidad te proporcionará las herramientas para representar visualmente la estructura y comportamiento de los sistemas software. Aprenderás a utilizar UML para comunicar diseños de manera efectiva, documentando tanto los aspectos estáticos como dinámicos de un sistema, y aplicarás patrones de diseño para resolver problemas comunes.</p>
+                        </div>
+                        <a href="ingenieriaunidad2.html" class="btn unit-btn mt-3">Ir a Unidad 2 <i class="bi bi-arrow-right-circle"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-md-12 mb-5" id="unidad3">
+                <div class="card h-100 shadow unit-card unit-3">
+                    <div class="card-body p-5">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 p-2 rounded-circle">
+                            <i class="bi bi-kanban"></i>
+                        </div>
+                        <h3 class="card-title">Unidad 3: Gestión, Planificación y Control de Proyecto</h3>
+                        <p class="card-text">Metodologías y técnicas para la correcta administración de proyectos de software.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Ciclos de vida del desarrollo de software</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Metodologías ágiles vs. tradicionales</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Planificación y estimación de proyectos</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Gestión de riesgos en proyectos software</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Control de calidad y testing</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Gestión de la configuración y herramientas</li>
+                        </ul>
+                        <button class="btn btn-outline-primary mt-4 show-more" data-target="more-unidad3">Ver más detalles <i class="bi bi-plus-circle"></i></button>
+                        <div id="more-unidad3" class="more-content mt-3" style="display: none;">
+                            <p>En la unidad final, aprenderás a gestionar proyectos software de manera efectiva, aplicando metodologías ágiles como Scrum y herramientas de gestión de proyectos. Estudiarás técnicas de estimación, planificación y seguimiento, así como estrategias para mitigar riesgos y asegurar la calidad del producto final.</p>
+                        </div>
+                        <a href="ingenieriaunidad3.html" class="btn unit-btn mt-3">Ir a Unidad 3 <i class="bi bi-arrow-right-circle"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="my-5 text-center py-5 bg-light rounded shadow-sm">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-heading">Metodología del Curso</h2>
+                    <hr class="divider my-4">
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-4">
+                            <div class="method-item">
+                                <div class="circle-icon">
+                                    <i class="bi bi-book"></i>
+                                </div>
+                                <h4>Teoría</h4>
+                                <p>Fundamentos metodológicos y mejores prácticas de ingeniería de software</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="method-item">
+                                <div class="circle-icon">
+                                    <i class="bi bi-laptop"></i>
+                                </div>
+                                <h4>Práctica</h4>
+                                <p>Desarrollo de casos de estudio y aplicación de técnicas en proyectos reales</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="method-item">
+                                <div class="circle-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h4>Proyecto</h4>
+                                <p>Trabajo en equipo para desarrollar una solución completa siguiendo buenas prácticas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Matías Prestes</h5>
+                    <p class="text-light mb-1">Profesor de Informática</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-globe me-2"></i><a href="https://profemprestes.github.io" class="text-white">profemprestes.github.io</a></li>
+                        <li><i class="bi bi-envelope me-2"></i><a href="mailto:profematiasprestes@gmail.com" class="text-white">profematiasprestes@gmail.com</a></li>
+                        <li><i class="bi bi-geo-alt me-2"></i>Montevideo, Uruguay | Canelones, Uruguay</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Enlaces Útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white"><i class="bi bi-link-45deg me-2"></i>Curso de Sistemas Operativos</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Recursos adicionales</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Calendario académico</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="social-icons">
+                        <a href="https://youtube.com/profematiasprestes" class="social-icon text-white me-3" title="YouTube"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="https://linkedin.com/in/mprestestecnologia" class="social-icon text-white me-3" title="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="https://github.com/profemprestes" class="social-icon text-white" title="GitHub"><i class="bi bi-github fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 Curso de Ingeniería del Software | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

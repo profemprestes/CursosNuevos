@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #3182ce;
+    --secondary-color: #4299e1;
+    --dark-color: #2c5282;
+    --light-color: #ebf8ff;
+    --programming-color: #805ad5;
+    --database-color: #2b6cb0;
+    --os-color: #ed8936;
+    --fullstack-color: #dd6b20;
+    --software-color: #2f855a;
+    --admin-color: #805ad5;
+    --project-color: #38a169;
+    --transition: all 0.3s ease;
+    --border-radius: 0.5rem;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #4a5568;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.year-header {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.year-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.course-card {
+    border: none;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border-top: 5px solid transparent;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Card Colors */
+.course-card .course-icon.programming {
+    background-color: var(--programming-color);
+}
+
+.course-card .course-icon.database {
+    background-color: var(--database-color);
+}
+
+.course-card .course-icon.os {
+    background-color: var(--os-color);
+}
+
+.course-card .course-icon.fullstack {
+    background-color: var(--fullstack-color);
+}
+
+.course-card .course-icon.software {
+    background-color: var(--software-color);
+}
+
+.course-card .course-icon.admin {
+    background-color: var(--admin-color);
+}
+
+.course-card .course-icon.project {
+    background-color: var(--project-color);
+}
+
+.course-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: white;
+    transition: var(--transition);
+}
+
+.course-card:hover .course-icon {
+    transform: scale(1.1);
+}
+
+.course-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.course-features span {
+    background-color: #f1f5f9;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.course-btn {
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.course-btn i {
+    transition: var(--transition);
+}
+
+.course-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Button Colors */
+.programming-btn {
+    border-color: var(--programming-color);
+    color: var(--programming-color);
+}
+
+.programming-btn:hover {
+    background-color: var(--programming-color);
+    border-color: var(--programming-color);
+    color: white;
+}
+
+.database-btn {
+    border-color: var(--database-color);
+    color: var(--database-color);
+}
+
+.database-btn:hover {
+    background-color: var(--database-color);
+    border-color: var(--database-color);
+    color: white;
+}
+
+.os-btn {
+    border-color: var(--os-color);
+    color: var(--os-color);
+}
+
+.os-btn:hover {
+    background-color: var(--os-color);
+    border-color: var(--os-color);
+    color: white;
+}
+
+.fullstack-btn {
+    border-color: var(--fullstack-color);
+    color: var(--fullstack-color);
+}
+
+.fullstack-btn:hover {
+    background-color: var(--fullstack-color);
+    border-color: var(--fullstack-color);
+    color: white;
+}
+
+.software-btn {
+    border-color: var(--software-color);
+    color: var(--software-color);
+}
+
+.software-btn:hover {
+    background-color: var(--software-color);
+    border-color: var(--software-color);
+    color: white;
+}
+
+.admin-btn {
+    border-color: var(--admin-color);
+    color: var(--admin-color);
+}
+
+.admin-btn:hover {
+    background-color: var(--admin-color);
+    border-color: var(--admin-color);
+    color: white;
+}
+
+.project-btn {
+    border-color: var(--project-color);
+    color: var(--project-color);
+}
+
+.project-btn:hover {
+    background-color: var(--project-color);
+    border-color: var(--project-color);
+    color: white;
+}
+
+/* Features Section */
+.feature-item {
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .course-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-item {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .year-badge {
+        display: block;
+        margin: 0 auto 0.5rem;
+        width: fit-content;
+    }
+    
+    .course-icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .card-title, .card-text {
+        text-align: center;
+    }
+    
+    .course-features {
+        justify-content: center;
+    }
+    
+    .course-btn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .hero-bg h1 {
+        font-size: 2rem;
+    }
+}

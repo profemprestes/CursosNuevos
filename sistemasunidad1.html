@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1: Fundamentos del Sistema Operativo Linux | Curso SO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sistemasunidad1.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#unit-nav" data-bs-offset="200">
+    <header class="unit-header py-5" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold">Unidad 1: Fundamentos del Sistema Operativo Linux</h1>
+                    <p class="lead mb-4">2° EMS | DGETP | Tecnologías de la Información</p>
+                    <p class="fs-5">Introducción a los conceptos básicos y el entorno de Linux</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm animated-btn">Ver contenido <i class="bi bi-arrow-down-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Unidad 1</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#unit-nav" aria-controls="unit-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="unit-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#historia"><i class="bi bi-book"></i> Historia y Filosofía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#instalacion"><i class="bi bi-hdd"></i> Instalación y Configuración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#paquetes"><i class="bi bi-box"></i> Gestión de Paquetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#terminal"><i class="bi bi-terminal"></i> Terminal y Comandos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#archivos"><i class="bi bi-folder"></i> Sistema de Archivos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="sistemasoperativos.html"><i class="bi bi-house-door"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="sistemasoperativos.html">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 1: Fundamentos del Sistema Operativo Linux</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="historia" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-book"></i>
+                </div>
+                <h2 class="section-title">Historia y Filosofía de Linux</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Orígenes y Evolución</h3>
+                            <p>Linux es un sistema operativo de tipo Unix que fue creado inicialmente como un proyecto personal por Linus Torvalds en 1991 mientras era estudiante en la Universidad de Helsinki. Su objetivo era crear un sistema operativo libre y de código abierto que pudiera ser utilizado y modificado por cualquier persona.</p>
+                            <p>El núcleo (kernel) de Linux, junto con las herramientas del proyecto GNU, conformaron lo que hoy conocemos como sistema operativo GNU/Linux, una alternativa libre a los sistemas Unix propietarios de la época.</p>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1991</div>
+                                    <div class="timeline-content">
+                                        <h4>Creación del Kernel Linux</h4>
+                                        <p>Linus Torvalds anuncia la primera versión del kernel Linux.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1992-1993</div>
+                                    <div class="timeline-content">
+                                        <h4>Primeras Distribuciones</h4>
+                                        <p>Aparecen las primeras distribuciones como SLS y Slackware.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1994-1995</div>
+                                    <div class="timeline-content">
+                                        <h4>Consolidación</h4>
+                                        <p>Surgen Red Hat y Debian, distribuciones que aún existen hoy día.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2000s</div>
+                                    <div class="timeline-content">
+                                        <h4>Popularización</h4>
+                                        <p>Linux se expande al ámbito empresarial y aparecen distribuciones más accesibles como Ubuntu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Filosofía del Software Libre</h3>
+                            <p>Linux se fundamenta en los principios del software libre y el código abierto (FOSS - Free and Open Source Software), estableciendo cuatro libertades fundamentales:</p>
+                            <ul class="feature-list">
+                                <li><span class="feature-number">1</span> La libertad de usar el programa con cualquier propósito</li>
+                                <li><span class="feature-number">2</span> La libertad de estudiar cómo funciona el programa y modificarlo</li>
+                                <li><span class="feature-number">3</span> La libertad de distribuir copias del programa</li>
+                                <li><span class="feature-number">4</span> La libertad de mejorar el programa y hacer públicas esas mejoras</li>
+                            </ul>
+                            <div class="info-box">
+                                <h4>¿Sabías que?</h4>
+                                <p>El término "Linux" técnicamente se refiere solo al kernel (núcleo) del sistema operativo. El sistema completo es correctamente llamado GNU/Linux, ya que incluye numerosas herramientas del proyecto GNU.</p>
+                            </div>
+                            <div class="text-center mt-4">
+                                <svg width="150" height="150" viewBox="0 0 200 200" class="linux-logo">
+                                    <path d="M100,15 C55,15 20,50 20,95 C20,140 55,175 100,175 C145,175 180,140 180,95 C180,50 145,15 100,15 Z" fill="#F3B21C"/>
+                                    <circle cx="80" cy="80" r="10" fill="#000"/>
+                                    <circle cx="120" cy="80" r="10" fill="#000"/>
+                                    <path d="M65,115 C80,135 120,135 135,115" stroke="#000" stroke-width="5" fill="none"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalacion" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-hdd"></i>
+                </div>
+                <h2 class="section-title">Instalación y Configuración Inicial</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>Instalar Linux puede parecer intimidante al principio, pero con las distribuciones modernas el proceso se ha simplificado considerablemente. En esta sección aprenderemos los diferentes métodos de instalación y la configuración inicial del sistema.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="content-card">
+                            <h3>Medios de Instalación</h3>
+                            <div class="installation-methods">
+                                <div class="method-item">
+                                    <div class="method-icon">
+                                        <i class="bi bi-usb-drive"></i>
+                                    </div>
+                                    <div class="method-content">
+                                        <h4>USB</h4>
+                                        <p>El método más común actualmente. Requiere una memoria USB de al menos 4GB y software para crear unidades USB bootables.</p>
+                                    </div>
+                                </div>
+                                <div class="method-item">
+                                    <div class="method-icon">
+                                        <i class="bi bi-disc"></i>
+                                    </div>
+                                    <div class="method-content">
+                                        <h4>DVD</h4>
+                                        <p>Método tradicional utilizando discos ópticos. Menos común hoy en día pero aún funcional en equipos antiguos.</p>
+                                    </div>
+                                </div>
+                                <div class="method-item">
+                                    <div class="method-icon">
+                                        <i class="bi bi-hdd-network"></i>
+                                    </div>
+                                    <div class="method-content">
+                                        <h4>Red (PXE)</h4>
+                                        <p>Instalación a través de la red, útil en entornos empresariales para despliegues múltiples.</p>
+                                    </div>
+                                </div>
+                                <div class="method-item">
+                                    <div class="method-icon">
+                                        <i class="bi bi-pc-display"></i>
+                                    </div>
+                                    <div class="method-content">
+                                        <h4>Máquina Virtual</h4>
+                                        <p>Ideal para principiantes, permite instalar Linux dentro de otro sistema operativo sin modificar el disco duro.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="content-card">
+                            <h3>Instalación paso a paso</h3>
+                            <p>El proceso de instalación varía según la distribución, pero generalmente incluye estos pasos:</p>
+                            <div class="steps-container">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h4>Preparación</h4>
+                                        <p>Descargar la ISO de la distribución y crear medio de instalación (USB/DVD)</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h4>Arranque</h4>
+                                        <p>Configurar la BIOS/UEFI para arrancar desde el medio de instalación</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <h4>Particionado</h4>
+                                        <p>Preparar el disco duro (partición manual o automática)</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-content">
+                                        <h4>Instalación</h4>
+                                        <p>Copiar archivos del sistema y configuración básica</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">5</span>
+                                    <div class="step-content">
+                                        <h4>Configuración</h4>
+                                        <p>Zona horaria, teclado, usuario, red, etc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content-card">
+                            <h3>Configuración Inicial</h3>
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="config-card">
+                                        <div class="config-icon">
+                                            <i class="bi bi-gear"></i>
+                                        </div>
+                                        <h4>Sistema</h4>
+                                        <ul>
+                                            <li>Actualización del sistema</li>
+                                            <li>Configuración regional</li>
+                                            <li>Controladores de hardware</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="config-card">
+                                        <div class="config-icon">
+                                            <i class="bi bi-wifi"></i>
+                                        </div>
+                                        <h4>Red</h4>
+                                        <ul>
+                                            <li>Configuración WiFi/Ethernet</li>
+                                            <li>Nombre de equipo</li>
+                                            <li>Configuración IP (estática/dinámica)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="config-card">
+                                        <div class="config-icon">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <h4>Usuarios</h4>
+                                        <ul>
+                                            <li>Creación de cuentas</li>
+                                            <li>Grupos y permisos</li>
+                                            <li>Configuración de contraseñas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="paquetes" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-box"></i>
+                </div>
+                <h2 class="section-title">Actualización y Gestión de Paquetes</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Sistemas de Gestión de Paquetes</h3>
+                            <p>Linux utiliza gestores de paquetes para instalar, actualizar y eliminar software. Los principales son:</p>
+                            
+                            <div class="package-managers">
+                                <div class="package-manager">
+                                    <h4>APT (Debian/Ubuntu)</h4>
+                                    <div class="code-sample">
+                                        <pre><code>sudo apt update
+sudo apt install paquete
+sudo apt remove paquete</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-manager">
+                                    <h4>DNF/YUM (Fedora/RHEL)</h4>
+                                    <div class="code-sample">
+                                        <pre><code>sudo dnf update
+sudo dnf install paquete
+sudo dnf remove paquete</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-manager">
+                                    <h4>Pacman (Arch Linux)</h4>
+                                    <div class="code-sample">
+                                        <pre><code>sudo pacman -Syu
+sudo pacman -S paquete
+sudo pacman -R paquete</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-manager">
+                                    <h4>Zypper (openSUSE)</h4>
+                                    <div class="code-sample">
+                                        <pre><code>sudo zypper refresh
+sudo zypper install paquete
+sudo zypper remove paquete</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Buenas Prácticas</h3>
+                            <div class="best-practices">
+                                <div class="practice-item">
+                                    <div class="practice-icon"><i class="bi bi-arrow-repeat"></i></div>
+                                    <div class="practice-content">
+                                        <h4>Actualización Regular</h4>
+                                        <p>Mantén tu sistema actualizado para recibir parches de seguridad y mejoras.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <div class="practice-icon"><i class="bi bi-shield-check"></i></div>
+                                    <div class="practice-content">
+                                        <h4>Repositorios Oficiales</h4>
+                                        <p>Prioriza la instalación desde los repositorios oficiales de tu distribución.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <div class="practice-icon"><i class="bi bi-journals"></i></div>
+                                    <div class="practice-content">
+                                        <h4>Consulta la Documentación</h4>
+                                        <p>Antes de instalar paquetes de fuentes externas, lee la documentación oficial.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <div class="practice-icon"><i class="bi bi-trash"></i></div>
+                                    <div class="practice-content">
+                                        <h4>Limpieza Periódica</h4>
+                                        <p>Elimina paquetes no utilizados y limpia la caché del gestor de paquetes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box warning mt-4">
+                                <h4><i class="bi bi-exclamation-triangle"></i> Precaución</h4>
+                                <p>Manipular los paquetes del sistema puede afectar la estabilidad. Siempre realiza copias de seguridad antes de modificaciones importantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="terminal" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-terminal"></i>
+                </div>
+                <h2 class="section-title">Comandos y Herramientas de la Línea de Comandos</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Uso de la Terminal</h3>
+                            <p>La terminal (también conocida como consola o línea de comandos) es una interfaz de texto que permite controlar el sistema mediante comandos. Es una herramienta poderosa y esencial en Linux.</p>
+                            
+                            <div class="terminal-demo">
+                                <div class="terminal-header">
+                                    <div class="terminal-buttons">
+                                        <span class="terminal-close"></span>
+                                        <span class="terminal-minimize"></span>
+                                        <span class="terminal-maximize"></span>
+                                    </div>
+                                    <div class="terminal-title">Terminal</div>
+                                </div>
+                                <div class="terminal-body">
+                                    <p class="terminal-prompt">usuario@linux:~$ <span class="terminal-cursor">_</span></p>
+                                </div>
+                            </div>
+                            
+                            <h4 class="mt-4">Ventajas de la Terminal</h4>
+                            <ul class="feature-list">
+                                <li>Control preciso sobre el sistema</li>
+                                <li>Automatización de tareas repetitivas</li>
+                                <li>Menor consumo de recursos que interfaces gráficas</li>
+                                <li>Acceso remoto eficiente (SSH)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Comandos Básicos</h3>
+                            <div class="command-table">
+                                <div class="command-category">
+                                    <h4>Navegación</h4>
+                                    <div class="command-list">
+                                        <div class="command-item">
+                                            <div class="command-name">cd</div>
+                                            <div class="command-desc">Cambiar de directorio</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">ls</div>
+                                            <div class="command-desc">Listar contenido</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">pwd</div>
+                                            <div class="command-desc">Mostrar directorio actual</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="command-category">
+                                    <h4>Archivos</h4>
+                                    <div class="command-list">
+                                        <div class="command-item">
+                                            <div class="command-name">touch</div>
+                                            <div class="command-desc">Crear archivo vacío</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">mkdir</div>
+                                            <div class="command-desc">Crear directorio</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">rm</div>
+                                            <div class="command-desc">Eliminar archivos</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">cp</div>
+                                            <div class="command-desc">Copiar archivos</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">mv</div>
+                                            <div class="command-desc">Mover/renombrar archivos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="command-category">
+                                    <h4>Visualización</h4>
+                                    <div class="command-list">
+                                        <div class="command-item">
+                                            <div class="command-name">cat</div>
+                                            <div class="command-desc">Mostrar contenido de archivo</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">less</div>
+                                            <div class="command-desc">Ver archivo con paginación</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">head</div>
+                                            <div class="command-desc">Mostrar primeras líneas</div>
+                                        </div>
+                                        <div class="command-item">
+                                            <div class="command-name">tail</div>
+                                            <div class="command-desc">Mostrar últimas líneas</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="archivos" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-folder"></i>
+                </div>
+                <h2 class="section-title">Sistema de Archivos</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Estructura de Directorios</h3>
+                            <p>El sistema de archivos de Linux sigue una estructura jerárquica estandarizada conocida como FHS (Filesystem Hierarchy Standard).</p>
+                            
+                            <div class="filesystem-structure">
+                                <div class="directory-tree">
+                                    <div class="dir-node root-node">
+                                        <span class="dir-name">/</span>
+                                        <div class="dir-children">
+                                            <div class="dir-node">
+                                                <span class="dir-name">/bin</span>
+                                                <div class="dir-desc">Binarios esenciales</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/boot</span>
+                                                <div class="dir-desc">Archivos de arranque</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/dev</span>
+                                                <div class="dir-desc">Dispositivos</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/etc</span>
+                                                <div class="dir-desc">Configuración del sistema</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/home</span>
+                                                <div class="dir-desc">Directorios de usuarios</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/lib</span>
+                                                <div class="dir-desc">Bibliotecas compartidas</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/mnt</span>
+                                                <div class="dir-desc">Punto de montaje temporal</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/opt</span>
+                                                <div class="dir-desc">Software opcional</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/proc</span>
+                                                <div class="dir-desc">Información del sistema</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/root</span>
+                                                <div class="dir-desc">Directorio del superusuario</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/usr</span>
+                                                <div class="dir-desc">Programas de usuario</div>
+                                            </div>
+                                            <div class="dir-node">
+                                                <span class="dir-name">/var</span>
+                                                <div class="dir-desc">Datos variables</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Manipulación de Archivos y Directorios</h3>
+                            
+                            <div class="file-operations">
+                                <div class="operation-group">
+                                    <h4>Navegación</h4>
+                                    <div class="code-sample">
+                                        <pre><code># Ir al directorio home
+cd ~
+
+# Directorio actual
+pwd
+
+# Listar archivos (incluyendo ocultos)
+ls -la
+
+# Ir al directorio padre
+cd ..
+
+# Ir a directorio específico
+cd /etc/</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="operation-group">
+                                    <h4>Creación y Eliminación</h4>
+                                    <div class="code-sample">
+                                        <pre><code># Crear directorio
+mkdir nuevo_directorio
+
+# Crear archivo vacío
+touch archivo.txt
+
+# Eliminar archivo
+rm archivo.txt
+
+# Eliminar directorio vacío
+rmdir directorio
+
+# Eliminar directorio con contenido
+rm -r directorio</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="operation-group">
+                                    <h4>Visualización y Edición</h4>
+                                    <div class="code-sample">
+                                        <pre><code># Ver contenido
+cat archivo.txt
+
+# Editar con nano
+nano archivo.txt
+
+# Editar con vim
+vim archivo.txt
+
+# Buscar texto en archivos
+grep "texto" archivo.txt</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box warning mt-4">
+                                <h4><i class="bi bi-exclamation-triangle"></i> Precaución</h4>
+                                <p>El comando <code>rm</code> elimina archivos permanentemente. No hay papelera de reciclaje en la línea de comandos. Ten especial cuidado con <code>rm -rf</code> que elimina de forma recursiva y forzada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-to-top-container">
+            <a href="#inicio" class="back-to-top">
+                <i class="bi bi-arrow-up-circle-fill"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto text-center">
+                    <h4>Unidad 1: Fundamentos del Sistema Operativo Linux</h4>
+                    <p>Curso de Sistemas Operativos | 2° EMS | DGETP</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="index.html" class="btn btn-outline-light animated-btn">
+                        <i class="bi bi-house-door me-2"></i> Volver a la página principal
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 Curso de Sistemas Operativos | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="sistemasunidad1.js"></script>
+</body>
+</html>

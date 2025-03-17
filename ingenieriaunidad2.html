@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2: Modelado de Sistemas | Curso Ingeniería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ingenieriaunidad2.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#unit-nav" data-bs-offset="200">
+    <header class="unit-header py-5" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold">Unidad 2: Modelado de Sistemas</h1>
+                    <p class="lead mb-4">3° EMS | DGETP | Tecnologías de la Información</p>
+                    <p class="fs-5">Exploración de los modelos esenciales y el uso de UML para el diseño de sistemas</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm animated-btn">Ver contenido <i class="bi bi-arrow-down-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Unidad 2</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#unit-nav" aria-controls="unit-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="unit-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#modelo-esencial"><i class="bi bi-diagram-2"></i> Modelo Esencial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#uml"><i class="bi bi-diagram-3"></i> UML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diagrama-nav"><i class="bi bi-shuffle"></i> Diagramas de Navegabilidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#casos-uso"><i class="bi bi-person-workspace"></i> Casos de Uso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diag-clases"><i class="bi bi-grid-3x3"></i> Diagramas de Clases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diag-secuencia"><i class="bi bi-arrow-down-up"></i> Diagramas de Secuencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diag-actividad"><i class="bi bi-activity"></i> Diagramas de Actividad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="ingenieria.html"><i class="bi bi-house-door"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="ingenieria.html">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 2: Modelado de Sistemas</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="modelo-esencial" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-diagram-2"></i>
+                </div>
+                <h2 class="section-title">Modelo Esencial</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>El modelo esencial es una descripción del sistema que muestra qué debe hacer el sistema sin mostrar cómo se implementará. Se centra en la esencia del problema, independiente de la tecnología, y está compuesto principalmente por el modelo ambiental y el modelo de comportamiento.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Modelo Ambiental</h3>
+                            <p>El modelo ambiental define el entorno en el que opera el sistema. Identifica las entidades externas con las que el sistema interactúa y define los límites o fronteras del sistema.</p>
+                            
+                            <div class="components-list">
+                                <div class="component-item">
+                                    <div class="component-icon">
+                                        <i class="bi bi-box-arrow-in-down-right"></i>
+                                    </div>
+                                    <div class="component-content">
+                                        <h4>Diagrama de Contexto</h4>
+                                        <p>Muestra al sistema como una única caja negra en su entorno, conectada a entidades externas a través de flujos de datos.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="component-item">
+                                    <div class="component-icon">
+                                        <i class="bi bi-list-check"></i>
+                                    </div>
+                                    <div class="component-content">
+                                        <h4>Lista de Eventos</h4>
+                                        <p>Identifica todos los eventos externos a los que el sistema debe responder, provenientes de entidades externas o de condiciones temporales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="diagram-container mt-4">
+                                <h4>Ejemplo de Diagrama de Contexto</h4>
+                                <div class="context-diagram">
+                                    <svg width="100%" height="300" viewBox="0 0 500 300">
+                                        <!-- Sistema Central -->
+                                        <circle cx="250" cy="150" r="70" fill="#4F86C6" />
+                                        <text x="250" y="150" text-anchor="middle" fill="white" font-weight="bold">Sistema</text>
+                                        <text x="250" y="170" text-anchor="middle" fill="white" font-size="12">Gestión Académica</text>
+                                        
+                                        <!-- Entidades Externas -->
+                                        <rect x="50" y="50" width="100" height="50" rx="10" fill="#58A4B0" />
+                                        <text x="100" y="80" text-anchor="middle" fill="white">Estudiantes</text>
+                                        
+                                        <rect x="50" y="200" width="100" height="50" rx="10" fill="#58A4B0" />
+                                        <text x="100" y="230" text-anchor="middle" fill="white">Profesores</text>
+                                        
+                                        <rect x="350" y="50" width="100" height="50" rx="10" fill="#58A4B0" />
+                                        <text x="400" y="80" text-anchor="middle" fill="white">Administración</text>
+                                        
+                                        <rect x="350" y="200" width="100" height="50" rx="10" fill="#58A4B0" />
+                                        <text x="400" y="230" text-anchor="middle" fill="white">Sistema Pagos</text>
+                                        
+                                        <!-- Flujos de Datos -->
+                                        <line x1="150" y1="75" x2="185" y2="125" stroke="#373F51" stroke-width="2" marker-end="url(#arrow)" />
+                                        <line x1="150" y1="225" x2="185" y2="175" stroke="#373F51" stroke-width="2" marker-end="url(#arrow)" />
+                                        <line x1="315" y1="125" x2="350" y2="75" stroke="#373F51" stroke-width="2" marker-end="url(#arrow)" />
+                                        <line x1="315" y1="175" x2="350" y2="225" stroke="#373F51" stroke-width="2" marker-end="url(#arrow)" />
+                                        
+                                        <!-- Flechas -->
+                                        <defs>
+                                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                                <path d="M0,0 L0,6 L9,3 z" fill="#373F51" />
+                                            </marker>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Modelo de Comportamiento</h3>
+                            <p>El modelo de comportamiento describe lo que hace el sistema internamente para responder a los eventos del entorno. Muestra cómo se transforman los datos y cómo se controla esta transformación.</p>
+                            
+                            <div class="components-list">
+                                <div class="component-item">
+                                    <div class="component-icon">
+                                        <i class="bi bi-diagram-3"></i>
+                                    </div>
+                                    <div class="component-content">
+                                        <h4>Diagramas de Flujo de Datos (DFD)</h4>
+                                        <p>Muestran cómo los datos se mueven a través del sistema, ilustrando los procesos, almacenes de datos y flujos de información.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="component-item">
+                                    <div class="component-icon">
+                                        <i class="bi bi-calendar-event"></i>
+                                    </div>
+                                    <div class="component-content">
+                                        <h4>Máquinas de Estado</h4>
+                                        <p>Describen los estados en los que puede encontrarse el sistema y cómo cambia entre ellos en respuesta a eventos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-info-circle"></i> Aspectos Clave</h4>
+                                <ul>
+                                    <li>El modelo esencial representa lo que el sistema debe hacer, no cómo debe implementarse</li>
+                                    <li>Se desarrolla en las etapas iniciales del análisis de requisitos</li>
+                                    <li>Es independiente de la tecnología y plataforma</li>
+                                    <li>Ayuda a los stakeholders a comprender la funcionalidad del sistema</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="content-card">
+                            <h3>Lista de Acontecimientos</h3>
+                            <p>La lista de acontecimientos identifica todos los eventos a los que el sistema debe responder. Es un componente crucial del modelo esencial que ayuda a estructurar el análisis del sistema.</p>
+                            
+                            <div class="event-list">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Evento</th>
+                                                <th>Origen</th>
+                                                <th>Respuesta del Sistema</th>
+                                                <th>Destino</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Solicitud de matrícula</td>
+                                                <td>Estudiante</td>
+                                                <td>Registro de matrícula, verificación de disponibilidad</td>
+                                                <td>Base de datos, Administración</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Registro de calificaciones</td>
+                                                <td>Profesor</td>
+                                                <td>Almacenamiento de calificaciones, cálculo de promedios</td>
+                                                <td>Base de datos, Estudiante</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pago de cuota</td>
+                                                <td>Sistema de Pagos</td>
+                                                <td>Actualización de estado financiero, emisión de recibo</td>
+                                                <td>Estudiante, Administración</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fin de período académico</td>
+                                                <td>Tiempo</td>
+                                                <td>Generación de reportes estadísticos, cierre de cursos</td>
+                                                <td>Administración</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div class="benefits-section mt-4">
+                                <h4>Beneficios de la Lista de Acontecimientos</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="benefit-item">
+                                            <div class="benefit-icon"><i class="bi bi-check-circle"></i></div>
+                                            <div class="benefit-text">Enfoca el análisis en eventos específicos que requieren respuesta</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="benefit-item">
+                                            <div class="benefit-icon"><i class="bi bi-check-circle"></i></div>
+                                            <div class="benefit-text">Ayuda a establecer los límites del sistema</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="benefit-item">
+                                            <div class="benefit-icon"><i class="bi bi-check-circle"></i></div>
+                                            <div class="benefit-text">Facilita la identificación de casos de uso</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="benefit-item">
+                                            <div class="benefit-icon"><i class="bi bi-check-circle"></i></div>
+                                            <div class="benefit-text">Proporciona una base para la validación de requisitos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="uml" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-diagram-3"></i>
+                </div>
+                <h2 class="section-title">UML (Lenguaje Unificado de Modelado)</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Introducción a UML</h3>
+                            <p>El Lenguaje Unificado de Modelado (UML) es un lenguaje visual estándar para modelar software. Proporciona una manera de visualizar, especificar, construir y documentar artefactos de un sistema.</p>
+                            
+                            <div class="info-box">
+                                <h4><i class="bi bi-lightbulb"></i> Origen e Historia</h4>
+                                <p>UML surgió en 1997 como una unificación de varios métodos de modelado orientado a objetos. Fue desarrollado por Grady Booch, James Rumbaugh y Ivar Jacobson (conocidos como "los tres amigos") y adoptado por el Object Management Group (OMG) como estándar.</p>
+                            </div>
+                            
+                            <div class="key-concepts mt-4">
+                                <h4>Conceptos Fundamentales</h4>
+                                <div class="concept-items">
+                                    <div class="concept-item">
+                                        <div class="concept-icon"><i class="bi bi-pencil-square"></i></div>
+                                        <div class="concept-content">
+                                            <h5>Notación Estándar</h5>
+                                            <p>Símbolos y reglas consistentes para representar elementos del sistema</p>
+                                        </div>
+                                    </div>
+                                    <div class="concept-item">
+                                        <div class="concept-icon"><i class="bi bi-layers"></i></div>
+                                        <div class="concept-content">
+                                            <h5>Diferentes Vistas</h5>
+                                            <p>Múltiples perspectivas del sistema (estructural, comportamiento, interacción)</p>
+                                        </div>
+                                    </div>
+                                    <div class="concept-item">
+                                        <div class="concept-icon"><i class="bi bi-boxes"></i></div>
+                                        <div class="concept-content">
+                                            <h5>Orientado a Objetos</h5>
+                                            <p>Basado en los principios de la programación orientada a objetos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Clasificación de Diagramas UML</h3>
+                            <p>UML 2.x define 14 tipos de diagramas, divididos en dos categorías principales:</p>
+                            
+                            <div class="diagram-categories">
+                                <div class="category-section">
+                                    <h4>Diagramas Estructurales</h4>
+                                    <p>Representan la estructura estática del sistema</p>
+                                    <div class="diagram-types">
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon structural">
+                                                <i class="bi bi-grid-3x3"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Clases</div>
+                                        </div>
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon structural">
+                                                <i class="bi bi-box"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Objetos</div>
+                                        </div>
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon structural">
+                                                <i class="bi bi-boxes"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Componentes</div>
+                                        </div>
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon structural">
+                                                <i class="bi bi-hdd-stack"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Despliegue</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="category-section">
+                                    <h4>Diagramas de Comportamiento</h4>
+                                    <p>Representan el comportamiento dinámico del sistema</p>
+                                    <div class="diagram-types">
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon behavioral">
+                                                <i class="bi bi-person-workspace"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Casos de Uso</div>
+                                        </div>
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon behavioral">
+                                                <i class="bi bi-arrow-down-up"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Secuencia</div>
+                                        </div>
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon behavioral">
+                                                <i class="bi bi-activity"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Actividad</div>
+                                        </div>
+                                        <div class="diagram-type">
+                                            <div class="diagram-icon behavioral">
+                                                <i class="bi bi-circle"></i>
+                                            </div>
+                                            <div class="diagram-name">Diagrama de Estado</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diagrama-nav" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-shuffle"></i>
+                </div>
+                <h2 class="section-title">Diagrama de Navegabilidad</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>Los diagramas de navegabilidad muestran la estructura de navegación de una aplicación, especialmente útiles para aplicaciones web y móviles. Representan cómo los usuarios pueden moverse entre las diferentes pantallas o páginas del sistema.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Elementos Básicos</h3>
+                            <div class="basic-elements">
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-window"></i></div>
+                                    <div class="element-content">
+                                        <h4>Nodos</h4>
+                                        <p>Representan pantallas, páginas o vistas de la aplicación</p>
+                                    </div>
+                                </div>
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-arrow-right"></i></div>
+                                    <div class="element-content">
+                                        <h4>Enlaces</h4>
+                                        <p>Muestran las transiciones o navegación posible entre nodos</p>
+                                    </div>
+                                </div>
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-circle-square"></i></div>
+                                    <div class="element-content">
+                                        <h4>Puntos de Inicio</h4>
+                                        <p>Indican las pantallas iniciales del sistema</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="notation-guide mt-4">
+                                <h4>Notación Común</h4>
+                                <p>Aunque no forma parte del estándar UML oficial, los diagramas de navegabilidad suelen utilizar las siguientes convenciones:</p>
+                                <ul class="notation-list">
+                                    <li>Rectángulos para representar páginas o pantallas</li>
+                                    <li>Flechas para mostrar la dirección de navegación</li>
+                                    <li>Etiquetas en las flechas para describir la acción que provoca la navegación</li>
+                                    <li>Colores o formas diferentes para categorizar tipos de pantallas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Ejemplo de Diagrama de Navegabilidad</h3>
+                            <div class="navigation-diagram-container">
+                                <svg width="100%" height="350" viewBox="0 0 500 350">
+                                    <!-- Nodos -->
+                                    <rect x="200" y="30" width="100" height="50" rx="5" fill="#4F86C6" />
+                                    <text x="250" y="60" text-anchor="middle" fill="white">Inicio</text>
+                                    
+                                    <rect x="50" y="150" width="100" height="50" rx="5" fill="#4F86C6" />
+                                    <text x="100" y="180" text-anchor="middle" fill="white">Registro</text>
+                                    
+                                    <rect x="350" y="150" width="100" height="50" rx="5" fill="#4F86C6" />
+                                    <text x="400" y="180" text-anchor="middle" fill="white">Login</text>
+                                    
+                                    <rect x="200" y="250" width="100" height="50" rx="5" fill="#4F86C6" />
+                                    <text x="250" y="280" text-anchor="middle" fill="white">Dashboard</text>
+                                    
+                                    <!-- Enlaces -->
+                                    <defs>
+                                        <marker id="navArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                            <path d="M0,0 L0,6 L9,3 z" fill="#373F51" />
+                                        </marker>
+                                    </defs>
+                                    
+                                    <!-- Inicio a Registro -->
+                                    <line x1="200" y1="55" x2="150" y2="150" stroke="#373F51" stroke-width="2" marker-end="url(#navArrow)" />
+                                    <text x="160" y="110" text-anchor="middle" fill="#373F51" font-size="12">Registrarse</text>
+                                    
+                                    <!-- Inicio a Login -->
+                                    <line x1="300" y1="55" x2="350" y2="150" stroke="#373F51" stroke-width="2" marker-end="url(#navArrow)" />
+                                    <text x="340" y="110" text-anchor="middle" fill="#373F51" font-size="12">Iniciar sesión</text>
+                                    
+                                    <!-- Registro a Dashboard -->
+                                    <line x1="100" y1="200" x2="200" y2="250" stroke="#373F51" stroke-width="2" marker-end="url(#navArrow)" />
+                                    <text x="150" y="240" text-anchor="middle" fill="#373F51" font-size="12">Registro exitoso</text>
+                                    
+                                    <!-- Login a Dashboard -->
+                                    <line x1="400" y1="200" x2="300" y2="250" stroke="#373F51" stroke-width="2" marker-end="url(#navArrow)" />
+                                    <text x="340" y="240" text-anchor="middle" fill="#373F51" font-size="12">Login exitoso</text>
+                                </svg>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-info-circle"></i> Usos y Beneficios</h4>
+                                <ul>
+                                    <li>Facilita la planificación de la arquitectura de información</li>
+                                    <li>Ayuda a identificar posibles puntos muertos o callejones sin salida</li>
+                                    <li>Proporciona una visión clara del flujo de usuario</li>
+                                    <li>Sirve como referencia para diseñadores de UX/UI</li>
+                                    <li>Complementa otros diagramas UML durante el desarrollo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="casos-uso" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-person-workspace"></i>
+                </div>
+                <h2 class="section-title">Diagramas de Casos de Uso</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Fundamentos</h3>
+                            <p>Los diagramas de casos de uso modelan la funcionalidad del sistema tal como la ven los actores externos. Representan un conjunto de acciones (casos de uso) que el sistema puede realizar en colaboración con uno o más usuarios externos (actores).</p>
+                            
+                            <div class="usecase-elements">
+                                <h4>Elementos Básicos</h4>
+                                <div class="element-group">
+                                    <div class="basic-element">
+                                        <div class="element-title"><i class="bi bi-person"></i> Actor</div>
+                                        <div class="element-desc">
+                                            <p>Representa a cualquier entidad externa (persona, sistema, dispositivo) que interactúa con el sistema. Se representa con una figura de "stick man".</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="basic-element">
+                                        <div class="element-title"><i class="bi bi-circle"></i> Caso de Uso</div>
+                                        <div class="element-desc">
+                                            <p>Representa una funcionalidad o servicio que el sistema proporciona a los actores. Se representa con una elipse con el nombre dentro o debajo.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="basic-element">
+                                        <div class="element-title"><i class="bi bi-box"></i> Límite del Sistema</div>
+                                        <div class="element-desc">
+                                            <p>Representa los límites del sistema que contiene los casos de uso. Se dibuja como un rectángulo que rodea los casos de uso.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relationships mt-4">
+                                <h4>Relaciones entre Casos de Uso</h4>
+                                <div class="relationship-types">
+                                    <div class="relationship-type">
+                                        <div class="relationship-name"><i class="bi bi-arrow-right"></i> Asociación</div>
+                                        <div class="relationship-desc">Comunicación entre un actor y un caso de uso</div>
+                                    </div>
+                                    <div class="relationship-type">
+                                        <div class="relationship-name"><i class="bi bi-box-arrow-in-right"></i> Include</div>
+                                        <div class="relationship-desc">Un caso de uso incorpora el comportamiento de otro</div>
+                                    </div>
+                                    <div class="relationship-type">
+                                        <div class="relationship-name"><i class="bi bi-box-arrow-in-down-right"></i> Extend</div>
+                                        <div class="relationship-desc">Un caso de uso extiende otro en situaciones específicas</div>
+                                    </div>
+                                    <div class="relationship-type">
+                                        <div class="relationship-name"><i class="bi bi-arrow-down"></i> Generalización</div>
+                                        <div class="relationship-desc">Un caso de uso es una especialización de otro</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Ejemplo de Diagrama de Casos de Uso</h3>
+                            <div class="usecase-diagram-container">
+                                <svg width="100%" height="400" viewBox="0 0 500 400">
+                                    <!-- Límite del Sistema -->
+                                    <rect x="100" y="50" width="300" height="300" fill="none" stroke="#373F51" stroke-width="2" stroke-dasharray="5,5" />
+                                    <text x="250" y="30" text-anchor="middle" font-weight="bold">Sistema de Biblioteca</text>
+                                    
+                                    <!-- Actores -->
+                                    <circle cx="50" cy="150" r="15" fill="#58A4B0" />
+                                    <line x1="50" y1="165" x2="50" y2="200" stroke="#58A4B0" stroke-width="2" />
+                                    <line x1="50" y1="175" x2="30" y2="190" stroke="#58A4B0" stroke-width="2" />
+                                    <line x1="50" y1="175" x2="70" y2="190" stroke="#58A4B0" stroke-width="2" />
+                                    <text x="50" y="225" text-anchor="middle">Usuario</text>
+                                    
+                                    <circle cx="450" cy="150" r="15" fill="#58A4B0" />
+                                    <line x1="450" y1="165" x2="450" y2="200" stroke="#58A4B0" stroke-width="2" />
+                                    <line x1="450" y1="175" x2="430" y2="190" stroke="#58A4B0" stroke-width="2" />
+                                    <line x1="450" y1="175" x2="470" y2="190" stroke="#58A4B0" stroke-width="2" />
+                                    <text x="450" y="225" text-anchor="middle">Bibliotecario</text>
+                                    
+                                    <!-- Casos de Uso -->
+                                    <ellipse cx="200" cy="100" rx="70" ry="30" fill="#4F86C6" />
+                                    <text x="200" y="105" text-anchor="middle" fill="white">Buscar Libro</text>
+                                    
+                                    <ellipse cx="200" cy="200" rx="70" ry="30" fill="#4F86C6" />
+                                    <text x="200" y="205" text-anchor="middle" fill="white">Solicitar Préstamo</text>
+                                    
+                                    <ellipse cx="200" cy="300" rx="70" ry="30" fill="#4F86C6" />
+                                    <text x="200" y="305" text-anchor="middle" fill="white">Devolver Libro</text>
+                                    
+                                    <ellipse cx="350" cy="200" rx="70" ry="30" fill="#4F86C6" />
+                                    <text x="350" y="205" text-anchor="middle" fill="white">Gestionar Catálogo</text>
+                                    
+                                    <!-- Relaciones -->
+                                    <line x1="70" y1="150" x2="130" y2="100" stroke="#373F51" stroke-width="1" />
+                                    <line x1="70" y1="150" x2="130" y2="200" stroke="#373F51" stroke-width="1" />
+                                    <line x1="70" y1="150" x2="130" y2="300" stroke="#373F51" stroke-width="1" />
+                                    
+                                    <line x1="430" y1="150" x2="350" y2="170" stroke="#373F51" stroke-width="1" />
+                                    <line x1="430" y1="150" x2="270" y2="200" stroke="#373F51" stroke-width="1" stroke-dasharray="5,5" />
+                                    <text x="340" y="160" font-size="10" font-style="italic">«include»</text>
+                                    
+                                    <line x1="270" y1="300" x2="270" y2="230" stroke="#373F51" stroke-width="1" />
+                                    <text x="290" y="260" font-size="10" font-style="italic">«extend»</text>
+                                    
+                                    <!-- Definición de la flecha -->
+                                    <defs>
+                                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                            <path d="M0,0 L0,6 L9,3 z" fill="#373F51" />
+                                        </marker>
+                                    </defs>
+                                </svg>
+                            </div>
+                            
+                            <div class="documentation mt-4">
+                                <h4>Documentación de Casos de Uso</h4>
+                                <p>Los diagramas de casos de uso suelen complementarse con descripciones textuales detalladas que incluyen:</p>
+                                <div class="usecase-template">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <td>Solicitar Préstamo</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Actores</th>
+                                            <td>Usuario, Bibliotecario</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Descripción</th>
+                                            <td>Permite a un usuario solicitar el préstamo de un libro disponible en la biblioteca</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Precondiciones</th>
+                                            <td>Usuario registrado, Libro disponible</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Flujo Principal</th>
+                                            <td>1. Usuario selecciona libro<br>2. Sistema verifica disponibilidad<br>3. Usuario confirma préstamo<br>4. Sistema registra préstamo</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Postcondiciones</th>
+                                            <td>Libro marcado como prestado, Registro actualizado</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diag-clases" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-grid-3x3"></i>
+                </div>
+                <h2 class="section-title">Diagramas de Clases</h2>
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="content-card intro-card">
+                            <p>Los diagramas de clases son el pilar de los modelos orientados a objetos. Muestran la estructura estática del sistema, representando las clases, sus atributos, operaciones y las relaciones entre ellas. Son fundamentales para el diseño de sistemas orientados a objetos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Estructura de una Clase</h3>
+                            <p>Una clase en UML se representa como un rectángulo dividido en tres compartimentos:</p>
+                            
+                            <div class="class-structure">
+                                <svg width="100%" height="220" viewBox="0 0 300 220">
+                                    <rect x="50" y="20" width="200" height="180" fill="#FFFFFF" stroke="#373F51" stroke-width="2" />
+                                    <line x1="50" y1="60" x2="250" y2="60" stroke="#373F51" stroke-width="2" />
+                                    <line x1="50" y1="120" x2="250" y2="120" stroke="#373F51" stroke-width="2" />
+                                    
+                                    <text x="150" y="45" text-anchor="middle" font-weight="bold">Libro</text>
+                                    
+                                    <text x="60" y="80" font-family="monospace">- título: String</text>
+                                    <text x="60" y="100" font-family="monospace">- autor: String</text>
+                                    
+                                    <text x="60" y="140" font-family="monospace">+ getTítulo(): String</text>
+                                    <text x="60" y="160" font-family="monospace">+ getAutor(): String</text>
+                                    <text x="60" y="180" font-family="monospace">+ prestar(): boolean</text>
+                                </svg>
+                            </div>
+                            
+                            <div class="compartments-explanation mt-3">
+                                <div class="compartment">
+                                    <h4>1. Nombre de la Clase</h4>
+                                    <p>Identificador único de la clase, generalmente un sustantivo.</p>
+                                </div>
+                                <div class="compartment">
+                                    <h4>2. Atributos</h4>
+                                    <p>Propiedades o características de la clase, con su tipo de dato.</p>
+                                    <code>visibilidad nombre: tipo [= valor inicial]</code>
+                                </div>
+                                <div class="compartment">
+                                    <h4>3. Operaciones</h4>
+                                    <p>Métodos o funciones que puede realizar la clase.</p>
+                                    <code>visibilidad nombre(parámetros): tipo_retorno</code>
+                                </div>
+                            </div>
+                            
+                            <div class="visibilities mt-4">
+                                <h4>Visibilidad</h4>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Símbolo</th>
+                                        <th>Visibilidad</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                    <tr>
+                                        <td>+</td>
+                                        <td>public</td>
+                                        <td>Accesible por cualquier clase</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>private</td>
+                                        <td>Accesible solo dentro de la clase</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>protected</td>
+                                        <td>Accesible por la clase y sus subclases</td>
+                                    </tr>
+                                    <tr>
+                                        <td>~</td>
+                                        <td>package</td>
+                                        <td>Accesible dentro del mismo paquete</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Relaciones entre Clases</h3>
+                            <div class="class-relationships">
+                                <div class="relationship-type">
+                                    <h4>Asociación</h4>
+                                    <p>Conexión semántica entre clases. Se representa con una línea sólida.</p>
+                                    <div class="relationship-example">
+                                        <svg width="100%" height="60" viewBox="0 0 300 60">
+                                            <rect x="20" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="70" y="40" text-anchor="middle" fill="white">Estudiante</text>
+                                            
+                                            <rect x="180" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="230" y="40" text-anchor="middle" fill="white">Curso</text>
+                                            
+                                            <line x1="120" y1="35" x2="180" y2="35" stroke="#373F51" stroke-width="2" />
+                                            <text x="150" y="25" text-anchor="middle" font-size="12">matricula</text>
+                                            <text x="130" y="50" text-anchor="middle" font-size="12">0..*</text>
+                                            <text x="170" y="50" text-anchor="middle" font-size="12">1..*</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="relationship-type">
+                                    <h4>Agregación</h4>
+                                    <p>Relación "parte-de" débil. Se representa con un diamante vacío.</p>
+                                    <div class="relationship-example">
+                                        <svg width="100%" height="60" viewBox="0 0 300 60">
+                                            <rect x="20" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="70" y="40" text-anchor="middle" fill="white">Departamento</text>
+                                            
+                                            <rect x="180" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="230" y="40" text-anchor="middle" fill="white">Empleado</text>
+                                            
+                                            <line x1="120" y1="35" x2="180" y2="35" stroke="#373F51" stroke-width="2" />
+                                            <polygon points="120,35 130,30 140,35 130,40" fill="white" stroke="#373F51" stroke-width="2" />
+                                            <text x="160" y="25" text-anchor="middle" font-size="12">tiene</text>
+                                            <text x="170" y="50" text-anchor="middle" font-size="12">0..*</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="relationship-type">
+                                    <h4>Composición</h4>
+                                    <p>Relación "parte-de" fuerte. Se representa con un diamante relleno.</p>
+                                    <div class="relationship-example">
+                                        <svg width="100%" height="60" viewBox="0 0 300 60">
+                                            <rect x="20" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="70" y="40" text-anchor="middle" fill="white">Coche</text>
+                                            
+                                            <rect x="180" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="230" y="40" text-anchor="middle" fill="white">Motor</text>
+                                            
+                                            <line x1="120" y1="35" x2="180" y2="35" stroke="#373F51" stroke-width="2" />
+                                            <polygon points="120,35 130,30 140,35 130,40" fill="#373F51" stroke="#373F51" stroke-width="2" />
+                                            <text x="160" y="25" text-anchor="middle" font-size="12">contiene</text>
+                                            <text x="170" y="50" text-anchor="middle" font-size="12">1</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="relationship-type">
+                                    <h4>Herencia</h4>
+                                    <p>Relación "es-un". Se representa con una flecha triangular vacía.</p>
+                                    <div class="relationship-example">
+                                        <svg width="100%" height="60" viewBox="0 0 300 60">
+                                            <rect x="20" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="70" y="40" text-anchor="middle" fill="white">Animal</text>
+                                            
+                                            <rect x="180" y="20" width="100" height="30" fill="#4F86C6" stroke="#373F51" />
+                                            <text x="230" y="40" text-anchor="middle" fill="white">Perro</text>
+                                            
+                                            <line x1="180" y1="35" x2="140" y2="35" stroke="#373F51" stroke-width="2" />
+                                            <polygon points="140,35 150,25 150,45" fill="white" stroke="#373F51" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="multiplicity mt-4">
+                                <h4>Multiplicidad</h4>
+                                <p>Indica cuántas instancias de una clase pueden relacionarse con una instancia de la otra clase.</p>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Notación</th>
+                                        <th>Significado</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Exactamente uno</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0..1</td>
+                                        <td>Cero o uno</td>
+                                    </tr>
+                                    <tr>
+                                        <td>*</td>
+                                        <td>Cero o más</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1..*</td>
+                                        <td>Uno o más</td>
+                                    </tr>
+                                    <tr>
+                                        <td>n..m</td>
+                                        <td>Desde n hasta m</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diag-secuencia" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-arrow-down-up"></i>
+                </div>
+                <h2 class="section-title">Diagramas de Secuencia</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Propósito y Elementos</h3>
+                            <p>Los diagramas de secuencia ilustran la interacción entre objetos en una secuencia temporal. Muestran cómo los procesos operan entre sí y en qué orden, enfocándose en el intercambio de mensajes entre objetos.</p>
+                            
+                            <div class="sequence-elements">
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-person-square"></i></div>
+                                    <div class="element-content">
+                                        <h4>Línea de Vida</h4>
+                                        <p>Representa un participante individual en la interacción. Se dibuja como una línea vertical punteada desde un rectángulo con el nombre del participante.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-arrow-right"></i></div>
+                                    <div class="element-content">
+                                        <h4>Mensaje</h4>
+                                        <p>Comunicación entre participantes. Se representa como una flecha entre líneas de vida con el nombre del mensaje.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-box"></i></div>
+                                    <div class="element-content">
+                                        <h4>Activación</h4>
+                                        <p>Período durante el cual un participante está ejecutando una operación. Se representa como un rectángulo delgado sobre la línea de vida.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="message-types mt-4">
+                                <h4>Tipos de Mensajes</h4>
+                                <div class="message-type">
+                                    <div class="message-icon">→</div>
+                                    <div class="message-desc">
+                                        <strong>Síncrono:</strong> El remitente espera una respuesta antes de continuar
+                                    </div>
+                                </div>
+                                <div class="message-type">
+                                    <div class="message-icon">⟶</div>
+                                    <div class="message-desc">
+                                        <strong>Asíncrono:</strong> El remitente continúa sin esperar respuesta
+                                    </div>
+                                </div>
+                                <div class="message-type">
+                                    <div class="message-icon">⟵⟵</div>
+                                    <div class="message-desc">
+                                        <strong>Respuesta:</strong> Retorno de un mensaje síncrono
+                                    </div>
+                                </div>
+                                <div class="message-type">
+                                    <div class="message-icon">⟶×</div>
+                                    <div class="message-desc">
+                                        <strong>Creación:</strong> Crea una nueva instancia del objeto destino
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Ejemplo de Diagrama de Secuencia</h3>
+                            <div class="sequence-diagram-container">
+                                <svg width="100%" height="400" viewBox="0 0 600 400">
+                                    <!-- Participantes -->
+                                    <rect x="50" y="20" width="100" height="40" fill="#4F86C6" stroke="#373F51" />
+                                    <text x="100" y="45" text-anchor="middle" fill="white">Usuario</text>
+                                    
+                                    <rect x="250" y="20" width="100" height="40" fill="#4F86C6" stroke="#373F51" />
+                                    <text x="300" y="45" text-anchor="middle" fill="white">Sistema</text>
+                                    
+                                    <rect x="450" y="20" width="100" height="40" fill="#4F86C6" stroke="#373F51" />
+                                    <text x="500" y="45" text-anchor="middle" fill="white">BaseDatos</text>
+                                    
+                                    <!-- Líneas de Vida -->
+                                    <line x1="100" y1="60" x2="100" y2="380" stroke="#373F51" stroke-width="1" stroke-dasharray="5,5" />
+                                    <line x1="300" y1="60" x2="300" y2="380" stroke="#373F51" stroke-width="1" stroke-dasharray="5,5" />
+                                    <line x1="500" y1="60" x2="500" y2="380" stroke="#373F51" stroke-width="1" stroke-dasharray="5,5" />
+                                    
+                                    <!-- Activaciones -->
+                                    <rect x="95" y="80" width="10" height="280" fill="#A0AEC0" />
+                                    <rect x="295" y="100" width="10" height="240" fill="#A0AEC0" />
+                                    <rect x="495" y="140" width="10" height="60" fill="#A0AEC0" />
+                                    <rect x="495" y="240" width="10" height="60" fill="#A0AEC0" />
+                                    
+                                    <!-- Mensajes -->
+                                    <line x1="105" y1="100" x2="295" y2="100" stroke="#373F51" stroke-width="1" marker-end="url(#arrow)" />
+                                    <text x="200" y="95" text-anchor="middle" font-size="12">1: iniciarSesión()</text>
+                                    
+                                    <line x1="305" y1="140" x2="495" y2="140" stroke="#373F51" stroke-width="1" marker-end="url(#arrow)" />
+                                    <text x="400" y="135" text-anchor="middle" font-size="12">2: verificarCredenciales()</text>
+                                    
+                                    <line x1="495" y1="200" x2="305" y2="200" stroke="#373F51" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+                                    <text x="400" y="195" text-anchor="middle" font-size="12">3: resultadoVerificación</text>
+                                    
+                                    <line x1="305" y1="240" x2="495" y2="240" stroke="#373F51" stroke-width="1" marker-end="url(#arrow)" />
+                                    <text x="400" y="235" text-anchor="middle" font-size="12">4: cargarPerfil()</text>
+                                    
+                                    <line x1="495" y1="300" x2="305" y2="300" stroke="#373F51" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+                                    <text x="400" y="295" text-anchor="middle" font-size="12">5: datosPerfil</text>
+                                    
+                                    <line x1="305" y1="340" x2="105" y2="340" stroke="#373F51" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+                                    <text x="200" y="335" text-anchor="middle" font-size="12">6: mostrarDashboard()</text>
+                                    
+                                    <!-- Definición de la flecha -->
+                                    <defs>
+                                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                            <path d="M0,0 L0,6 L9,3 z" fill="#373F51" />
+                                        </marker>
+                                    </defs>
+                                </svg>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-lightbulb"></i> Cuándo Usar Diagramas de Secuencia</h4>
+                                <ul>
+                                    <li>Para modelar escenarios de casos de uso</li>
+                                    <li>Para visualizar la lógica de métodos complejos</li>
+                                    <li>Para entender el flujo de mensajes en sistemas distribuidos</li>
+                                    <li>Para identificar responsabilidades de objetos</li>
+                                    <li>Para detectar cuellos de botella en la comunicación</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diag-actividad" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-activity"></i>
+                </div>
+                <h2 class="section-title">Diagramas de Actividad</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Fundamentos</h3>
+                            <p>Los diagramas de actividad representan flujos de trabajo paso a paso de operaciones componentes en un sistema. Son esencialmente diagramas de flujo sofisticados que muestran el flujo de control de una actividad a otra.</p>
+                            
+                            <div class="activity-elements">
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-circle-fill"></i></div>
+                                    <div class="element-content">
+                                        <h4>Nodo Inicial</h4>
+                                        <p>Punto de inicio del flujo. Se representa como un círculo negro sólido.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-circle"></i></div>
+                                    <div class="element-content">
+                                        <h4>Nodo Final</h4>
+                                        <p>Punto de terminación del flujo. Se representa como un círculo con un punto negro dentro.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-square"></i></div>
+                                    <div class="element-content">
+                                        <h4>Actividad</h4>
+                                        <p>Paso en el flujo de trabajo. Se representa como un rectángulo con esquinas redondeadas.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-diamond"></i></div>
+                                    <div class="element-content">
+                                        <h4>Decisión</h4>
+                                        <p>Punto de bifurcación condicional. Se representa como un rombo.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="element-item">
+                                    <div class="element-icon"><i class="bi bi-dash-lg"></i></div>
+                                    <div class="element-content">
+                                        <h4>Barra de Sincronización</h4>
+                                        <p>Divide o une flujos concurrentes. Se representa como una línea horizontal o vertical gruesa.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="content-card">
+                            <h3>Ejemplo de Diagrama de Actividad</h3>
+                            <div class="activity-diagram-container">
+                                <svg width="100%" height="500" viewBox="0 0 400 500">
+                                    <!-- Nodo Inicial -->
+                                    <circle cx="200" cy="30" r="15" fill="#373F51" />
+                                    
+                                    <!-- Actividades -->
+                                    <rect x="150" y="70" width="100" height="50" rx="15" fill="#4F86C6" />
+                                    <text x="200" y="100" text-anchor="middle" fill="white">Iniciar Sesión</text>
+                                    
+                                    <!-- Decisión -->
+                                    <polygon points="200,150 230,180 200,210 170,180" fill="#58A4B0" />
+                                    <text x="200" y="183" text-anchor="middle" fill="white">¿Válido?</text>
+                                    
+                                    <rect x="50" y="180" width="100" height="50" rx="15" fill="#4F86C6" />
+                                    <text x="100" y="210" text-anchor="middle" fill="white">Mostrar Error</text>
+                                    
+                                    <rect x="150" y="240" width="100" height="50" rx="15" fill="#4F86C6" />
+                                    <text x="200" y="270" text-anchor="middle" fill="white">Cargar Perfil</text>
+                                    
+                                    <!-- Bifurcación (Fork) -->
+                                    <rect x="180" y="310" width="40" height="5" fill="#373F51" />
+                                    
+                                    <rect x="50" y="340" width="100" height="50" rx="15" fill="#4F86C6" />
+                                    <text x="100" y="370" text-anchor="middle" fill="white">Cargar Datos</text>
+                                    
+                                    <rect x="250" y="340" width="100" height="50" rx="15" fill="#4F86C6" />
+                                    <text x="300" y="370" text-anchor="middle" fill="white">Verificar Permisos</text>
+                                    
+                                    <!-- Unión (Join) -->
+                                    <rect x="180" y="410" width="40" height="5" fill="#373F51" />
+                                    
+                                    <rect x="150" y="440" width="100" height="50" rx="15" fill="#4F86C6" />
+                                    <text x="200" y="470" text-anchor="middle" fill="white">Mostrar Dashboard</text>
+                                    
+                                    <!-- Flechas -->
+                                    <line x1="200" y1="45" x2="200" y2="70" stroke="#373F51" stroke-width="2" marker-end="url(#activityArrow)" />
+                                    <line x1="200" y1="120" x2="200" y2="150" stroke="#373F51" stroke-width="2" marker-end="url(#activityArrow)" />
+                                    
+                                    <line x1="170" y1="180" x2="150" y2="180" stroke="#373F51" stroke-width="2" />
+                                    <text x="160" y="170" font-size="12">No</text>
+                                    
+                                    <line x1="200" y1="210" x2="200" y2="240" stroke="#373F51" stroke-width="2" marker-end="url(#activityArrow)" />
+                                    <text x="210" y="230" font-size="12">Sí</text>
+                                    
+                                    <line x1="100" y1="180" x2="100" y2="130" stroke="#373F51" stroke-width="2" />
+                                    <line x1="100" y1="130" x2="150" y2="130" stroke="#373F51" stroke-width="2" />
+                                    
+                                    <line x1="200" y1="290" x2="200" y2="310" stroke="#373F51" stroke-width="2" marker-end="url(#activityArrow)" />
+                                    
+                                    <line x1="180" y1="312" x2="100" y2="312" stroke="#373F51" stroke-width="2" />
+                                    <line x1="100" y1="312" x2="100" y2="340" stroke="#373F51" stroke-width="2" marker-end="url(#activityArrow)" />
+                                    
+                                    <line x1="220" y1="312" x2="300" y2="312" stroke="#373F51" stroke-width="2" />
+                                    <line x1="300" y1="312" x2="300" y2="340" stroke="#373F51" stroke-width="2" marker-end="url(#activityArrow)" />
+                                    
+                                    <line x1="100" y1="390" x2="100" y2="412" stroke="#373F51" stroke-width="2" />
+                                    <line x1="100" y1="412" x2="180" y2="412" stroke="#373F51" stroke-width="2" />
+                                    
+                                    <line x1="300" y1="390" x2="300" y2="412" stroke="#373F51" stroke-width="2" />
+                                    <line x1="300" y1="412" x2="220" y2="412" stroke="#373F51" stroke-width="2" />
+                                    
+                                    <line x1="200" y1="415" x2="200" y2="440" stroke="#373F51" stroke-width="2" marker-end="url(#activityArrow)" />
+                                    
+                                    <!-- Definición de la flecha -->
+                                    <defs>
+                                        <marker id="activityArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                            <path d="M0,0 L0,6 L9,3 z" fill="#373F51" />
+                                        </marker>
+                                    </defs>
+                                </svg>
+                            </div>
+                            
+                            <div class="info-box mt-4">
+                                <h4><i class="bi bi-lightbulb"></i> Aplicaciones de los Diagramas de Actividad</h4>
+                                <ul>
+                                    <li>Modelar flujos de trabajo de negocio</li>
+                                    <li>Describir procedimientos complejos</li>
+                                    <li>Ilustrar la lógica de algoritmos</li>
+                                    <li>Modelar operaciones paralelas en sistemas concurrentes</li>
+                                    <li>Documentar procesos de negocio y casos de uso</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="content-card">
+                            <h3>Patrones Comunes en Diagramas de Actividad</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="pattern-card">
+                                        <h4><i class="bi bi-diamond"></i> Decisión-Fusión</h4>
+                                        <p>Representa bifurcaciones condicionales en el flujo con un rombo para la decisión y otro para reunir los caminos alternativos.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pattern-card">
+                                        <h4><i class="bi bi-dash-lg"></i> Fork-Join</h4>
+                                        <p>Muestra actividades que pueden ejecutarse en paralelo con una barra de sincronización que divide el flujo y otra que lo reúne.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pattern-card">
+                                        <h4><i class="bi bi-arrow-repeat"></i> Bucle</h4>
+                                        <p>Representa flujos que se repiten hasta que se cumple una condición, usando decisiones para controlar la iteración.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-table mt-4">
+                                <h4>Comparación con Otros Diagramas</h4>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Diagrama de Actividad</th>
+                                            <th>Diagrama de Secuencia</th>
+                                            <th>Diagrama de Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Enfoque</th>
+                                            <td>Flujo de procesos</td>
+                                            <td>Interacción entre objetos</td>
+                                            <td>Estados y transiciones</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Perspectiva</th>
+                                            <td>Procedural</td>
+                                            <td>Temporal</td>
+                                            <td>Basada en estados</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Mejor para</th>
+                                            <td>Algoritmos y flujos de trabajo</td>
+                                            <td>Mensajes y colaboración</td>
+                                            <td>Comportamiento basado en eventos</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-to-top-container">
+            <a href="#inicio" class="back-to-top">
+                <i class="bi bi-arrow-up-circle-fill"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto text-center">
+                    <h4>Unidad 2: Modelado de Sistemas</h4>
+                    <p>Curso de Ingeniería del Software | 3° EMS | DGETP</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="ingenieria.html" class="btn btn-outline-light animated-btn">
+                        <i class="bi bi-house-door me-2"></i> Volver a la página principal
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 Curso de Ingeniería del Software | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="ingenieriaunidad2.js"></script>
+</body>
+</html>
