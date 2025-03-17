@@ -1,0 +1,122 @@
+/* Colores y variables específicas para la tutoría */
+:root {
+    --tutoria-primary: #1E40AF;
+    --tutoria-secondary: #3B82F6;
+    --tutoria-dark: #1E3A8A;
+    --tutoria-light: #EFF6FF;
+    --tutoria-accent-1: #7C3AED;
+    --tutoria-accent-2: #10B981;
+    --tutoria-accent-3: #F97316;
+}
+
+/* Estilos específicos del hero */
+.tutoria-hero {
+    background: linear-gradient(135deg, var(--tutoria-primary), var(--tutoria-dark));
+}
+
+/* Tarjetas de unidades */
+.tutoria-unit-1 {
+    border-left-color: var(--tutoria-accent-1);
+}
+
+.tutoria-unit-2 {
+    border-left-color: var(--tutoria-accent-2);
+}
+
+/* Botones de unidades */
+.tutoria-btn-1 {
+    background-color: var(--tutoria-accent-1);
+    border-color: var(--tutoria-accent-1);
+    color: white;
+}
+
+.tutoria-btn-1:hover {
+    background-color: #6D28D9;
+    border-color: #6D28D9;
+}
+
+.tutoria-btn-2 {
+    background-color: var(--tutoria-accent-2);
+    border-color: var(--tutoria-accent-2);
+    color: white;
+}
+
+.tutoria-btn-2:hover {
+    background-color: #059669;
+    border-color: #059669;
+}
+
+/* Iconos de metodología */
+.tutoria-circle-1 {
+    background-color: var(--tutoria-accent-1);
+}
+
+.tutoria-circle-2 {
+    background-color: var(--tutoria-accent-2);
+}
+
+.tutoria-circle-3 {
+    background-color: var(--tutoria-accent-3);
+}
+
+/* Animaciones específicas */
+.tutoria-hero .hero-title {
+    animation-delay: 0.1s;
+}
+
+.tutoria-hero .hero-subtitle {
+    animation-delay: 0.3s;
+}
+
+.tutoria-hero .hero-description {
+    animation-delay: 0.5s;
+}
+
+.tutoria-hero .hero-btn {
+    animation-delay: 0.7s;
+}
+
+/* Efectos hover para las tarjetas */
+.tutoria-unit-1:hover {
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+}
+
+.tutoria-unit-2:hover {
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+}
+
+/* Estilos adicionales para contenido */
+.tutoria-unit-1 .feature-icon {
+    background-color: var(--tutoria-accent-1) !important;
+}
+
+.tutoria-unit-2 .feature-icon {
+    background-color: var(--tutoria-accent-2) !important;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .tutoria-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tutoria-hero .hero-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tutoria-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .circle-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .method-item {
+        margin-bottom: 1.5rem;
+    }
+}
