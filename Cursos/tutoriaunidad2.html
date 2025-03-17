@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2: Herramientas Analíticas, Creativas y Proyectuales | Tutoría UTULAB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hero-animations.css">
+    <link rel="stylesheet" href="tutoria.css">
+    <link rel="stylesheet" href="tutoriaunidad2.css">
+</head>
+<body>
+    <header class="hero-bg py-5 mb-5" id="inicio">
+        <div class="hero-icons-container">
+            <div class="hero-circle circle-1"></div>
+            <div class="hero-circle circle-2"></div>
+            <div class="hero-circle circle-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="row align-items-center py-5">
+                <div class="col-lg-7 text-white">
+                    <h1 class="display-4 fw-bold hero-title">Unidad 2: Herramientas Analíticas, Creativas y Proyectuales</h1>
+                    <p class="lead mb-4 hero-subtitle">Tutoría de Proyecto UTULAB - 3° EMS | DGETP</p>
+                    <p class="fs-5 hero-description">Identifica y aplica herramientas analíticas, creativas y proyectuales para la indagación, identificación y análisis de situaciones problema, generando propuestas orientadas a la innovación.</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm hero-btn animated-btn">
+                        Explorar contenido <i class="bi bi-arrow-down-circle"></i>
+                    </a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <div class="hero-icon">
+                        <svg width="300" height="300" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Design Thinking Board -->
+                            <rect x="100" y="120" width="400" height="300" rx="10" fill="#4A5568" />
+                            <rect x="120" y="140" width="360" height="260" rx="5" fill="#2D3748" />
+                            
+                            <!-- Brain and Idea Elements -->
+                            <path d="M300 180 C260 180 230 210 230 250 C230 280 250 300 270 310 C280 315 280 330 280 340 L320 340 C320 330 320 315 330 310 C350 300 370 280 370 250 C370 210 340 180 300 180 Z" fill="#805AD5" />
+                            <circle cx="300" cy="250" r="40" fill="#2D3748" />
+                            <path d="M270 230 L285 250 L270 270" stroke="#FBD38D" stroke-width="5" />
+                            <path d="M330 230 L315 250 L330 270" stroke="#FBD38D" stroke-width="5" />
+                            <circle cx="300" cy="170" r="15" fill="#ED8936" />
+                            <path d="M300 155 L300 130" stroke="#ED8936" stroke-width="3" />
+                            
+                            <!-- Post-it Notes -->
+                            <rect x="150" y="170" width="50" height="50" rx="5" fill="#F6E05E" transform="rotate(-5 150 170)" />
+                            <rect x="150" y="240" width="50" height="50" rx="5" fill="#68D391" transform="rotate(3 150 240)" />
+                            <rect x="150" y="310" width="50" height="50" rx="5" fill="#4299E1" transform="rotate(-2 150 310)" />
+                            <rect x="400" y="170" width="50" height="50" rx="5" fill="#FC8181" transform="rotate(4 400 170)" />
+                            <rect x="400" y="240" width="50" height="50" rx="5" fill="#B794F4" transform="rotate(-3 400 240)" />
+                            <rect x="400" y="310" width="50" height="50" rx="5" fill="#4FD1C5" transform="rotate(2 400 310)" />
+                            
+                            <!-- Connection Lines -->
+                            <path d="M280 340 L280 380 L200 380 L200 430" stroke="#A0AEC0" stroke-width="3" stroke-dasharray="5,5" />
+                            <path d="M320 340 L320 380 L400 380 L400 430" stroke="#A0AEC0" stroke-width="3" stroke-dasharray="5,5" />
+                            
+                            <!-- Process Elements -->
+                            <circle cx="200" cy="450" r="30" fill="#48BB78" />
+                            <circle cx="400" cy="450" r="30" fill="#F56565" />
+                            <path d="M200 450 L400 450" stroke="#A0AEC0" stroke-width="3" />
+                            <path d="M260 450 L270 440 L270 460 Z" fill="#A0AEC0" />
+                            <path d="M340 450 L330 440 L330 460 Z" fill="#A0AEC0" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Herramientas Proyectuales</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio"><i class="bi bi-house-door"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduccion"><i class="bi bi-info-circle"></i> Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diseno-centrado"><i class="bi bi-people"></i> Diseño Centrado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#herramientas-analisis"><i class="bi bi-search"></i> Herramientas de Análisis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#herramientas-creatividad"><i class="bi bi-lightbulb"></i> Herramientas de Creatividad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#herramientas-validacion"><i class="bi bi-check-circle"></i> Herramientas de Validación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="tutoria.html"><i class="bi bi-arrow-left-circle"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="tutoria.html">Tutoría UTULAB</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 2: Herramientas Analíticas, Creativas y Proyectuales</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="introduccion" class="mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Introducción a las Herramientas Proyectuales</h2>
+                    <hr class="divider my-4">
+                    <p class="text-muted mb-5">
+                        Las herramientas analíticas, creativas y proyectuales son fundamentales para la indagación, 
+                        identificación y análisis de situaciones problema en contexto, y para la generación de 
+                        propuestas orientadas a la innovación. Esta unidad te proporcionará las técnicas necesarias 
+                        para abordar problemas complejos con un enfoque sistemático y creativo, permitiéndote 
+                        desarrollar soluciones innovadoras basadas en las necesidades reales de los usuarios.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="method-item">
+                        <div class="circle-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h4>Indagación y Análisis</h4>
+                        <p>Metodologías para investigar contextos, descubrir necesidades ocultas y analizar problemáticas</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="method-item">
+                        <div class="circle-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h4>Ideación Creativa</h4>
+                        <p>Técnicas para estimular la creatividad, generar ideas disruptivas y desarrollar conceptos innovadores</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="method-item">
+                        <div class="circle-icon">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                        <h4>Validación y Refinamiento</h4>
+                        <p>Herramientas para testear propuestas, obtener retroalimentación y mejorar iterativamente las soluciones</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diseno-centrado" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h2 class="section-title">Proceso de Diseño Centrado en las Personas</h2>
+                <p class="section-desc">Explora metodologías que colocan a las personas y sus necesidades en el centro del proceso de diseño, creando soluciones más efectivas y significativas.</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Empatizar</h3>
+                            <p>Comprender profundamente las necesidades, deseos y motivaciones de las personas para las que estás diseñando a través de la observación, la interacción y la inmersión en su contexto.</p>
+                            <div class="tool-tags">
+                                <span>Entrevistas</span>
+                                <span>Observación</span>
+                                <span>Inmersión</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Definir</h3>
+                            <p>Articular claramente el problema o desafío basándose en los insights obtenidos durante la fase de empatía, estableciendo un punto de vista y una dirección clara para la ideación.</p>
+                            <div class="tool-tags">
+                                <span>Point of View</span>
+                                <span>How Might We</span>
+                                <span>User Personas</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Idear</h3>
+                            <p>Generar un amplio espectro de posibles soluciones a través de técnicas de pensamiento divergente, fomentando la cantidad y diversidad de ideas antes de evaluar su viabilidad.</p>
+                            <div class="tool-tags">
+                                <span>Brainstorming</span>
+                                <span>S.C.A.M.P.E.R.</span>
+                                <span>Mapas Mentales</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Prototipar</h3>
+                            <p>Transformar ideas en representaciones tangibles que permitan explorar soluciones, comunicar conceptos y obtener retroalimentación temprana, desde bocetos simples hasta prototipos funcionales.</p>
+                            <div class="tool-tags">
+                                <span>Mockups</span>
+                                <span>Wireframes</span>
+                                <span>Prototipos Rápidos</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Testear</h3>
+                            <p>Evaluar prototipos con usuarios reales para validar supuestos, identificar problemas y refinar soluciones en un ciclo iterativo de mejora continua hasta alcanzar la solución óptima.</p>
+                            <div class="tool-tags">
+                                <span>User Testing</span>
+                                <span>Feedback Loops</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button class="btn btn-outline-primary btn-more-info" data-bs-toggle="modal" data-bs-target="#modalDesignThinking">
+                        Más información sobre Design Thinking <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas-analisis" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-search"></i>
+                </div>
+                <h2 class="section-title">Herramientas de Relevamiento y Análisis</h2>
+                <p class="section-desc">Descubre técnicas para recopilar datos significativos, analizar contextos y comprender profundamente las problemáticas antes de proponer soluciones.</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-journal-text"></i>
+                            </div>
+                            <h3>Estudio de Casos</h3>
+                            <p>Análisis detallado de situaciones, proyectos o productos similares para extraer aprendizajes y buenas prácticas aplicables a tu propio contexto.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Benchmarking competitivo</li>
+                                <li><i class="bi bi-check-circle"></i> Análisis de éxitos y fracasos</li>
+                                <li><i class="bi bi-check-circle"></i> Identificación de patrones</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalCaseStudy">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-map"></i>
+                            </div>
+                            <h3>Mapeos</h3>
+                            <p>Visualización gráfica de sistemas, procesos, relaciones o experiencias para identificar patrones, oportunidades y puntos de intervención.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Journey maps</li>
+                                <li><i class="bi bi-check-circle"></i> Stakeholder maps</li>
+                                <li><i class="bi bi-check-circle"></i> System maps</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalMapping">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-eye"></i>
+                            </div>
+                            <h3>Observación Directa</h3>
+                            <p>Técnicas de observación sistemática del comportamiento y contexto de los usuarios para descubrir necesidades no articuladas y oportunidades de mejora.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Shadowing</li>
+                                <li><i class="bi bi-check-circle"></i> Observación participante</li>
+                                <li><i class="bi bi-check-circle"></i> Análisis contextual</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalObservation">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-mic"></i>
+                            </div>
+                            <h3>Relevamiento de Fuentes Primarias</h3>
+                            <p>Recopilación de información directamente de las personas involucradas o afectadas por la problemática a través de diversas técnicas de investigación cualitativa.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Entrevistas cualitativas</li>
+                                <li><i class="bi bi-check-circle"></i> Focus groups</li>
+                                <li><i class="bi bi-check-circle"></i> Encuestas etnográficas</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalPrimary">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-layout-split"></i>
+                            </div>
+                            <h3>Análisis FODA</h3>
+                            <p>Marco de evaluación sistemática para identificar Fortalezas, Oportunidades, Debilidades y Amenazas en un proyecto, producto o proceso para guiar la toma de decisiones estratégicas.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Evaluación interna y externa</li>
+                                <li><i class="bi bi-check-circle"></i> Matriz FODA cruzada</li>
+                                <li><i class="bi bi-check-circle"></i> Priorización de factores</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalFODA">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-clipboard-data"></i>
+                            </div>
+                            <h3>Registros Sistematizados</h3>
+                            <p>Metodologías para documentar, organizar y analizar la información recopilada de manera estructurada, facilitando la identificación de patrones y conclusiones significativas.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Bitácoras de investigación</li>
+                                <li><i class="bi bi-check-circle"></i> Matrices de análisis</li>
+                                <li><i class="bi bi-check-circle"></i> Codificación temática</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalRegistros">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas-creatividad" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-lightbulb"></i>
+                </div>
+                <h2 class="section-title">Herramientas de Creatividad</h2>
+                <p class="section-desc">Explora técnicas diseñadas para potenciar el pensamiento divergente y generar ideas innovadoras que rompan con los enfoques convencionales.</p>
+                
+                <div class="row g-4">
+                    <div class="col-md-12 mb-4">
+                        <div class="creativity-intro p-4 rounded">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h3 class="mb-3">El Proceso Creativo</h3>
+                                    <p>La creatividad no es un momento de inspiración repentina, sino un proceso estructurado que combina el pensamiento divergente (generación de múltiples ideas) y convergente (selección y refinamiento). Las herramientas que aprenderás facilitan ambos modos de pensamiento para desarrollar soluciones verdaderamente innovadoras.</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="creativity-icon">
+                                        <i class="bi bi-bezier2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="creativity-card">
+                            <div class="creativity-card-header">
+                                <i class="bi bi-chat-dots"></i>
+                                <h3>Lluvia de Ideas</h3>
+                            </div>
+                            <div class="creativity-card-body">
+                                <p>Técnica grupal para generar grandes cantidades de ideas en poco tiempo, fomentando la participación sin filtros ni críticas iniciales para maximizar el pensamiento divergente.</p>
+                                <h4>Principios clave:</h4>
+                                <ul>
+                                    <li>Cantidad sobre calidad inicial</li>
+                                    <li>No juzgar ideas prematuramente</li>
+                                    <li>Construir sobre ideas ajenas</li>
+                                    <li>Buscar ideas no convencionales</li>
+                                </ul>
+                                <h4>Variantes:</h4>
+                                <div class="variants">
+                                    <span>Brainwriting</span>
+                                    <span>Round-Robin</span>
+                                    <span>Brainstorm Inverso</span>
+                                </div>
+                                <button class="btn btn-creativity mt-3" data-bs-toggle="modal" data-bs-target="#modalBrainstorming">
+                                    Técnicas detalladas <i class="bi bi-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="creativity-card">
+                            <div class="creativity-card-header">
+                                <i class="bi bi-diagram-3"></i>
+                                <h3>Mapa Mental</h3>
+                            </div>
+                            <div class="creativity-card-body">
+                                <p>Herramienta visual que organiza información de manera radial, estimulando conexiones no lineales entre conceptos para descubrir nuevas relaciones y perspectivas.</p>
+                                <h4>Beneficios:</h4>
+                                <ul>
+                                    <li>Visualización de relaciones complejas</li>
+                                    <li>Asociaciones libres entre conceptos</li>
+                                    <li>Integración de pensamiento lógico y creativo</li>
+                                    <li>Estructuración orgánica de ideas</li>
+                                </ul>
+                                <h4>Aplicaciones:</h4>
+                                <div class="variants">
+                                    <span>Conceptualización</span>
+                                    <span>Planificación</span>
+                                    <span>Síntesis</span>
+                                </div>
+                                <button class="btn btn-creativity mt-3" data-bs-toggle="modal" data-bs-target="#modalMindMap">
+                                    Metodología completa <i class="bi bi-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="creativity-card">
+                            <div class="creativity-card-header">
+                                <i class="bi bi-shuffle"></i>
+                                <h3>S.C.A.M.P.E.R.</h3>
+                            </div>
+                            <div class="creativity-card-body">
+                                <p>Técnica de ideación basada en un conjunto de verbos de acción que funcionan como provocaciones para transformar conceptos existentes en nuevas ideas a través de diferentes operaciones.</p>
+                                <h4>Significado:</h4>
+                                <ul>
+                                    <li><strong>S</strong>ustituir: ¿Qué puedo reemplazar?</li>
+                                    <li><strong>C</strong>ombinar: ¿Qué puedo unir o mezclar?</li>
+                                    <li><strong>A</strong>daptar: ¿Cómo puedo ajustar a otro contexto?</li>
+                                    <li><strong>M</strong>odificar: ¿Qué puedo alterar o magnificar?</li>
+                                    <li><strong>P</strong>roponer otros usos: ¿Para qué más serviría?</li>
+                                    <li><strong>E</strong>liminar: ¿Qué puedo omitir o reducir?</li>
+                                    <li><strong>R</strong>eordenar: ¿Cómo puedo reorganizar?</li>
+                                </ul>
+                                <button class="btn btn-creativity mt-3" data-bs-toggle="modal" data-bs-target="#modalSCAMPER">
+                                    Ejemplos prácticos <i class="bi bi-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas-validacion" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+                <h2 class="section-title">Herramientas de Validación</h2>
+                <p class="section-desc">Metodologías para evaluar la viabilidad, deseabilidad y factibilidad de las soluciones propuestas, garantizando que respondan efectivamente a las necesidades identificadas.</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6">
+                        <div class="validation-card">
+                            <div class="validation-header">
+                                <div class="validation-icon">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <h3>Validación con Usuarios</h3>
+                            </div>
+                            <div class="validation-body">
+                                <p>Procesos para evaluar soluciones directamente con los usuarios finales, obteniendo retroalimentación valiosa para refinar y mejorar conceptos antes de su implementación final.</p>
+                                
+                                <div class="validation-methods">
+                                    <div class="method">
+                                        <h4><i class="bi bi-chat-right-dots"></i> Entrevistas de Validación</h4>
+                                        <p>Conversaciones estructuradas con usuarios potenciales para evaluar conceptos o prototipos, identificando fortalezas y áreas de mejora.</p>
+                                    </div>
+                                    
+                                    <div class="method">
+                                        <h4><i class="bi bi-eye"></i> Pruebas de Usabilidad</h4>
+                                        <p>Sesiones donde los usuarios interactúan con prototipos mientras realizan tareas específicas, permitiendo identificar problemas de uso y experiencia.</p>
+                                    </div>
+                                    
+                                    <div class="method">
+                                        <h4><i class="bi bi-card-list"></i> Evaluación Comparativa (A/B)</h4>
+                                        <p>Comparación de diferentes versiones de una solución para determinar cuál funciona mejor según métricas predefinidas.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="validation-tips">
+                                    <h4>Consideraciones clave:</h4>
+                                    <ul>
+                                        <li>Seleccionar usuarios representativos del público objetivo</li>
+                                        <li>Diseñar escenarios realistas de prueba</li>
+                                        <li>Capturar tanto datos cuantitativos como cualitativos</li>
+                                        <li>Establecer métricas claras de éxito</li>
+                                        <li>Mantener una actitud abierta ante la retroalimentación negativa</li>
+                                    </ul>
+                                </div>
+                                
+                                <button class="btn btn-validation mt-3" data-bs-toggle="modal" data-bs-target="#modalUserValidation">
+                                    Guía completa de validación <i class="bi bi-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="validation-card">
+                            <div class="validation-header">
+                                <div class="validation-icon">
+                                    <i class="bi bi-graph-up"></i>
+                                </div>
+                                <h3>Análisis FODA de Soluciones</h3>
+                            </div>
+                            <div class="validation-body">
+                                <p>Aplicación de la matriz FODA específicamente para evaluar soluciones propuestas, analizando tanto factores internos como externos que podrían afectar su implementación y éxito.</p>
+                                
+                                <div class="foda-matrix">
+                                    <div class="foda-row">
+                                        <div class="foda-cell positive">
+                                            <h4>Fortalezas</h4>
+                                            <p>Ventajas inherentes de la solución propuesta, capacidades distintivas y recursos disponibles.</p>
+                                        </div>
+                                        <div class="foda-cell negative">
+                                            <h4>Debilidades</h4>
+                                            <p>Limitaciones internas, carencias o aspectos que podrían mejorarse en la solución.</p>
+                                        </div>
+                                    </div>
+                                    <div class="foda-row">
+                                        <div class="foda-cell positive">
+                                            <h4>Oportunidades</h4>
+                                            <p>Factores externos favorables que podrían potenciar el éxito de la solución propuesta.</p>
+                                        </div>
+                                        <div class="foda-cell negative">
+                                            <h4>Amenazas</h4>
+                                            <p>Factores externos que podrían obstaculizar la implementación o éxito de la solución.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="foda-strategies">
+                                    <h4>Estrategias derivadas:</h4>
+                                    <ul>
+                                        <li><strong>FO:</strong> Usar fortalezas para aprovechar oportunidades</li>
+                                        <li><strong>FA:</strong> Usar fortalezas para evitar amenazas</li>
+                                        <li><strong>DO:</strong> Superar debilidades aprovechando oportunidades</li>
+                                        <li><strong>DA:</strong> Minimizar debilidades y evitar amenazas</li>
+                                    </ul>
+                                </div>
+                                
+                                <button class="btn btn-validation mt-3" data-bs-toggle="modal" data-bs-target="#modalFODAValidation">
+                                    Plantilla y ejemplo práctico <i class="bi bi-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5 text-center py-5 bg-light rounded shadow-sm">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-heading">Proyectos Prácticos</h2>
+                    <hr class="divider my-4">
+                    <p class="text-muted mb-5">
+                        Aplica las herramientas estudiadas en esta unidad a proyectos reales. Estos ejercicios te permitirán 
+                        poner en práctica las metodologías analíticas, creativas y proyectuales en contextos significativos.
+                    </p>
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-4">
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="bi bi-clipboard-data"></i>
+                                </div>
+                                <h4>Diagnóstico Contextual</h4>
+                                <p>Utiliza herramientas de relevamiento para analizar un contexto real e identificar oportunidades de intervención.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+                                <h4>Taller de Ideación</h4>
+                                <p>Implementa técnicas creativas para generar soluciones innovadoras a un problema previamente definido.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h4>Validación Iterativa</h4>
+                                <p>Desarrolla un ciclo de prototipado y validación con usuarios para refinar progresivamente una solución.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales para detalles de herramientas -->
+    <div class="modal fade" id="modalDesignThinking" tabindex="-1" aria-labelledby="modalDesignThinkingLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDesignThinkingLabel">Design Thinking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>El Design Thinking es una metodología centrada en el usuario que busca resolver problemas complejos a través de un proceso iterativo que equilibra las necesidades de las personas, las posibilidades tecnológicas y los requisitos para el éxito empresarial.</p>
+                            
+                            <h4>Principios fundamentales:</h4>
+                            <ul>
+                                <li><strong>Centrado en las personas:</strong> Coloca a los usuarios y sus necesidades en el centro del proceso de diseño.</li>
+                                <li><strong>Colaborativo:</strong> Promueve la diversidad de perspectivas y el trabajo en equipos multidisciplinarios.</li>
+                                <li><strong>Experimental:</strong> Favorece la creación de prototipos rápidos y el aprendizaje a través de la iteración.</li>
+                                <li><strong>Optimista:</strong> Parte de la creencia de que todos pueden crear cambios, independientemente de su rol o experiencia.</li>
+                            </ul>
+                            
+                            <h4>Aplicaciones en diversos campos:</h4>
+                            <ul>
+                                <li>Desarrollo de productos y servicios</li>
+                                <li>Diseño de experiencias y sistemas</li>
+                                <li>Innovación social y organizacional</li>
+                                <li>Educación y aprendizaje</li>
+                                <li>Políticas públicas y gobernanza</li>
+                            </ul>
+                            
+                            <h4>Recursos recomendados:</h4>
+                            <ul>
+                                <li>Design Thinking Bootleg - d.school Stanford</li>
+                                <li>El Manual de Design Thinking - IDEO</li>
+                                <li>This Is Service Design Doing - Marc Stickdorn et al.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Unidad 2: Herramientas Analíticas, Creativas y Proyectuales</h5>
+                    <p class="text-light mb-1">Tutoría de Proyecto UTULAB | 3° EMS | DGETP</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-globe me-2"></i><a href="https://utu.edu.uy" class="text-white">utu.edu.uy</a></li>
+                        <li><i class="bi bi-envelope me-2"></i><a href="mailto:utulabproyectos@utu.edu.uy" class="text-white">utulabproyectos@utu.edu.uy</a></li>
+                        <li><i class="bi bi-telephone me-2"></i><a href="tel:+59898765432" class="text-white">+598 9876 5432</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Enlaces Útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="tutoria.html" class="text-white"><i class="bi bi-link-45deg me-2"></i>Volver a Tutoría UTULAB</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Recursos de creatividad</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Biblioteca de proyectos</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Tutoriales y guías</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon text-white me-3" title="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="social-icon text-white me-3" title="Twitter"><i class="bi bi-twitter-x fs-4"></i></a>
+                        <a href="#" class="social-icon text-white me-3" title="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="social-icon text-white" title="YouTube"><i class="bi bi-youtube fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 UTULAB | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="tutoria.js"></script>
+    <script src="tutoriaunidad2.js"></script>
+</body>
+</html>

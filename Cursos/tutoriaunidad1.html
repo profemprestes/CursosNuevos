@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1: Herramientas de Prototipado | Tutoría UTULAB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hero-animations.css">
+    <link rel="stylesheet" href="tutoria.css">
+    <link rel="stylesheet" href="tutoriaunidad1.css">
+</head>
+<body>
+    <header class="hero-bg py-5 mb-5" id="inicio">
+        <div class="hero-icons-container">
+            <div class="hero-circle circle-1"></div>
+            <div class="hero-circle circle-2"></div>
+            <div class="hero-circle circle-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="row align-items-center py-5">
+                <div class="col-lg-7 text-white">
+                    <h1 class="display-4 fw-bold hero-title">Unidad 1: Herramientas de Prototipado</h1>
+                    <p class="lead mb-4 hero-subtitle">Tutoría de Proyecto UTULAB - 3° EMS | DGETP</p>
+                    <p class="fs-5 hero-description">Aplica y experimenta con técnicas y herramientas manuales, tradicionales, analógicas y digitales para el testeo de ideas y propuestas en proyectos técnicos y tecnológicos.</p>
+                    <a href="#contenido" class="btn btn-light btn-lg mt-3 shadow-sm hero-btn animated-btn">
+                        Explorar contenido <i class="bi bi-arrow-down-circle"></i>
+                    </a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <div class="hero-icon">
+                        <svg width="300" height="300" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- 3D Printer -->
+                            <rect x="150" y="300" width="300" height="40" rx="5" fill="#4A5568" />
+                            <rect x="180" y="120" width="240" height="180" rx="5" fill="#2D3748" />
+                            
+                            <!-- Printer Frame -->
+                            <rect x="180" y="120" width="20" height="180" fill="#A0AEC0" />
+                            <rect x="400" y="120" width="20" height="180" fill="#A0AEC0" />
+                            <rect x="180" y="120" width="240" height="20" fill="#A0AEC0" />
+                            
+                            <!-- Print Head -->
+                            <rect x="220" y="180" width="60" height="30" rx="5" fill="#4299E1" />
+                            <rect x="240" y="210" width="20" height="40" fill="#4299E1" />
+                            
+                            <!-- Print Bed -->
+                            <rect x="200" y="280" width="200" height="10" fill="#718096" />
+                            
+                            <!-- 3D Model being printed -->
+                            <path d="M250 260 L280 230 L320 230 L350 260 L320 280 L280 280 L250 260Z" fill="#38B2AC" />
+                            
+                            <!-- CNC Elements -->
+                            <rect x="100" y="380" width="400" height="20" rx="5" fill="#4A5568" />
+                            <rect x="120" y="400" width="360" height="100" rx="5" fill="#2D3748" />
+                            
+                            <!-- CNC Cutting Head -->
+                            <rect x="290" y="420" width="20" height="60" fill="#FC8181" />
+                            <circle cx="300" cy="420" r="10" fill="#F56565" />
+                            
+                            <!-- Material being cut -->
+                            <rect x="150" y="480" width="300" height="10" fill="#F6AD55" />
+                            
+                            <!-- Digital Design Elements -->
+                            <circle cx="480" cy="150" r="60" fill="rgba(66, 153, 225, 0.2)" />
+                            <path d="M450 150 L470 170 L490 130 L510 150" stroke="#4299E1" stroke-width="4" fill="none" />
+                            <circle cx="450" cy="150" r="5" fill="#4299E1" />
+                            <circle cx="470" cy="170" r="5" fill="#4299E1" />
+                            <circle cx="490" cy="130" r="5" fill="#4299E1" />
+                            <circle cx="510" cy="150" r="5" fill="#4299E1" />
+                            
+                            <!-- Connecting lines -->
+                            <path d="M480 210 L480 300 L400 300" stroke="#A0AEC0" stroke-width="2" stroke-dasharray="5,5" />
+                            <path d="M300 340 L300 380" stroke="#A0AEC0" stroke-width="2" stroke-dasharray="5,5" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary py-3">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">Herramientas de Prototipado</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio"><i class="bi bi-house-door"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduccion"><i class="bi bi-info-circle"></i> Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fabricacion-digital"><i class="bi bi-printer"></i> Fabricación Digital</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#visualizacion"><i class="bi bi-display"></i> Visualización</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#herramientas-tradicionales"><i class="bi bi-tools"></i> Herramientas Tradicionales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sostenibilidad"><i class="bi bi-recycle"></i> Sostenibilidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link back-home" href="tutoria.html"><i class="bi bi-arrow-left-circle"></i> Volver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" id="contenido">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="tutoria.html">Tutoría UTULAB</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Unidad 1: Herramientas de Prototipado</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="introduccion" class="mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Introducción a las Herramientas de Prototipado</h2>
+                    <hr class="divider my-4">
+                    <p class="text-muted mb-5">
+                        En esta unidad aprenderás a utilizar diversas herramientas y técnicas para el prototipado, desde
+                        métodos tradicionales hasta las más avanzadas tecnologías digitales. El prototipado es una fase
+                        esencial en el desarrollo de proyectos, permitiéndote transformar ideas conceptuales en modelos
+                        físicos o virtuales para probar su viabilidad, funcionalidad y experiencia de usuario.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="method-item">
+                        <div class="circle-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h4>Teoría y Práctica</h4>
+                        <p>Combinación de fundamentos teóricos con experiencia práctica utilizando herramientas reales</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="method-item">
+                        <div class="circle-icon">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <h4>Tecnologías Diversas</h4>
+                        <p>Exploración de múltiples tecnologías de fabricación digital y técnicas tradicionales</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="method-item">
+                        <div class="circle-icon">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <h4>Enfoque Práctico</h4>
+                        <p>Desarrollo de proyectos reales que te permiten aplicar las técnicas aprendidas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fabricacion-digital" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-printer-3d"></i>
+                </div>
+                <h2 class="section-title">Fabricación Digital (CNC)</h2>
+                <p class="section-desc">Descubre cómo las tecnologías de fabricación digital están revolucionando el diseño y desarrollo de productos, permitiendo transformar directamente archivos digitales en objetos físicos con gran precisión.</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-layers"></i>
+                            </div>
+                            <h3>Impresión 3D</h3>
+                            <p>Tecnología aditiva que construye objetos tridimensionales capa por capa a partir de modelos digitales.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Materiales: PLA, ABS, PETG, Resinas</li>
+                                <li><i class="bi bi-check-circle"></i> Técnicas: FDM, SLA, SLS</li>
+                                <li><i class="bi bi-check-circle"></i> Software: Cura, PrusaSlicer, Fusion 360</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modal3DPrinting">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-grid-3x3"></i>
+                            </div>
+                            <h3>Router CNC</h3>
+                            <p>Máquina de corte por control numérico que utiliza fresas rotativas para tallar materiales.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Materiales: Madera, Acrílico, Aluminio</li>
+                                <li><i class="bi bi-check-circle"></i> Técnicas: 2.5D, 3D, Grabado</li>
+                                <li><i class="bi bi-check-circle"></i> Software: Aspire, VCarve, Fusion 360</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalCNCRouter">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-lightning"></i>
+                            </div>
+                            <h3>Láser CNC</h3>
+                            <p>Tecnología de corte y grabado de alta precisión mediante un haz de luz láser concentrado.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Materiales: Madera, Acrílico, Cuero, Papel</li>
+                                <li><i class="bi bi-check-circle"></i> Técnicas: Corte, Grabado, Marcado</li>
+                                <li><i class="bi bi-check-circle"></i> Software: LightBurn, RDWorks, Illustrator</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalLaserCNC">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="bi bi-boxes"></i>
+                            </div>
+                            <h3>Materiales</h3>
+                            <p>Explora diferentes materiales y sus propiedades para cada tecnología de fabricación digital.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Polímeros: PLA, ABS, PETG, Resinas</li>
+                                <li><i class="bi bi-check-circle"></i> Maderas: MDF, Contrachapado, Balsa</li>
+                                <li><i class="bi bi-check-circle"></i> Otros: Acrílico, Aluminio, Cuero, Textiles</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalMaterials">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualizacion" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-display"></i>
+                </div>
+                <h2 class="section-title">Herramientas Virtuales de Visualización</h2>
+                <p class="section-desc">Aprende a utilizar herramientas digitales que permiten visualizar, simular y presentar tus diseños antes de fabricarlos, ahorrando tiempo y recursos en el proceso de desarrollo.</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon visualization-icon">
+                                <i class="bi bi-pc-display"></i>
+                            </div>
+                            <h3>Simulación</h3>
+                            <p>Herramientas para probar virtualmente el comportamiento y funcionalidad de tus diseños.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Estructural: Análisis de elementos finitos</li>
+                                <li><i class="bi bi-check-circle"></i> Mecánica: Simulación de movimiento</li>
+                                <li><i class="bi bi-check-circle"></i> Software: Fusion 360, SolidWorks, Ansys</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalSimulation">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon visualization-icon">
+                                <i class="bi bi-play-btn"></i>
+                            </div>
+                            <h3>Animación</h3>
+                            <p>Técnicas para crear secuencias animadas que muestren el funcionamiento de tus diseños.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> 3D: Animación de objetos y escenas</li>
+                                <li><i class="bi bi-check-circle"></i> 2D: Motion graphics explicativos</li>
+                                <li><i class="bi bi-check-circle"></i> Software: Blender, After Effects, Cinema 4D</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalAnimation">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="tool-card">
+                            <div class="tool-icon visualization-icon">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <h3>Realidad Aumentada</h3>
+                            <p>Integración de elementos virtuales en el mundo real para visualizar tus diseños en contexto.</p>
+                            <ul class="tool-features">
+                                <li><i class="bi bi-check-circle"></i> Visualización: Proyección de modelos 3D</li>
+                                <li><i class="bi bi-check-circle"></i> Interacción: Experiencias interactivas</li>
+                                <li><i class="bi bi-check-circle"></i> Software: Unity AR, ARKit, ARCore</li>
+                            </ul>
+                            <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalAR">
+                                Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas-tradicionales" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-tools"></i>
+                </div>
+                <h2 class="section-title">Herramientas Tradicionales y Manuales</h2>
+                <p class="section-desc">Descubre cómo las técnicas tradicionales de prototipado siguen siendo relevantes y se complementan con las tecnologías digitales en el proceso de diseño y desarrollo de productos.</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6">
+                        <div class="tool-card horizontal">
+                            <div class="tool-icon traditional-icon">
+                                <i class="bi bi-scissors"></i>
+                            </div>
+                            <div class="tool-content">
+                                <h3>Técnicas de Corte y Ensamblaje</h3>
+                                <p>Métodos manuales para convertir planos y plantillas en prototipos físicos mediante corte, plegado y ensamblaje.</p>
+                                <ul class="tool-features">
+                                    <li><i class="bi bi-check-circle"></i> Paper prototyping para interfaces y maquetas</li>
+                                    <li><i class="bi bi-check-circle"></i> Corte y plegado de materiales livianos</li>
+                                    <li><i class="bi bi-check-circle"></i> Técnicas de ensamblaje no permanente</li>
+                                </ul>
+                                <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalCutting">
+                                    Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="tool-card horizontal">
+                            <div class="tool-icon traditional-icon">
+                                <i class="bi bi-brush"></i>
+                            </div>
+                            <div class="tool-content">
+                                <h3>Modelado y Escultura</h3>
+                                <p>Creación de representaciones tridimensionales físicas mediante técnicas manuales de modelado y escultura.</p>
+                                <ul class="tool-features">
+                                    <li><i class="bi bi-check-circle"></i> Materiales: Arcilla, Cartón, Espuma, Madera</li>
+                                    <li><i class="bi bi-check-circle"></i> Técnicas de sustracción y adición de material</li>
+                                    <li><i class="bi bi-check-circle"></i> Acabados superficiales y pintura</li>
+                                </ul>
+                                <button class="btn btn-tool-details mt-3" data-bs-toggle="modal" data-bs-target="#modalModeling">
+                                    Ver detalles <i class="bi bi-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="fusion-section">
+                            <h3 class="fusion-title"><i class="bi bi-arrow-left-right"></i> Fusión de Tecnologías Productivas</h3>
+                            <p class="fusion-desc">La combinación estratégica de métodos tradicionales y digitales ofrece ventajas únicas en el proceso de prototipado:</p>
+                            
+                            <div class="fusion-diagram">
+                                <div class="fusion-node traditional">
+                                    <i class="bi bi-tools"></i>
+                                    <h4>Tradicional</h4>
+                                    <p>Flexibilidad, sensación táctil, bajo costo inicial</p>
+                                </div>
+                                <div class="fusion-arrow">
+                                    <i class="bi bi-arrow-left-right"></i>
+                                </div>
+                                <div class="fusion-node digital">
+                                    <i class="bi bi-cpu"></i>
+                                    <h4>Digital</h4>
+                                    <p>Precisión, repetibilidad, complejidad</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fusion-cases">
+                                <h4>Casos de aplicación:</h4>
+                                <ul class="fusion-list">
+                                    <li><i class="bi bi-check-circle-fill"></i> Prototipo híbrido: combinar piezas impresas en 3D con acabados manuales</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Moldes digitales para producción artesanal</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Digitalización de bocetos y modelos físicos para refinamiento digital</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sostenibilidad" class="mb-5 pt-4">
+            <div class="section-card">
+                <div class="section-icon">
+                    <i class="bi bi-recycle"></i>
+                </div>
+                <h2 class="section-title">Consideraciones de Sostenibilidad</h2>
+                <p class="section-desc">Explora cómo integrar principios de sostenibilidad en el proceso de prototipado, reduciendo el impacto ambiental y promoviendo prácticas responsables.</p>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <div class="sustain-card">
+                            <div class="sustain-icon">
+                                <i class="bi bi-tree"></i>
+                            </div>
+                            <h3>Materiales Sostenibles</h3>
+                            <ul class="sustain-list">
+                                <li><i class="bi bi-check-circle"></i> Filamentos biodegradables (PLA)</li>
+                                <li><i class="bi bi-check-circle"></i> Materiales reciclados y reciclables</li>
+                                <li><i class="bi bi-check-circle"></i> Maderas de fuentes renovables</li>
+                                <li><i class="bi bi-check-circle"></i> Alternativas a plásticos de un solo uso</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="sustain-card">
+                            <div class="sustain-icon">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h3>Eficiencia Energética</h3>
+                            <ul class="sustain-list">
+                                <li><i class="bi bi-check-circle"></i> Optimización de diseños para reducir material</li>
+                                <li><i class="bi bi-check-circle"></i> Minimización de tiempos de fabricación</li>
+                                <li><i class="bi bi-check-circle"></i> Uso de energías renovables</li>
+                                <li><i class="bi bi-check-circle"></i> Configuraciones de bajo consumo energético</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="sustain-card">
+                            <div class="sustain-icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </div>
+                            <h3>Ciclo de Vida</h3>
+                            <ul class="sustain-list">
+                                <li><i class="bi bi-check-circle"></i> Diseño para desensamblaje</li>
+                                <li><i class="bi bi-check-circle"></i> Reutilización de desechos y fallidos</li>
+                                <li><i class="bi bi-check-circle"></i> Compostaje y reciclaje de materiales</li>
+                                <li><i class="bi bi-check-circle"></i> Análisis de ciclo de vida del prototipo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="eco-design-tips mt-5">
+                    <h3 class="text-center mb-4"><i class="bi bi-award"></i> Principios de Ecodiseño en Prototipado</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="eco-tip">
+                                <div class="eco-number">1</div>
+                                <h4>Reducir</h4>
+                                <p>Minimiza la cantidad de material utilizado mediante diseños eficientes y estructuras optimizadas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="eco-tip">
+                                <div class="eco-number">2</div>
+                                <h4>Reutilizar</h4>
+                                <p>Diseña para permitir la reutilización de componentes y materiales en futuros prototipos.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="eco-tip">
+                                <div class="eco-number">3</div>
+                                <h4>Reciclar</h4>
+                                <p>Selecciona materiales que puedan ser reciclados al final de la vida útil del prototipo.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="eco-tip">
+                                <div class="eco-number">4</div>
+                                <h4>Respetar</h4>
+                                <p>Considera el impacto ambiental y social de tus decisiones de diseño y fabricación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5 text-center py-5 bg-light rounded shadow-sm">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-heading">Proyectos Prácticos</h2>
+                    <hr class="divider my-4">
+                    <p class="text-muted mb-5">
+                        Aplica los conocimientos adquiridos en esta unidad desarrollando prototipos para proyectos reales.
+                        Estos ejercicios te permitirán experimentar con diferentes herramientas y técnicas en un contexto práctico.
+                    </p>
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-4">
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <h4>Prototipo de Interface</h4>
+                                <p>Diseña y fabrica un prototipo físico para una interface de usuario empleando técnicas digitales y analógicas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="bi bi-box"></i>
+                                </div>
+                                <h4>Producto Funcional</h4>
+                                <p>Crea un prototipo funcional de un producto utilizando fabricación digital combinada con técnicas manuales.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="bi bi-megaphone"></i>
+                                </div>
+                                <h4>Presentación Visual</h4>
+                                <p>Desarrolla visualizaciones y animaciones digitales para comunicar efectivamente tu concepto de diseño.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales para detalles de herramientas -->
+    <div class="modal fade" id="modal3DPrinting" tabindex="-1" aria-labelledby="modal3DPrintingLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal3DPrintingLabel">Impresión 3D</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Tecnologías de Impresión 3D</h4>
+                            <ul>
+                                <li><strong>FDM (Modelado por Deposición Fundida):</strong> La más común y accesible, utiliza filamento plástico que se funde y deposita capa por capa.</li>
+                                <li><strong>SLA (Estereolitografía):</strong> Utiliza resina líquida fotosensible que se cura con luz UV, creando piezas de gran detalle.</li>
+                                <li><strong>SLS (Sinterizado Selectivo por Láser):</strong> Emplea polvo que se fusiona con láser, ideal para piezas funcionales.</li>
+                            </ul>
+                            <h4>Aplicaciones en Prototipado</h4>
+                            <ul>
+                                <li>Prototipos funcionales para pruebas mecánicas</li>
+                                <li>Maquetas y modelos de presentación</li>
+                                <li>Moldes y herramientas para otros procesos</li>
+                                <li>Piezas personalizadas y de pequeña serie</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Flujo de Trabajo</h4>
+                            <ol>
+                                <li>Diseño 3D utilizando software CAD</li>
+                                <li>Exportación a formato STL o OBJ</li>
+                                <li>Configuración en software de laminado (slicing)</li>
+                                <li>Impresión de la pieza</li>
+                                <li>Post-procesamiento (lijado, pintado, etc.)</li>
+                            </ol>
+                            <h4>Consideraciones de Diseño</h4>
+                            <ul>
+                                <li>Orientación para minimizar soportes</li>
+                                <li>Tolerancias para piezas que deben encajar</li>
+                                <li>Grosor de paredes y estructuras</li>
+                                <li>Temperatura y velocidad según material</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Unidad 1: Herramientas de Prototipado</h5>
+                    <p class="text-light mb-1">Tutoría de Proyecto UTULAB | 3° EMS | DGETP</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-globe me-2"></i><a href="https://utu.edu.uy" class="text-white">utu.edu.uy</a></li>
+                        <li><i class="bi bi-envelope me-2"></i><a href="mailto:utulabproyectos@utu.edu.uy" class="text-white">utulabproyectos@utu.edu.uy</a></li>
+                        <li><i class="bi bi-telephone me-2"></i><a href="tel:+59898765432" class="text-white">+598 9876 5432</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Enlaces Útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="tutoria.html" class="text-white"><i class="bi bi-link-45deg me-2"></i>Volver a Tutoría UTULAB</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Recursos de prototipado</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Biblioteca de proyectos</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-link-45deg me-2"></i>Tutoriales y guías</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon text-white me-3" title="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="social-icon text-white me-3" title="Twitter"><i class="bi bi-twitter-x fs-4"></i></a>
+                        <a href="#" class="social-icon text-white me-3" title="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="social-icon text-white" title="YouTube"><i class="bi bi-youtube fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="small mb-0"> 2023 UTULAB | DGETP | Tecnologías de la Información</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="tutoria.js"></script>
+    <script src="tutoriaunidad1.js"></script>
+</body>
+</html>

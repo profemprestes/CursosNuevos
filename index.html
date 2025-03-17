@@ -8,197 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesindex.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="hero-animations.css">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #3b82f6;
-            --dark-color: #1e40af;
-            --light-color: #eff6ff;
-            --accent-color: #22c55e;
-            --accent-secondary: #f97316;
-            --gray-color: #64748b;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .hero-bg {
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .course-card {
-            transition: all 0.3s ease-in-out;
-            border: none;
-            border-radius: 1rem;
-            overflow: hidden;
-            height: 100%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .course-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--light-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-        }
-        
-        .ems-2-header {
-            background-color: rgba(59, 130, 246, 0.1);
-            border-left: 5px solid var(--primary-color);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .ems-3-header {
-            background-color: rgba(34, 197, 94, 0.1);
-            border-left: 5px solid var(--accent-color);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .btn-course {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .btn-course:hover {
-            background-color: var(--dark-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
-        
-        .btn-course:hover i {
-            transform: translateX(3px);
-        }
-        
-        .btn-course i {
-            transition: transform 0.3s ease;
-        }
-        
-        .ems-2-card .card-header {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .ems-3-card .card-header {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        
-        .card-body {
-            padding: 1.5rem;
-        }
-        
-        .card-header {
-            padding: 1rem 1.5rem;
-            font-weight: 600;
-        }
-        
-        .code-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.05;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .floating-element {
-            position: absolute;
-            opacity: 0.2;
-            animation: float 15s infinite linear;
-        }
-        
-        .el-1 {
-            top: 10%;
-            left: 10%;
-            animation-duration: 12s;
-        }
-        
-        .el-2 {
-            top: 60%;
-            left: 80%;
-            animation-duration: 18s;
-            animation-delay: 2s;
-        }
-        
-        .el-3 {
-            top: 30%;
-            left: 60%;
-            animation-duration: 15s;
-            animation-delay: 1s;
-        }
-        
-        .el-4 {
-            top: 70%;
-            left: 30%;
-            animation-duration: 20s;
-            animation-delay: 3s;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-            25% {
-                transform: translate(10px, 15px) rotate(5deg);
-            }
-            50% {
-                transform: translate(5px, -10px) rotate(-5deg);
-            }
-            75% {
-                transform: translate(-10px, 5px) rotate(3deg);
-            }
-            100% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
+
 </head>
 <body>
     <header class="hero-bg py-5 mb-5" id="inicio">
@@ -283,7 +96,7 @@
         <div class="row g-4">
             <!-- Programación Avanzada -->
             <div class="col-md-4">
-                <div class="course-card ems-2-card card h-100">
+                <div class="course-card ems-2-card card h-100 bg-programacion">
                     <div class="card-header">
                         <i class="bi bi-code-slash me-2"></i>Programación Avanzada
                     </div>
@@ -292,7 +105,14 @@
                             <i class="bi bi-braces"></i>
                         </div>
                         <h5 class="card-title">Profundiza en la programación</h5>
-                        <p class="card-text flex-grow-1">Aprende paradigmas avanzados de programación, estructuras de datos complejas y técnicas de optimización para desarrollar soluciones eficientes.</p>
+                        <p class="card-text flex-grow-1">
+                            Aprende paradigmas avanzados de programación, incluyendo:
+                            <ul>
+                                <li>1. Programación orientada a objetos (POO) en Java</li>
+                                <li>2. Interfaces</li>
+                                <li>3. Conexión a bases de datos</li>
+                            </ul>
+                        </p>
                         <a href="programacionavanzada.html" class="btn btn-course mt-3">
                             Ver detalles <i class="bi bi-arrow-right-circle"></i>
                         </a>
@@ -302,7 +122,7 @@
 
             <!-- Introducción a Base de Datos -->
             <div class="col-md-4">
-                <div class="course-card ems-2-card card h-100">
+                <div class="course-card ems-2-card card h-100 bg-bases-datos">
                     <div class="card-header">
                         <i class="bi bi-database me-2"></i>Introducción a Base de Datos
                     </div>
@@ -311,7 +131,14 @@
                             <i class="bi bi-table"></i>
                         </div>
                         <h5 class="card-title">Gestión de datos estructurados</h5>
-                        <p class="card-text flex-grow-1">Explora los fundamentos del diseño y gestión de bases de datos relacionales, modelado de datos y consultas SQL para almacenar y recuperar información eficientemente.</p>
+                        <p class="card-text flex-grow-1">
+                            Explora los fundamentos del diseño y gestión de bases de datos relacionales, incluyendo:
+                            <ul>
+                                <li>1. Bases de datos relacionales</li>
+                                <li>2. Fundamentos de la modelización</li>
+                                <li>3. Gestor de base de datos en lenguaje SQL</li>
+                            </ul>
+                        </p>
                         <a href="basededatos.html" class="btn btn-course mt-3">
                             Ver detalles <i class="bi bi-arrow-right-circle"></i>
                         </a>
@@ -321,7 +148,7 @@
 
             <!-- Sistemas Operativos -->
             <div class="col-md-4">
-                <div class="course-card ems-2-card card h-100">
+                <div class="course-card ems-2-card card h-100 bg-sistemas">
                     <div class="card-header">
                         <i class="bi bi-terminal me-2"></i>Sistemas Operativos
                     </div>
@@ -330,7 +157,14 @@
                             <i class="bi bi-pc-display"></i>
                         </div>
                         <h5 class="card-title">Fundamentos de Linux</h5>
-                        <p class="card-text flex-grow-1">Descubre el fascinante mundo de los sistemas operativos Linux, desde comandos básicos hasta la automatización de tareas mediante scripts.</p>
+                        <p class="card-text flex-grow-1">
+                            Descubre el fascinante mundo de los sistemas operativos Linux, incluyendo:
+                            <ul>
+                                <li>1. Fundamentos del Sistema Operativo Linux</li>
+                                <li>2. Permisos y Propiedades</li>
+                                <li>3. Automatización de Tareas y Scripts</li>
+                            </ul>
+                        </p>
                         <a href="sistemasoperativos.html" class="btn btn-course mt-3">
                             Ver detalles <i class="bi bi-arrow-right-circle"></i>
                         </a>
@@ -347,7 +181,7 @@
         <div class="row g-4">
             <!-- Programación Full Stack -->
             <div class="col-md-6 col-lg-3">
-                <div class="course-card ems-3-card card h-100">
+                <div class="course-card ems-3-card card h-100 bg-fullstack">
                     <div class="card-header">
                         <i class="bi bi-stack me-2"></i>Programación Full Stack
                     </div>
@@ -356,7 +190,14 @@
                             <i class="bi bi-layers"></i>
                         </div>
                         <h5 class="card-title">Desarrollo web integral</h5>
-                        <p class="card-text flex-grow-1">Domina el desarrollo frontend y backend para crear aplicaciones web completas, utilizando frameworks modernos y APIs.</p>
+                        <p class="card-text flex-grow-1">
+                            Domina el desarrollo frontend y backend para crear aplicaciones web completas, utilizando:
+                            <ul>
+                                <li>HTML, CSS y JavaScript</li>
+                                <li>Frameworks como React y Node.js</li>
+                                <li>APIs RESTful</li>
+                            </ul>
+                        </p>
                         <a href="fullstack.html" class="btn btn-course mt-3">
                             Ver detalles <i class="bi bi-arrow-right-circle"></i>
                         </a>
@@ -366,7 +207,7 @@
 
             <!-- Ingeniería de Software -->
             <div class="col-md-6 col-lg-3">
-                <div class="course-card ems-3-card card h-100">
+                <div class="course-card ems-3-card card h-100 bg-ingenieria">
                     <div class="card-header">
                         <i class="bi bi-diagram-3 me-2"></i>Ingeniería de Software
                     </div>
@@ -375,7 +216,14 @@
                             <i class="bi bi-pencil-square"></i>
                         </div>
                         <h5 class="card-title">Diseño y gestión de sistemas</h5>
-                        <p class="card-text flex-grow-1">Aprende metodologías de desarrollo, modelado UML y técnicas de gestión de proyectos para crear software de calidad.</p>
+                        <p class="card-text flex-grow-1">
+                            Aprende metodologías de desarrollo, modelado UML y técnicas de gestión de proyectos, incluyendo:
+                            <ul>
+                                <li>Metodologías ágiles</li>
+                                <li>Modelado de sistemas</li>
+                                <li>Pruebas de software</li>
+                            </ul>
+                        </p>
                         <a href="ingenieria.html" class="btn btn-course mt-3">
                             Ver detalles <i class="bi bi-arrow-right-circle"></i>
                         </a>
@@ -385,7 +233,7 @@
 
             <!-- Administración de Sistemas Operativos -->
             <div class="col-md-6 col-lg-3">
-                <div class="course-card ems-3-card card h-100">
+                <div class="course-card ems-3-card card h-100 bg-adminsistemas">
                     <div class="card-header">
                         <i class="bi bi-hdd-stack me-2"></i>Administración de SO
                     </div>
@@ -394,7 +242,14 @@
                             <i class="bi bi-gear"></i>
                         </div>
                         <h5 class="card-title">Gestión de sistemas</h5>
-                        <p class="card-text flex-grow-1">Profundiza en la administración de sistemas Linux y Windows Server, configuración de redes y servicios empresariales.</p>
+                        <p class="card-text flex-grow-1">
+                            Profundiza en la administración de sistemas Linux y Windows Server, incluyendo:
+                            <ul>
+                                <li>Configuración de redes</li>
+                                <li>Seguridad en sistemas</li>
+                                <li>Servicios empresariales</li>
+                            </ul>
+                        </p>
                         <a href="adminsistemas.html" class="btn btn-course mt-3">
                             Ver detalles <i class="bi bi-arrow-right-circle"></i>
                         </a>
@@ -404,7 +259,7 @@
 
             <!-- Tutoría de Proyecto UTULAB -->
             <div class="col-md-6 col-lg-3">
-                <div class="course-card ems-3-card card h-100">
+                <div class="course-card ems-3-card card h-100 bg-utulab">
                     <div class="card-header">
                         <i class="bi bi-kanban me-2"></i>Tutoría de Proyecto UTULAB
                     </div>
@@ -413,7 +268,14 @@
                             <i class="bi bi-lightning"></i>
                         </div>
                         <h5 class="card-title">Proyecto integrador</h5>
-                        <p class="card-text flex-grow-1">Desarrolla un proyecto real bajo la guía de tutores expertos, aplicando todos los conocimientos adquiridos durante tu formación.</p>
+                        <p class="card-text flex-grow-1">
+                            Desarrolla un proyecto real bajo la guía de tutores expertos, aplicando todos los conocimientos adquiridos, incluyendo:
+                            <ul>
+                                <li>Planificación de proyectos</li>
+                                <li>Implementación de soluciones</li>
+                                <li>Presentación de resultados</li>
+                            </ul>
+                        </p>
                         <a href="utulab.html" class="btn btn-course mt-3">
                             Ver detalles <i class="bi bi-arrow-right-circle"></i>
                         </a>
